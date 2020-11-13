@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FB124E70-39BB-436D-A220-EA700993F9DB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Cash_prg</RootNamespace>
+    <AssemblyName>Cash_prg</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Acc_a.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Acc_b.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Acc_c.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Acc_d.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Calender_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="City_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Class1_Cash.cs" />
+    <Compile Include="Company_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Country_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Currency_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Delivery_Purchase_order.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Delivery_Sales_Estimate.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Descount_type_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Emp_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Emp_work_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Installment_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Items_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Item_content_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Item_kind_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Ownership_kind_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ownership_person_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Payment_method_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Project_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase_invoice_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase_order_items_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase_order_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase_payment_cheque_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase_payment_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Customer\Cust_add_uc.xaml.cs">
+      <DependentUpon>Cust_add_uc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Uc_Salesinvoice.xaml.cs">
+      <DependentUpon>Uc_Salesinvoice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sales_Estimate_items_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sales_Estimate_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sales_invoice_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sales_person_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sales_Receipt_payment_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sarvice_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Status_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Store_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Stors\Uc_2.xaml.cs">
+      <DependentUpon>Uc_2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stors\Uc_store.xaml.cs">
+      <DependentUpon>Uc_store.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tax_type_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Town_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Unit_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vendors_tbl.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Sales\Customer\Cust_add_uc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sales\Uc_Salesinvoice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stors\Uc_2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stors\Uc_store.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Acc_a.datasource" />
+    <None Include="Properties\DataSources\Acc_b.datasource" />
+    <None Include="Properties\DataSources\Acc_c.datasource" />
+    <None Include="Properties\DataSources\Acc_d.datasource" />
+    <None Include="Properties\DataSources\App.datasource" />
+    <None Include="Properties\DataSources\Calender_tbl.datasource" />
+    <None Include="Properties\DataSources\CashDbEntities.datasource" />
+    <None Include="Properties\DataSources\City_tbl.datasource" />
+    <None Include="Properties\DataSources\Company_tbl.datasource" />
+    <None Include="Properties\DataSources\Country_tbl.datasource" />
+    <None Include="Properties\DataSources\Currency_tbl.datasource" />
+    <None Include="Properties\DataSources\Customer_tbl.datasource" />
+    <None Include="Properties\DataSources\Delivery_Purchase_order.datasource" />
+    <None Include="Properties\DataSources\Delivery_Sales_Estimate.datasource" />
+    <None Include="Properties\DataSources\Descount_type_tbl.datasource" />
+    <None Include="Properties\DataSources\Emp_tbl.datasource" />
+    <None Include="Properties\DataSources\Emp_work_tbl.datasource" />
+    <None Include="Properties\DataSources\Installment_tbl.datasource" />
+    <None Include="Properties\DataSources\Items_tbl.datasource" />
+    <None Include="Properties\DataSources\Item_content_tbl.datasource" />
+    <None Include="Properties\DataSources\Item_kind_tbl.datasource" />
+    <None Include="Properties\DataSources\MainWindow.datasource" />
+    <None Include="Properties\DataSources\Ownership_kind_tbl.datasource" />
+    <None Include="Properties\DataSources\Ownership_person_tbl.datasource" />
+    <None Include="Properties\DataSources\Payment_method.datasource" />
+    <None Include="Properties\DataSources\Payment_method_tbl.datasource" />
+    <None Include="Properties\DataSources\Project_tbl.datasource" />
+    <None Include="Properties\DataSources\Purchase_invoice_tbl.datasource" />
+    <None Include="Properties\DataSources\Purchase_order_items_tbl.datasource" />
+    <None Include="Properties\DataSources\Purchase_order_tbl.datasource" />
+    <None Include="Properties\DataSources\Purchase_payment_cheque_tbl.datasource" />
+    <None Include="Properties\DataSources\Purchase_payment_tbl.datasource" />
+    <None Include="Properties\DataSources\Sales_Estimate_items_tbl.datasource" />
+    <None Include="Properties\DataSources\Sales_Estimate_tbl.datasource" />
+    <None Include="Properties\DataSources\Sales_invoice_tbl.datasource" />
+    <None Include="Properties\DataSources\Sales_person_tbl.datasource" />
+    <None Include="Properties\DataSources\Sales_Receipt_payment_tbl.datasource" />
+    <None Include="Properties\DataSources\Sarvice_tbl.datasource" />
+    <None Include="Properties\DataSources\sp_helpdiagramdefinition_Result.datasource" />
+    <None Include="Properties\DataSources\sp_helpdiagrams_Result.datasource" />
+    <None Include="Properties\DataSources\Status_tbl.datasource" />
+    <None Include="Properties\DataSources\Store_tbl.datasource" />
+    <None Include="Properties\DataSources\sysdiagram.datasource" />
+    <None Include="Properties\DataSources\Tax_type_tbl.datasource" />
+    <None Include="Properties\DataSources\Town_tbl.datasource" />
+    <None Include="Properties\DataSources\Unit_tbl.datasource" />
+    <None Include="Properties\DataSources\Vendors_tbl.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\chart.png" />
+    <Resource Include="Images\check.png" />
+    <Resource Include="Images\door.png" />
+    <Resource Include="Images\Edit.png" />
+    <Resource Include="Images\excel.png" />
+    <Resource Include="Images\exist.png" />
+    <Resource Include="Images\exl.png" />
+    <Resource Include="Images\export.png" />
+    <Resource Include="Images\go.png" />
+    <Resource Include="Images\gold_coin_stacks.png" />
+    <Resource Include="Images\ok.png" />
+    <Resource Include="Images\pdf.png" />
+    <Resource Include="Images\printer.png" />
+    <Resource Include="Images\program_group.png" />
+    <Resource Include="Images\refresh.png" />
+    <Resource Include="Images\scaner2.png" />
+    <Resource Include="Images\search.png" />
+    <Resource Include="Images\square-white-24-ns.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\cust_aqsat.png" />
+    <Resource Include="Images\cust_credit.png" />
+    <Resource Include="Images\cust_dept.jpg" />
+    <Resource Include="Images\cust_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\cust_usr.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Customers\" />
+    <Folder Include="Sales\Delivery\" />
+    <Folder Include="Sales\Estimate\" />
+    <Folder Include="Sales\invoice\" />
+    <Folder Include="Sales\invoice_return\" />
+    <Folder Include="Sales\Receipt\" />
+    <Folder Include="Sales\Reports\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

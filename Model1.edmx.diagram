@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4f7eb64b56ab4abfa77440f08cb33690" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="CashDbModel.Acc_a" Width="1.5" PointX="9" PointY="8.875" />
+        <EntityTypeShape EntityType="CashDbModel.Acc_b" Width="1.5" PointX="0.75" PointY="20.75" />
+        <EntityTypeShape EntityType="CashDbModel.Acc_c" Width="1.5" PointX="9" PointY="13.25" />
+        <EntityTypeShape EntityType="CashDbModel.Acc_d" Width="1.5" PointX="9" PointY="27.375" />
+        <EntityTypeShape EntityType="CashDbModel.Calender_tbl" Width="1.5" PointX="11.5" PointY="42.5" />
+        <EntityTypeShape EntityType="CashDbModel.City_tbl" Width="1.5" PointX="4.5" PointY="35.75" />
+        <EntityTypeShape EntityType="CashDbModel.Company_tbl" Width="1.5" PointX="13.75" PointY="35.375" />
+        <EntityTypeShape EntityType="CashDbModel.Country_tbl" Width="1.5" PointX="4.5" PointY="42.25" />
+        <EntityTypeShape EntityType="CashDbModel.Currency_tbl" Width="1.5" PointX="1.5" PointY="15.25" />
+        <EntityTypeShape EntityType="CashDbModel.Customer_tbl" Width="1.5" PointX="14" PointY="27.375" />
+        <EntityTypeShape EntityType="CashDbModel.Delivery_Purchase_order" Width="1.5" PointX="9" PointY="50.125" />
+        <EntityTypeShape EntityType="CashDbModel.Delivery_Sales_Estimate" Width="1.5" PointX="6" PointY="2.5" />
+        <EntityTypeShape EntityType="CashDbModel.Descount_type_tbl" Width="1.5" PointX="4.5" PointY="6.625" />
+        <EntityTypeShape EntityType="CashDbModel.Emp_tbl" Width="1.5" PointX="16" PointY="35" />
+        <EntityTypeShape EntityType="CashDbModel.Emp_work_tbl" Width="1.5" PointX="13.75" PointY="45.375" />
+        <EntityTypeShape EntityType="CashDbModel.Installment_tbl" Width="1.5" PointX="11.25" PointY="19.75" />
+        <EntityTypeShape EntityType="CashDbModel.Item_content_tbl" Width="1.5" PointX="11.25" PointY="33.625" />
+        <EntityTypeShape EntityType="CashDbModel.Item_kind_tbl" Width="1.5" PointX="6.75" PointY="7.625" />
+        <EntityTypeShape EntityType="CashDbModel.Items_tbl" Width="1.5" PointX="9" PointY="18" />
+        <EntityTypeShape EntityType="CashDbModel.Ownership_kind_tbl" Width="1.5" PointX="11.5" PointY="39.875" />
+        <EntityTypeShape EntityType="CashDbModel.Ownership_person_tbl" Width="1.5" PointX="16" PointY="46.75" />
+        <EntityTypeShape EntityType="CashDbModel.Payment_method_tbl" Width="1.5" PointX="3.75" PointY="32.375" />
+        <EntityTypeShape EntityType="CashDbModel.Project_tbl" Width="1.5" PointX="9.75" PointY="37" />
+        <EntityTypeShape EntityType="CashDbModel.Purchase_invoice_tbl" Width="1.5" PointX="3" PointY="18.625" />
+        <EntityTypeShape EntityType="CashDbModel.Purchase_order_items_tbl" Width="1.5" PointX="14.25" PointY="19.5" />
+        <EntityTypeShape EntityType="CashDbModel.Purchase_order_tbl" Width="1.5" PointX="12" PointY="0.75" />
+        <EntityTypeShape EntityType="CashDbModel.Purchase_payment_cheque_tbl" Width="1.5" PointX="5.25" PointY="27.75" />
+        <EntityTypeShape EntityType="CashDbModel.Sales_Estimate_items_tbl" Width="1.5" PointX="11.25" PointY="13.75" />
+        <EntityTypeShape EntityType="CashDbModel.Sales_Estimate_tbl" Width="1.5" PointX="3.75" PointY="12.375" />
+        <EntityTypeShape EntityType="CashDbModel.Sales_invoice_tbl" Width="1.5" PointX="6" PointY="18.375" />
+        <EntityTypeShape EntityType="CashDbModel.Sales_person_tbl" Width="1.5" PointX="16.25" PointY="29.75" />
+        <EntityTypeShape EntityType="CashDbModel.Sales_Receipt_payment_tbl" Width="1.5" PointX="11.25" PointY="25.625" />
+        <EntityTypeShape EntityType="CashDbModel.Sarvice_tbl" Width="1.5" PointX="0.75" PointY="2.125" />
+        <EntityTypeShape EntityType="CashDbModel.Status_tbl" Width="1.5" PointX="1.5" PointY="12.5" />
+        <EntityTypeShape EntityType="CashDbModel.Store_tbl" Width="1.5" PointX="6.75" PointY="38.25" />
+        <EntityTypeShape EntityType="CashDbModel.sysdiagram" Width="1.5" PointX="2.75" PointY="2.125" />
+        <EntityTypeShape EntityType="CashDbModel.Tax_type_tbl" Width="1.5" PointX="4.5" PointY="9.125" />
+        <EntityTypeShape EntityType="CashDbModel.Town_tbl" Width="1.5" PointX="4.5" PointY="39" />
+        <EntityTypeShape EntityType="CashDbModel.Unit_tbl" Width="1.5" PointX="6.75" PointY="13.875" />
+        <EntityTypeShape EntityType="CashDbModel.Vendors_tbl" Width="1.5" PointX="9.75" PointY="1" />
+        <EntityTypeShape EntityType="CashDbModel.Purchase_payment_tbl" Width="1.5" PointX="0.75" PointY="5.125" />
+        <AssociationConnector Association="CashDbModel.FK_Installment_tbl_Acc_a" />
+        <AssociationConnector Association="CashDbModel.FK_Items_tbl_Acc_a" />
+        <AssociationConnector Association="CashDbModel.FK_Items_tbl_Acc_a1" />
+        <AssociationConnector Association="CashDbModel.FK_Items_tbl_Acc_a2" />
+        <AssociationConnector Association="CashDbModel.FK_Purchase_invoice_tbl_Acc_a" />
+        <AssociationConnector Association="CashDbModel.FK_Sales_invoice_tbl_Acc_a" />
+        <AssociationConnector Association="CashDbModel.FK_Sales_Receipt_payment_tbl_Acc_a" />
+        <AssociationConnector Association="CashDbModel.FK_Installment_tbl_Acc_b" />
+        <AssociationConnector Association="CashDbModel.FK_Items_tbl_Acc_b" />
+        <AssociationConnector Association="CashDbModel.FK_Items_tbl_Acc_b1" />
+        <AssociationConnector Association="CashDbModel.FK_Items_tbl_Acc_b2" />
+        <AssociationConnector Association="CashDbModel.FK_Purchase_invoice_tbl_Acc_b" />
+        <AssociationConnector Association="CashDbModel.FK_Sales_invoice_tbl_Acc_b" />
+        <AssociationConnector Association="CashDbModel.FK_Sales_Receipt_payment_tbl_Acc_b" />
+        <AssociationConnector Association="CashDbModel.FK_Installment_tbl_Acc_c" />
+        <AssociationConnector Association="CashDbModel.FK_Items_tbl_Acc_c" />
+        <AssociationConnector Association="CashDbModel.FK_Items_tbl_Acc_c1" />
+        <AssociationConnector Association="CashDbModel.FK_Items_tbl_Acc_c2" />
+        <AssociationConnector Association="CashDbModel.FK_Purchase_invoice_tbl_Acc_c" />
+        <AssociationConnector Association="CashDbModel.FK_Sales_invoice_tbl_Acc_c" />
+        <AssociationConnector Association="CashDbModel.FK_Sales_Receipt_payment_tbl_Acc_c" />
+        <AssociationConnector Association="CashDbModel.FK_Installment_tbl_Acc_d" />
+        <AssociationConnector Association="CashDbModel.FK_Purchase_invoice_tbl_Acc_d" />
+        <AssociationConnector Association="CashDbModel.FK_Sales_invoice_tbl_Acc_d" />
+        <AssociationConnector Association="CashDbModel.FK_Sales_Receipt_payment_tbl_Acc_d" />
+        <AssociationConnector Association="CashDbModel.FK_Company_Calender_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Company_tbl_City_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Company_tbl_City_tbl1" />
+        <AssociationConnector Association="CashDbModel.FK_Customer_tbl_City_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Store_tbl_City_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Vendors_tbl_City_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Company_Currency_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Company_Ownership_kind_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Company_tbl_Country_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Company_tbl_Country_tbl1" />
+        <AssociationConnector Association="CashDbModel.FK_Company_tbl_Town_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Company_tbl_Town_tbl1" />
+        <AssociationConnector Association="CashDbModel.FK_Ownership_person_Company" />
+        <AssociationConnector Association="CashDbModel.FK_Customer_tbl_Country_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Store_tbl_Country_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Vendors_tbl_Country_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Purchase_order_tbl_Currency_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Sales_Estimate_tbl_Currency_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Vendors_tbl_Currency_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Customer_tbl_Project_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Customer_tbl_Status_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Customer_tbl_Town_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Sales_person_tbl_Customer_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Delivery_Purchase_order_Store_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Delivery_Sales_Estimate_Sales_Estimate_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Item_kind_tbl_Descount_type_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Emp_tbl_Emp_work_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Emp_tbl_Store_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Installment_tbl_Sales_invoice_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Item_content_tbl_Items_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Item_kind_tbl_Tax_type_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Items_tbl_Item_kind_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Items_tbl_Store_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Items_tbl_Unit_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Purchase_order_items_tbl_Items_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Sales_Estimate_items_tbl_Items_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Purchase_invoice_tbl_Payment_method_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Sales_invoice_tbl_Payment_method_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Purchase_order_tbl_Project_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Purchase_invoice_tbl_Purchase_order_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Purchase_payment_cheque_tbl_Purchase_invoice_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Purchase_order_items_tbl_Purchase_order_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Purchase_order_items_tbl_Store_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Purchase_order_items_tbl_Unit_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Purchase_order_tbl_Status_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Purchase_order_tbl_Vendors_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Sales_Estimate_items_tbl_Sales_Estimate_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Sales_Estimate_items_tbl_Store_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Sales_Estimate_items_tbl_Unit_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Sales_Estimate_tbl_Status_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Sales_invoice_tbl_Sales_Estimate_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Sales_Receipt_payment_tbl_Sales_invoice_tbl" />
+        <AssociationConnector Association="CashDbModel.FK_Store_tbl_Town_tbl1" />
+        <AssociationConnector Association="CashDbModel.FK_Vendors_tbl_Town_tbl" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="Cash_prg.Sales.Uc_Salesinvoice"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Cash_prg.Sales"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="65" Margin="185,219,0,0" VerticalAlignment="Top" Width="136"/>
+        <Label x:Name="label" Content="sales window" HorizontalAlignment="Left" Height="67" Margin="348,63,0,0" VerticalAlignment="Top" Width="198"/>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,1963 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CashDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Acc_a">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Acc_a_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Acc_b">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Acc_b_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Acc_b_belong" Type="int" />
+  </EntityType>
+  <EntityType Name="Acc_c">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Acc_c_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Acc_c_belong" Type="int" />
+  </EntityType>
+  <EntityType Name="Acc_d">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Acc_d_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Acc_d_belong" Type="int" />
+  </EntityType>
+  <EntityType Name="Calender_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Calender_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="City_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="City_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="City_Belong" Type="int" />
+  </EntityType>
+  <EntityType Name="Company_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Company_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Trade_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Trade_feacher" Type="nvarchar" MaxLength="500" />
+    <Property Name="Trade_RegNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Currency_code" Type="int" />
+    <Property Name="Logo" Type="image" />
+    <Property Name="Country_id" Type="int" />
+    <Property Name="City_id" Type="int" />
+    <Property Name="Town_id" Type="int" />
+    <Property Name="Street_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Building_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country2_id" Type="int" />
+    <Property Name="City2_id" Type="int" />
+    <Property Name="Town2_id" Type="int" />
+    <Property Name="Street2_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Building2_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tel_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="Jawal_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Website" Type="nvarchar" MaxLength="50" />
+    <Property Name="Facebook" Type="nvarchar" MaxLength="50" />
+    <Property Name="Trade_start_date" Type="datetime" />
+    <Property Name="Licensed_operator_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tax_aded" Type="float" />
+    <Property Name="Tax_income" Type="float" />
+    <Property Name="Ownership_kind_id" Type="int" />
+    <Property Name="Occupation" Type="nvarchar" MaxLength="250" />
+    <Property Name="Calendar_id" Type="int" />
+    <Property Name="Financial_year" Type="int" />
+    <Property Name="Financial_start_date" Type="date" />
+    <Property Name="Financial_end_date" Type="date" />
+  </EntityType>
+  <EntityType Name="Country_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Contry_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Currency_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Currency_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Customer_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Customer_display_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Customer_activ_id" Type="int" />
+    <Property Name="Customer_first_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Customer_last_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Customer_Email" Type="nvarchar" MaxLength="200" />
+    <Property Name="Customer_Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Customer_Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Customer_payment_terms" Type="nvarchar(max)" />
+    <Property Name="Currency_id" Type="int" />
+    <Property Name="Customer_Notes" Type="nvarchar(max)" />
+    <Property Name="Customer_Website" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Country_id" Type="int" />
+    <Property Name="City_id" Type="int" />
+    <Property Name="Town_id" Type="int" />
+    <Property Name="Street_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Facebook" Type="nvarchar" MaxLength="50" />
+    <Property Name="project_id" Type="int" />
+    <Property Name="Twitter" Type="nvarchar" MaxLength="50" />
+    <Property Name="Opining_balance" Type="float" />
+    <Property Name="Payment_preferred_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Delivery_Purchase_order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Purchase_order_id" Type="int" />
+    <Property Name="Delivery_date" Type="datetime" />
+    <Property Name="Store_id" Type="int" />
+    <Property Name="Delivery_note" Type="nvarchar" MaxLength="500" />
+    <Property Name="Delivery_tirms_conditions" Type="nvarchar" MaxLength="500" />
+    <Property Name="Delivery_recipient" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Delivery_Sales_Estimate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Sales_Estimate_id" Type="int" />
+    <Property Name="Delivery_date" Type="datetime" />
+    <Property Name="Expiry_date" Type="datetime" />
+    <Property Name="Sales_Estimate_status" Type="nvarchar" MaxLength="100" />
+    <Property Name="Sails_person" Type="nvarchar" MaxLength="200" />
+    <Property Name="Delivery_note" Type="nvarchar" MaxLength="500" />
+    <Property Name="Delivery_tirms_conditions" Type="nvarchar" MaxLength="500" />
+    <Property Name="Delivery_recipient" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Descount_type_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descount_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Descount_percent" Type="float" />
+  </EntityType>
+  <EntityType Name="Emp_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Emp_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Emp_pass" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Emp_work_id" Type="int" />
+    <Property Name="Store_id" Type="int" />
+    <Property Name="Emp_seg" Type="image" />
+    <Property Name="Emp_pic" Type="image" />
+    <Property Name="t1" Type="bit" />
+    <Property Name="t2" Type="bit" />
+    <Property Name="t3" Type="bit" />
+    <Property Name="t4" Type="bit" />
+    <Property Name="t5" Type="bit" />
+    <Property Name="t6" Type="bit" />
+    <Property Name="t7" Type="bit" />
+    <Property Name="t8" Type="bit" />
+    <Property Name="t9" Type="bit" />
+    <Property Name="t10" Type="bit" />
+    <Property Name="t101" Type="bit" />
+    <Property Name="t102" Type="bit" />
+    <Property Name="t103" Type="bit" />
+    <Property Name="t104" Type="bit" />
+    <Property Name="t105" Type="bit" />
+    <Property Name="t106" Type="bit" />
+    <Property Name="t107" Type="bit" />
+    <Property Name="t108" Type="bit" />
+    <Property Name="t109" Type="bit" />
+    <Property Name="t1010" Type="bit" />
+    <Property Name="t1011" Type="bit" />
+    <Property Name="t1012" Type="bit" />
+    <Property Name="t1013" Type="bit" />
+    <Property Name="t1014" Type="bit" />
+    <Property Name="t1015" Type="bit" />
+    <Property Name="t1016" Type="bit" />
+    <Property Name="t1017" Type="bit" />
+    <Property Name="t1018" Type="bit" />
+    <Property Name="t1019" Type="bit" />
+    <Property Name="t1020" Type="bit" />
+    <Property Name="t1021" Type="bit" />
+    <Property Name="t1022" Type="bit" />
+    <Property Name="t1023" Type="bit" />
+    <Property Name="t1024" Type="bit" />
+    <Property Name="t1025" Type="bit" />
+    <Property Name="t1026" Type="bit" />
+    <Property Name="t1027" Type="bit" />
+    <Property Name="t1028" Type="bit" />
+    <Property Name="t1029" Type="bit" />
+    <Property Name="t1030" Type="bit" />
+  </EntityType>
+  <EntityType Name="Emp_work_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Work_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Installment_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Sales_invoice_id" Type="int" />
+    <Property Name="Installment_date" Type="datetime" />
+    <Property Name="Installment_start_date" Type="datetime" />
+    <Property Name="Installment_number" Type="int" />
+    <Property Name="Installment_due_date" Type="datetime" />
+    <Property Name="Installment_currency" Type="nvarchar" MaxLength="50" />
+    <Property Name="Currency_exchange" Type="float" />
+    <Property Name="Installment_due_amount" Type="float" />
+    <Property Name="Guarantor_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Guarantor_id_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="kembyala_number" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cash_hold_acc_a" Type="int" />
+    <Property Name="Cash_hold_acc_b" Type="int" />
+    <Property Name="Cash_hold_acc_c" Type="int" />
+    <Property Name="Cash_hold_acc_d" Type="int" />
+  </EntityType>
+  <EntityType Name="Item_content_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Items_id" Type="int" />
+    <Property Name="Content_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Item_kind_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Item_kind_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Item_tax_id" Type="int" />
+    <Property Name="Decount_type_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Items_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Store_id" Type="int" />
+    <Property Name="Item_kind_id" Type="int" />
+    <Property Name="Item_name" Type="nvarchar" MaxLength="300" />
+    <Property Name="Item_description" Type="nvarchar(max)" />
+    <Property Name="Item_content_id" Type="int" />
+    <Property Name="Item_quantity" Type="float" />
+    <Property Name="Item_unit_id" Type="int" />
+    <Property Name="Item_price_sell" Type="float" />
+    <Property Name="Item_sales_acc_a_id" Type="int" />
+    <Property Name="Item_sales_acc_b_id" Type="int" />
+    <Property Name="Item_sales_acc_c_id" Type="int" />
+    <Property Name="Item_sales_acc_d_id" Type="int" />
+    <Property Name="Item_purchase_acc_a_id" Type="int" />
+    <Property Name="Item_purchase_acc_b_id" Type="int" />
+    <Property Name="Item_purchase_acc_c_id" Type="int" />
+    <Property Name="Item_purchase_acc_d_id" Type="int" />
+    <Property Name="Item_point_reorder" Type="float" />
+    <Property Name="Cost_sold_goods_acc_a_id" Type="int" />
+    <Property Name="Cost_sold_goods_acc_b_id" Type="int" />
+    <Property Name="Cost_sold_goods_acc_c_id" Type="int" />
+    <Property Name="Cost_sold_goods_acc_d_id" Type="int" />
+    <Property Name="Item_feacher_color" Type="nvarchar" MaxLength="50" />
+    <Property Name="Barcode" Type="float" />
+  </EntityType>
+  <EntityType Name="Ownership_kind_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ownership_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ownership_tax_add" Type="float" />
+  </EntityType>
+  <EntityType Name="Ownership_person_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Company_id" Type="int" />
+    <Property Name="Person_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Person_father" Type="nvarchar" MaxLength="50" />
+    <Property Name="Person_family" Type="nvarchar" MaxLength="50" />
+    <Property Name="Person_id" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Payment_method_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Payment_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Project_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Project_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Project_note" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Purchase_invoice_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Vendor_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Vendor_tax_num" Type="nvarchar" MaxLength="50" />
+    <Property Name="Branch_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Purchase_invoice_number" Type="int" />
+    <Property Name="Purchase_order_id" Type="int" />
+    <Property Name="Purchase_invoice_date" Type="datetime" />
+    <Property Name="Purchase_invoice_due_date" Type="nchar" MaxLength="10" />
+    <Property Name="Invoice_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Is_invoice_taxable" Type="bit" />
+    <Property Name="Invoice_amount_before_tax" Type="float" />
+    <Property Name="Invoice_level_tax" Type="float" />
+    <Property Name="Invoice_level_tax_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Invoice_level_tax_percent" Type="float" />
+    <Property Name="Invoice_amount_after_tax" Type="float" />
+    <Property Name="Invoice_note" Type="nvarchar" MaxLength="500" />
+    <Property Name="Invoice_tirms_conditions" Type="nvarchar" MaxLength="500" />
+    <Property Name="Payment_method_id" Type="int" />
+    <Property Name="Cash" Type="float" />
+    <Property Name="acc_a_id" Type="int" />
+    <Property Name="acc_b_id" Type="int" />
+    <Property Name="acc_c_id" Type="int" />
+    <Property Name="acc_d_id" Type="int" />
+    <Property Name="Debit_amount" Type="float" />
+    <Property Name="Cheque_amount" Type="float" />
+    <Property Name="Received_payment" Type="float" />
+  </EntityType>
+  <EntityType Name="Purchase_order_items_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Purchase_order_id" Type="int" />
+    <Property Name="Item_id" Type="int" />
+    <Property Name="Item_Services" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="Quantity" Type="float" />
+    <Property Name="Unit_id" Type="int" />
+    <Property Name="Item_price" Type="float" />
+    <Property Name="Store_id" Type="int" />
+    <Property Name="Item_tax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Item_tax_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Item_tax_percent" Type="float" />
+    <Property Name="Item_tax_amount" Type="float" />
+    <Property Name="Descount_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Descount_percent" Type="float" />
+    <Property Name="Discount_amount_item" Type="float" />
+    <Property Name="Amount_after_tax" Type="float" />
+    <Property Name="Amount_before_tax" Type="float" />
+    <Property Name="Enclude_invoice" Type="bit" />
+    <Property Name="Enclude_delivery" Type="bit" />
+  </EntityType>
+  <EntityType Name="Purchase_order_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Vendor_id" Type="int" />
+    <Property Name="Purchase_order_date" Type="datetime" />
+    <Property Name="Purchase_order_expert_date" Type="datetime" />
+    <Property Name="Project_id" Type="int" />
+    <Property Name="Purchase_order_status_id" Type="int" />
+    <Property Name="Currency_id" Type="int" />
+    <Property Name="Exchange_rate" Type="float" />
+    <Property Name="Purchase_order_amount_before_tax" Type="float" />
+    <Property Name="Purchase_order_level_tax" Type="float" />
+    <Property Name="Purchase_order_level_tax_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Purchase_order_level_tax_percent" Type="float" />
+    <Property Name="Purchase_order_amount_after_tax" Type="float" />
+    <Property Name="Purchase_order_notes" Type="nvarchar" MaxLength="500" />
+    <Property Name="Purchase_order_terms_conditions" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Purchase_payment_cheque_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Purchase_invoice_id" Type="int" />
+    <Property Name="Cheque_num" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cheque_amount" Type="float" />
+    <Property Name="Cheque_due_date" Type="datetime" />
+    <Property Name="Bank_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name_hold_cheque" Type="nvarchar" MaxLength="150" />
+    <Property Name="Cheque_currency" Type="nvarchar" MaxLength="50" />
+    <Property Name="Currency_exchange" Type="float" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CashDb.dbo.Purchase_payment_tbl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Purchase_payment_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Purchase_invoice_id" Type="int" />
+    <Property Name="Amount" Type="float" />
+    <Property Name="Pay_date" Type="datetime" />
+    <Property Name="currency" Type="nvarchar" MaxLength="50" />
+    <Property Name="Currency_exchange" Type="float" />
+  </EntityType>
+  <EntityType Name="Sales_Estimate_items_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Sales_Estimate_id" Type="int" />
+    <Property Name="Item_id" Type="int" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Quantity" Type="float" />
+    <Property Name="Unit_id" Type="int" />
+    <Property Name="Item_price" Type="float" />
+    <Property Name="Store_id" Type="int" />
+    <Property Name="Item_tax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Item_tax_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Item_tax_percent" Type="float" />
+    <Property Name="Item_tax_amount" Type="float" />
+    <Property Name="Descount_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Descount_percent" Type="float" />
+    <Property Name="Discount_amount_item" Type="float" />
+    <Property Name="Amount_after_tax" Type="float" />
+    <Property Name="Amount_before_tax" Type="float" />
+  </EntityType>
+  <EntityType Name="Sales_Estimate_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Customer_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Estimate_date" Type="datetime" />
+    <Property Name="Estimate_expert_date" Type="datetime" />
+    <Property Name="Project_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Estimate_status_id" Type="int" />
+    <Property Name="Sails_person" Type="nvarchar" MaxLength="200" />
+    <Property Name="Currency_id" Type="int" />
+    <Property Name="Exchange_rate" Type="float" />
+    <Property Name="Sales_Estimate_amount_before_tax" Type="float" />
+    <Property Name="Sales_Estimate_level_tax" Type="float" />
+    <Property Name="Sales_Estimate_level_tax_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sales_Estimate_level_tax_percent" Type="float" />
+    <Property Name="Purchase_order_amount_after_tax" Type="float" />
+    <Property Name="Shipping_charge" Type="float" />
+    <Property Name="Purchase_order_notes" Type="nvarchar" MaxLength="500" />
+    <Property Name="Purchase_order_terms_conditions" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Sales_invoice_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Customer_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Sales_Estimate_id" Type="int" />
+    <Property Name="Branch_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Purchase_invoice_number" Type="int" />
+    <Property Name="Sails_invoice_date" Type="datetime" />
+    <Property Name="Sales_invoice_due_date" Type="datetime" />
+    <Property Name="Invoice_status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Is_invoice_taxable" Type="bit" />
+    <Property Name="Invoice_amount_before_tax" Type="float" />
+    <Property Name="Invoice_level_tax" Type="float" />
+    <Property Name="Invoice_level_tax_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Invoice_level_tax_percent" Type="float" />
+    <Property Name="Invoice_amount_after_tax" Type="float" />
+    <Property Name="Sarvice_id" Type="int" />
+    <Property Name="Invoice_note" Type="nvarchar" MaxLength="500" />
+    <Property Name="Invoice_tirms_conditions" Type="nvarchar" MaxLength="500" />
+    <Property Name="Payment_method_id" Type="int" />
+    <Property Name="Cash" Type="float" />
+    <Property Name="acc_a_id" Type="int" />
+    <Property Name="acc_b_id" Type="int" />
+    <Property Name="acc_c_id" Type="int" />
+    <Property Name="acc_d_id" Type="int" />
+    <Property Name="Debit_amount" Type="float" />
+    <Property Name="Cheque_amount" Type="float" />
+    <Property Name="Installment_amount" Type="float" />
+    <Property Name="Received_payment" Type="float" />
+  </EntityType>
+  <EntityType Name="Sales_person_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Customer_id" Type="int" />
+    <Property Name="Sales_person_name" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Sales_Receipt_payment_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Customer_name" Type="nvarchar" MaxLength="150" />
+    <Property Name="Sales_invoice_id" Type="int" />
+    <Property Name="Amount" Type="float" />
+    <Property Name="Payment_date" Type="datetime" />
+    <Property Name="Payment_method" Type="nvarchar" MaxLength="50" />
+    <Property Name="currency" Type="nvarchar" MaxLength="50" />
+    <Property Name="Currency_exchange" Type="float" />
+    <Property Name="Cash_hold_acc_a" Type="int" />
+    <Property Name="Cash_hold_acc_b" Type="int" />
+    <Property Name="Cash_hold_acc_c" Type="int" />
+    <Property Name="Cash_hold_acc_d" Type="int" />
+    <Property Name="Amount_words" Type="nvarchar" MaxLength="250" />
+    <Property Name="Cheque_num" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cheque_due_date" Type="datetime" />
+    <Property Name="Bank_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name_hold_cheque" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Sarvice_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sarvice_name" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Status_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Store_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Store_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Country_id" Type="int" />
+    <Property Name="City_id" Type="int" />
+    <Property Name="Town_id" Type="int" />
+    <Property Name="Street_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Building_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Tax_type_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tax_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tax_percent" Type="float" />
+  </EntityType>
+  <EntityType Name="Town_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Town_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Town_belong" Type="int" />
+  </EntityType>
+  <EntityType Name="Unit_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Unit_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Vendors_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Vendor_display_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Vendor_tax_num" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vendor_activ" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vendor_first_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vendor_last_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vendo_Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vendo_Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vendo_Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vender_payment_terms" Type="nvarchar" MaxLength="100" />
+    <Property Name="Currency_id" Type="int" />
+    <Property Name="Vendo_Notes" Type="nvarchar(max)" />
+    <Property Name="Vendo_Website" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Country_id" Type="int" />
+    <Property Name="City_id" Type="int" />
+    <Property Name="Town_id" Type="int" />
+    <Property Name="Street_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Facebook" Type="nvarchar" MaxLength="50" />
+    <Property Name="Twitter" Type="nvarchar" MaxLength="50" />
+    <Property Name="Opining_balance" Type="float" />
+    <Property Name="Payment_preferred" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Company_Calender_tbl">
+    <End Role="Calender_tbl" Type="Self.Calender_tbl" Multiplicity="0..1" />
+    <End Role="Company_tbl" Type="Self.Company_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Calender_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company_tbl">
+        <PropertyRef Name="Calendar_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_Currency_tbl">
+    <End Role="Currency_tbl" Type="Self.Currency_tbl" Multiplicity="0..1" />
+    <End Role="Company_tbl" Type="Self.Company_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currency_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company_tbl">
+        <PropertyRef Name="Currency_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_Ownership_kind_tbl">
+    <End Role="Ownership_kind_tbl" Type="Self.Ownership_kind_tbl" Multiplicity="0..1" />
+    <End Role="Company_tbl" Type="Self.Company_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ownership_kind_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company_tbl">
+        <PropertyRef Name="Ownership_kind_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_tbl_City_tbl">
+    <End Role="City_tbl" Type="Self.City_tbl" Multiplicity="0..1" />
+    <End Role="Company_tbl" Type="Self.Company_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company_tbl">
+        <PropertyRef Name="City_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_tbl_City_tbl1">
+    <End Role="City_tbl" Type="Self.City_tbl" Multiplicity="0..1" />
+    <End Role="Company_tbl" Type="Self.Company_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company_tbl">
+        <PropertyRef Name="City2_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_tbl_Country_tbl">
+    <End Role="Country_tbl" Type="Self.Country_tbl" Multiplicity="0..1" />
+    <End Role="Company_tbl" Type="Self.Company_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company_tbl">
+        <PropertyRef Name="Country_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_tbl_Country_tbl1">
+    <End Role="Country_tbl" Type="Self.Country_tbl" Multiplicity="0..1" />
+    <End Role="Company_tbl" Type="Self.Company_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company_tbl">
+        <PropertyRef Name="Country2_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_tbl_Town_tbl">
+    <End Role="Town_tbl" Type="Self.Town_tbl" Multiplicity="0..1" />
+    <End Role="Company_tbl" Type="Self.Company_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Town_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company_tbl">
+        <PropertyRef Name="Town_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_tbl_Town_tbl1">
+    <End Role="Town_tbl" Type="Self.Town_tbl" Multiplicity="0..1" />
+    <End Role="Company_tbl" Type="Self.Company_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Town_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company_tbl">
+        <PropertyRef Name="Town2_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_tbl_City_tbl">
+    <End Role="City_tbl" Type="Self.City_tbl" Multiplicity="0..1" />
+    <End Role="Customer_tbl" Type="Self.Customer_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer_tbl">
+        <PropertyRef Name="City_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_tbl_Country_tbl">
+    <End Role="Country_tbl" Type="Self.Country_tbl" Multiplicity="0..1" />
+    <End Role="Customer_tbl" Type="Self.Customer_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer_tbl">
+        <PropertyRef Name="Country_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_tbl_Project_tbl">
+    <End Role="Project_tbl" Type="Self.Project_tbl" Multiplicity="0..1" />
+    <End Role="Customer_tbl" Type="Self.Customer_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer_tbl">
+        <PropertyRef Name="project_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_tbl_Status_tbl">
+    <End Role="Status_tbl" Type="Self.Status_tbl" Multiplicity="0..1" />
+    <End Role="Customer_tbl" Type="Self.Customer_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer_tbl">
+        <PropertyRef Name="Customer_activ_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_tbl_Town_tbl">
+    <End Role="Town_tbl" Type="Self.Town_tbl" Multiplicity="0..1" />
+    <End Role="Customer_tbl" Type="Self.Customer_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Town_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer_tbl">
+        <PropertyRef Name="Town_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Delivery_Purchase_order_Store_tbl">
+    <End Role="Store_tbl" Type="Self.Store_tbl" Multiplicity="0..1" />
+    <End Role="Delivery_Purchase_order" Type="Self.Delivery_Purchase_order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Delivery_Purchase_order">
+        <PropertyRef Name="Store_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Delivery_Sales_Estimate_Sales_Estimate_tbl">
+    <End Role="Sales_Estimate_tbl" Type="Self.Sales_Estimate_tbl" Multiplicity="0..1" />
+    <End Role="Delivery_Sales_Estimate" Type="Self.Delivery_Sales_Estimate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_Estimate_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Delivery_Sales_Estimate">
+        <PropertyRef Name="Sales_Estimate_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Emp_tbl_Emp_work_tbl">
+    <End Role="Emp_work_tbl" Type="Self.Emp_work_tbl" Multiplicity="0..1" />
+    <End Role="Emp_tbl" Type="Self.Emp_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Emp_work_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Emp_tbl">
+        <PropertyRef Name="Emp_work_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Emp_tbl_Store_tbl">
+    <End Role="Store_tbl" Type="Self.Store_tbl" Multiplicity="0..1" />
+    <End Role="Emp_tbl" Type="Self.Emp_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Emp_tbl">
+        <PropertyRef Name="Store_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Installment_tbl_Acc_a">
+    <End Role="Acc_a" Type="Self.Acc_a" Multiplicity="0..1" />
+    <End Role="Installment_tbl" Type="Self.Installment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_a">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Installment_tbl">
+        <PropertyRef Name="Cash_hold_acc_a" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Installment_tbl_Acc_b">
+    <End Role="Acc_b" Type="Self.Acc_b" Multiplicity="0..1" />
+    <End Role="Installment_tbl" Type="Self.Installment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_b">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Installment_tbl">
+        <PropertyRef Name="Cash_hold_acc_b" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Installment_tbl_Acc_c">
+    <End Role="Acc_c" Type="Self.Acc_c" Multiplicity="0..1" />
+    <End Role="Installment_tbl" Type="Self.Installment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_c">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Installment_tbl">
+        <PropertyRef Name="Cash_hold_acc_c" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Installment_tbl_Acc_d">
+    <End Role="Acc_d" Type="Self.Acc_d" Multiplicity="0..1" />
+    <End Role="Installment_tbl" Type="Self.Installment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_d">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Installment_tbl">
+        <PropertyRef Name="Cash_hold_acc_d" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Installment_tbl_Sales_invoice_tbl">
+    <End Role="Sales_invoice_tbl" Type="Self.Sales_invoice_tbl" Multiplicity="0..1" />
+    <End Role="Installment_tbl" Type="Self.Installment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_invoice_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Installment_tbl">
+        <PropertyRef Name="Sales_invoice_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Item_content_tbl_Items_tbl">
+    <End Role="Items_tbl" Type="Self.Items_tbl" Multiplicity="0..1" />
+    <End Role="Item_content_tbl" Type="Self.Item_content_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Items_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Item_content_tbl">
+        <PropertyRef Name="Items_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Item_kind_tbl_Descount_type_tbl">
+    <End Role="Descount_type_tbl" Type="Self.Descount_type_tbl" Multiplicity="0..1" />
+    <End Role="Item_kind_tbl" Type="Self.Item_kind_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Descount_type_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Item_kind_tbl">
+        <PropertyRef Name="Decount_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Item_kind_tbl_Tax_type_tbl">
+    <End Role="Tax_type_tbl" Type="Self.Tax_type_tbl" Multiplicity="0..1" />
+    <End Role="Item_kind_tbl" Type="Self.Item_kind_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tax_type_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Item_kind_tbl">
+        <PropertyRef Name="Item_tax_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_tbl_Acc_a">
+    <End Role="Acc_a" Type="Self.Acc_a" Multiplicity="0..1" />
+    <End Role="Items_tbl" Type="Self.Items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_a">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Items_tbl">
+        <PropertyRef Name="Item_sales_acc_a_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_tbl_Acc_a1">
+    <End Role="Acc_a" Type="Self.Acc_a" Multiplicity="0..1" />
+    <End Role="Items_tbl" Type="Self.Items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_a">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Items_tbl">
+        <PropertyRef Name="Item_purchase_acc_a_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_tbl_Acc_a2">
+    <End Role="Acc_a" Type="Self.Acc_a" Multiplicity="0..1" />
+    <End Role="Items_tbl" Type="Self.Items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_a">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Items_tbl">
+        <PropertyRef Name="Cost_sold_goods_acc_a_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_tbl_Acc_b">
+    <End Role="Acc_b" Type="Self.Acc_b" Multiplicity="0..1" />
+    <End Role="Items_tbl" Type="Self.Items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_b">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Items_tbl">
+        <PropertyRef Name="Item_sales_acc_b_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_tbl_Acc_b1">
+    <End Role="Acc_b" Type="Self.Acc_b" Multiplicity="0..1" />
+    <End Role="Items_tbl" Type="Self.Items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_b">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Items_tbl">
+        <PropertyRef Name="Item_purchase_acc_b_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_tbl_Acc_b2">
+    <End Role="Acc_b" Type="Self.Acc_b" Multiplicity="0..1" />
+    <End Role="Items_tbl" Type="Self.Items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_b">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Items_tbl">
+        <PropertyRef Name="Cost_sold_goods_acc_b_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_tbl_Acc_c">
+    <End Role="Acc_c" Type="Self.Acc_c" Multiplicity="0..1" />
+    <End Role="Items_tbl" Type="Self.Items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_c">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Items_tbl">
+        <PropertyRef Name="Item_sales_acc_c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_tbl_Acc_c1">
+    <End Role="Acc_c" Type="Self.Acc_c" Multiplicity="0..1" />
+    <End Role="Items_tbl" Type="Self.Items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_c">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Items_tbl">
+        <PropertyRef Name="Item_purchase_acc_c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_tbl_Acc_c2">
+    <End Role="Acc_c" Type="Self.Acc_c" Multiplicity="0..1" />
+    <End Role="Items_tbl" Type="Self.Items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_c">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Items_tbl">
+        <PropertyRef Name="Cost_sold_goods_acc_c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_tbl_Item_kind_tbl">
+    <End Role="Item_kind_tbl" Type="Self.Item_kind_tbl" Multiplicity="0..1" />
+    <End Role="Items_tbl" Type="Self.Items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item_kind_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Items_tbl">
+        <PropertyRef Name="Item_kind_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_tbl_Store_tbl">
+    <End Role="Store_tbl" Type="Self.Store_tbl" Multiplicity="0..1" />
+    <End Role="Items_tbl" Type="Self.Items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Items_tbl">
+        <PropertyRef Name="Store_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_tbl_Unit_tbl">
+    <End Role="Unit_tbl" Type="Self.Unit_tbl" Multiplicity="0..1" />
+    <End Role="Items_tbl" Type="Self.Items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Items_tbl">
+        <PropertyRef Name="Item_unit_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ownership_person_Company">
+    <End Role="Company_tbl" Type="Self.Company_tbl" Multiplicity="0..1" />
+    <End Role="Ownership_person_tbl" Type="Self.Ownership_person_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ownership_person_tbl">
+        <PropertyRef Name="Company_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_invoice_tbl_Acc_a">
+    <End Role="Acc_a" Type="Self.Acc_a" Multiplicity="0..1" />
+    <End Role="Purchase_invoice_tbl" Type="Self.Purchase_invoice_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_a">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Purchase_invoice_tbl">
+        <PropertyRef Name="acc_a_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_invoice_tbl_Acc_b">
+    <End Role="Acc_b" Type="Self.Acc_b" Multiplicity="0..1" />
+    <End Role="Purchase_invoice_tbl" Type="Self.Purchase_invoice_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_b">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Purchase_invoice_tbl">
+        <PropertyRef Name="acc_b_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_invoice_tbl_Acc_c">
+    <End Role="Acc_c" Type="Self.Acc_c" Multiplicity="0..1" />
+    <End Role="Purchase_invoice_tbl" Type="Self.Purchase_invoice_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_c">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Purchase_invoice_tbl">
+        <PropertyRef Name="acc_c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_invoice_tbl_Acc_d">
+    <End Role="Acc_d" Type="Self.Acc_d" Multiplicity="0..1" />
+    <End Role="Purchase_invoice_tbl" Type="Self.Purchase_invoice_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_d">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase_invoice_tbl">
+        <PropertyRef Name="acc_d_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_invoice_tbl_Payment_method_tbl">
+    <End Role="Payment_method_tbl" Type="Self.Payment_method_tbl" Multiplicity="0..1" />
+    <End Role="Purchase_invoice_tbl" Type="Self.Purchase_invoice_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payment_method_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase_invoice_tbl">
+        <PropertyRef Name="Payment_method_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_invoice_tbl_Purchase_order_tbl">
+    <End Role="Purchase_order_tbl" Type="Self.Purchase_order_tbl" Multiplicity="0..1" />
+    <End Role="Purchase_invoice_tbl" Type="Self.Purchase_invoice_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Purchase_order_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase_invoice_tbl">
+        <PropertyRef Name="Purchase_order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_order_items_tbl_Items_tbl">
+    <End Role="Items_tbl" Type="Self.Items_tbl" Multiplicity="0..1" />
+    <End Role="Purchase_order_items_tbl" Type="Self.Purchase_order_items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Items_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase_order_items_tbl">
+        <PropertyRef Name="Item_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_order_items_tbl_Purchase_order_tbl">
+    <End Role="Purchase_order_tbl" Type="Self.Purchase_order_tbl" Multiplicity="0..1" />
+    <End Role="Purchase_order_items_tbl" Type="Self.Purchase_order_items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Purchase_order_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase_order_items_tbl">
+        <PropertyRef Name="Purchase_order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_order_items_tbl_Store_tbl">
+    <End Role="Store_tbl" Type="Self.Store_tbl" Multiplicity="0..1" />
+    <End Role="Purchase_order_items_tbl" Type="Self.Purchase_order_items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase_order_items_tbl">
+        <PropertyRef Name="Store_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_order_items_tbl_Unit_tbl">
+    <End Role="Unit_tbl" Type="Self.Unit_tbl" Multiplicity="0..1" />
+    <End Role="Purchase_order_items_tbl" Type="Self.Purchase_order_items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase_order_items_tbl">
+        <PropertyRef Name="Unit_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_order_tbl_Currency_tbl">
+    <End Role="Currency_tbl" Type="Self.Currency_tbl" Multiplicity="0..1" />
+    <End Role="Purchase_order_tbl" Type="Self.Purchase_order_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currency_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase_order_tbl">
+        <PropertyRef Name="Currency_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_order_tbl_Project_tbl">
+    <End Role="Project_tbl" Type="Self.Project_tbl" Multiplicity="0..1" />
+    <End Role="Purchase_order_tbl" Type="Self.Purchase_order_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase_order_tbl">
+        <PropertyRef Name="Project_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_order_tbl_Status_tbl">
+    <End Role="Status_tbl" Type="Self.Status_tbl" Multiplicity="0..1" />
+    <End Role="Purchase_order_tbl" Type="Self.Purchase_order_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase_order_tbl">
+        <PropertyRef Name="Purchase_order_status_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_order_tbl_Vendors_tbl">
+    <End Role="Vendors_tbl" Type="Self.Vendors_tbl" Multiplicity="0..1" />
+    <End Role="Purchase_order_tbl" Type="Self.Purchase_order_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vendors_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase_order_tbl">
+        <PropertyRef Name="Vendor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_payment_cheque_tbl_Purchase_invoice_tbl">
+    <End Role="Purchase_invoice_tbl" Type="Self.Purchase_invoice_tbl" Multiplicity="0..1" />
+    <End Role="Purchase_payment_cheque_tbl" Type="Self.Purchase_payment_cheque_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Purchase_invoice_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase_payment_cheque_tbl">
+        <PropertyRef Name="Purchase_invoice_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Estimate_items_tbl_Items_tbl">
+    <End Role="Items_tbl" Type="Self.Items_tbl" Multiplicity="0..1" />
+    <End Role="Sales_Estimate_items_tbl" Type="Self.Sales_Estimate_items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Items_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_Estimate_items_tbl">
+        <PropertyRef Name="Item_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Estimate_items_tbl_Sales_Estimate_tbl">
+    <End Role="Sales_Estimate_tbl" Type="Self.Sales_Estimate_tbl" Multiplicity="0..1" />
+    <End Role="Sales_Estimate_items_tbl" Type="Self.Sales_Estimate_items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_Estimate_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_Estimate_items_tbl">
+        <PropertyRef Name="Sales_Estimate_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Estimate_items_tbl_Store_tbl">
+    <End Role="Store_tbl" Type="Self.Store_tbl" Multiplicity="0..1" />
+    <End Role="Sales_Estimate_items_tbl" Type="Self.Sales_Estimate_items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_Estimate_items_tbl">
+        <PropertyRef Name="Store_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Estimate_items_tbl_Unit_tbl">
+    <End Role="Unit_tbl" Type="Self.Unit_tbl" Multiplicity="0..1" />
+    <End Role="Sales_Estimate_items_tbl" Type="Self.Sales_Estimate_items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_Estimate_items_tbl">
+        <PropertyRef Name="Unit_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Estimate_tbl_Currency_tbl">
+    <End Role="Currency_tbl" Type="Self.Currency_tbl" Multiplicity="0..1" />
+    <End Role="Sales_Estimate_tbl" Type="Self.Sales_Estimate_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currency_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_Estimate_tbl">
+        <PropertyRef Name="Currency_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Estimate_tbl_Status_tbl">
+    <End Role="Status_tbl" Type="Self.Status_tbl" Multiplicity="0..1" />
+    <End Role="Sales_Estimate_tbl" Type="Self.Sales_Estimate_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_Estimate_tbl">
+        <PropertyRef Name="Estimate_status_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_invoice_tbl_Acc_a">
+    <End Role="Acc_a" Type="Self.Acc_a" Multiplicity="0..1" />
+    <End Role="Sales_invoice_tbl" Type="Self.Sales_invoice_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_a">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sales_invoice_tbl">
+        <PropertyRef Name="acc_a_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_invoice_tbl_Acc_b">
+    <End Role="Acc_b" Type="Self.Acc_b" Multiplicity="0..1" />
+    <End Role="Sales_invoice_tbl" Type="Self.Sales_invoice_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_b">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sales_invoice_tbl">
+        <PropertyRef Name="acc_b_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_invoice_tbl_Acc_c">
+    <End Role="Acc_c" Type="Self.Acc_c" Multiplicity="0..1" />
+    <End Role="Sales_invoice_tbl" Type="Self.Sales_invoice_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_c">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sales_invoice_tbl">
+        <PropertyRef Name="acc_c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_invoice_tbl_Acc_d">
+    <End Role="Acc_d" Type="Self.Acc_d" Multiplicity="0..1" />
+    <End Role="Sales_invoice_tbl" Type="Self.Sales_invoice_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_d">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_invoice_tbl">
+        <PropertyRef Name="acc_d_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_invoice_tbl_Payment_method_tbl">
+    <End Role="Payment_method_tbl" Type="Self.Payment_method_tbl" Multiplicity="0..1" />
+    <End Role="Sales_invoice_tbl" Type="Self.Sales_invoice_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payment_method_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_invoice_tbl">
+        <PropertyRef Name="Payment_method_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_invoice_tbl_Sales_Estimate_tbl">
+    <End Role="Sales_Estimate_tbl" Type="Self.Sales_Estimate_tbl" Multiplicity="0..1" />
+    <End Role="Sales_invoice_tbl" Type="Self.Sales_invoice_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_Estimate_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_invoice_tbl">
+        <PropertyRef Name="Sales_Estimate_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_person_tbl_Customer_tbl">
+    <End Role="Customer_tbl" Type="Self.Customer_tbl" Multiplicity="0..1" />
+    <End Role="Sales_person_tbl" Type="Self.Sales_person_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_person_tbl">
+        <PropertyRef Name="Customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Receipt_payment_tbl_Acc_a">
+    <End Role="Acc_a" Type="Self.Acc_a" Multiplicity="0..1" />
+    <End Role="Sales_Receipt_payment_tbl" Type="Self.Sales_Receipt_payment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_a">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sales_Receipt_payment_tbl">
+        <PropertyRef Name="Cash_hold_acc_a" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Receipt_payment_tbl_Acc_b">
+    <End Role="Acc_b" Type="Self.Acc_b" Multiplicity="0..1" />
+    <End Role="Sales_Receipt_payment_tbl" Type="Self.Sales_Receipt_payment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_b">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sales_Receipt_payment_tbl">
+        <PropertyRef Name="Cash_hold_acc_b" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Receipt_payment_tbl_Acc_c">
+    <End Role="Acc_c" Type="Self.Acc_c" Multiplicity="0..1" />
+    <End Role="Sales_Receipt_payment_tbl" Type="Self.Sales_Receipt_payment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_c">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sales_Receipt_payment_tbl">
+        <PropertyRef Name="Cash_hold_acc_c" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Receipt_payment_tbl_Acc_d">
+    <End Role="Acc_d" Type="Self.Acc_d" Multiplicity="0..1" />
+    <End Role="Sales_Receipt_payment_tbl" Type="Self.Sales_Receipt_payment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_d">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_Receipt_payment_tbl">
+        <PropertyRef Name="Cash_hold_acc_d" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Receipt_payment_tbl_Sales_invoice_tbl">
+    <End Role="Sales_invoice_tbl" Type="Self.Sales_invoice_tbl" Multiplicity="0..1" />
+    <End Role="Sales_Receipt_payment_tbl" Type="Self.Sales_Receipt_payment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_invoice_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_Receipt_payment_tbl">
+        <PropertyRef Name="Sales_invoice_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Store_tbl_City_tbl">
+    <End Role="City_tbl" Type="Self.City_tbl" Multiplicity="0..1" />
+    <End Role="Store_tbl" Type="Self.Store_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Store_tbl">
+        <PropertyRef Name="City_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Store_tbl_Country_tbl">
+    <End Role="Country_tbl" Type="Self.Country_tbl" Multiplicity="0..1" />
+    <End Role="Store_tbl" Type="Self.Store_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Store_tbl">
+        <PropertyRef Name="Country_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Store_tbl_Town_tbl1">
+    <End Role="Town_tbl" Type="Self.Town_tbl" Multiplicity="0..1" />
+    <End Role="Store_tbl" Type="Self.Store_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Town_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Store_tbl">
+        <PropertyRef Name="Town_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vendors_tbl_City_tbl">
+    <End Role="City_tbl" Type="Self.City_tbl" Multiplicity="0..1" />
+    <End Role="Vendors_tbl" Type="Self.Vendors_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vendors_tbl">
+        <PropertyRef Name="City_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vendors_tbl_Country_tbl">
+    <End Role="Country_tbl" Type="Self.Country_tbl" Multiplicity="0..1" />
+    <End Role="Vendors_tbl" Type="Self.Vendors_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vendors_tbl">
+        <PropertyRef Name="Country_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vendors_tbl_Currency_tbl">
+    <End Role="Currency_tbl" Type="Self.Currency_tbl" Multiplicity="0..1" />
+    <End Role="Vendors_tbl" Type="Self.Vendors_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currency_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vendors_tbl">
+        <PropertyRef Name="Currency_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vendors_tbl_Town_tbl">
+    <End Role="Town_tbl" Type="Self.Town_tbl" Multiplicity="0..1" />
+    <End Role="Vendors_tbl" Type="Self.Vendors_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Town_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vendors_tbl">
+        <PropertyRef Name="Town_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="CashDbModelStoreContainer">
+    <EntitySet Name="Acc_a" EntityType="Self.Acc_a" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Acc_b" EntityType="Self.Acc_b" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Acc_c" EntityType="Self.Acc_c" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Acc_d" EntityType="Self.Acc_d" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Calender_tbl" EntityType="Self.Calender_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City_tbl" EntityType="Self.City_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company_tbl" EntityType="Self.Company_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country_tbl" EntityType="Self.Country_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Currency_tbl" EntityType="Self.Currency_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer_tbl" EntityType="Self.Customer_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Delivery_Purchase_order" EntityType="Self.Delivery_Purchase_order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Delivery_Sales_Estimate" EntityType="Self.Delivery_Sales_Estimate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Descount_type_tbl" EntityType="Self.Descount_type_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Emp_tbl" EntityType="Self.Emp_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Emp_work_tbl" EntityType="Self.Emp_work_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Installment_tbl" EntityType="Self.Installment_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Item_content_tbl" EntityType="Self.Item_content_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Item_kind_tbl" EntityType="Self.Item_kind_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Items_tbl" EntityType="Self.Items_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ownership_kind_tbl" EntityType="Self.Ownership_kind_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ownership_person_tbl" EntityType="Self.Ownership_person_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment_method_tbl" EntityType="Self.Payment_method_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Project_tbl" EntityType="Self.Project_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Purchase_invoice_tbl" EntityType="Self.Purchase_invoice_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Purchase_order_items_tbl" EntityType="Self.Purchase_order_items_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Purchase_order_tbl" EntityType="Self.Purchase_order_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Purchase_payment_cheque_tbl" EntityType="Self.Purchase_payment_cheque_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales_Estimate_items_tbl" EntityType="Self.Sales_Estimate_items_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales_Estimate_tbl" EntityType="Self.Sales_Estimate_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales_invoice_tbl" EntityType="Self.Sales_invoice_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales_person_tbl" EntityType="Self.Sales_person_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales_Receipt_payment_tbl" EntityType="Self.Sales_Receipt_payment_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sarvice_tbl" EntityType="Self.Sarvice_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status_tbl" EntityType="Self.Status_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Store_tbl" EntityType="Self.Store_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tax_type_tbl" EntityType="Self.Tax_type_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Town_tbl" EntityType="Self.Town_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Unit_tbl" EntityType="Self.Unit_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vendors_tbl" EntityType="Self.Vendors_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Purchase_payment_tbl" EntityType="Self.Purchase_payment_tbl" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Purchase_payment_tbl].[Id] AS [Id], 
+    [Purchase_payment_tbl].[Purchase_invoice_id] AS [Purchase_invoice_id], 
+    [Purchase_payment_tbl].[Amount] AS [Amount], 
+    [Purchase_payment_tbl].[Pay_date] AS [Pay_date], 
+    [Purchase_payment_tbl].[currency] AS [currency], 
+    [Purchase_payment_tbl].[Currency_exchange] AS [Currency_exchange]
+    FROM [dbo].[Purchase_payment_tbl] AS [Purchase_payment_tbl]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Company_Calender_tbl" Association="Self.FK_Company_Calender_tbl">
+      <End Role="Calender_tbl" EntitySet="Calender_tbl" />
+      <End Role="Company_tbl" EntitySet="Company_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_Currency_tbl" Association="Self.FK_Company_Currency_tbl">
+      <End Role="Currency_tbl" EntitySet="Currency_tbl" />
+      <End Role="Company_tbl" EntitySet="Company_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_Ownership_kind_tbl" Association="Self.FK_Company_Ownership_kind_tbl">
+      <End Role="Ownership_kind_tbl" EntitySet="Ownership_kind_tbl" />
+      <End Role="Company_tbl" EntitySet="Company_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_tbl_City_tbl" Association="Self.FK_Company_tbl_City_tbl">
+      <End Role="City_tbl" EntitySet="City_tbl" />
+      <End Role="Company_tbl" EntitySet="Company_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_tbl_City_tbl1" Association="Self.FK_Company_tbl_City_tbl1">
+      <End Role="City_tbl" EntitySet="City_tbl" />
+      <End Role="Company_tbl" EntitySet="Company_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_tbl_Country_tbl" Association="Self.FK_Company_tbl_Country_tbl">
+      <End Role="Country_tbl" EntitySet="Country_tbl" />
+      <End Role="Company_tbl" EntitySet="Company_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_tbl_Country_tbl1" Association="Self.FK_Company_tbl_Country_tbl1">
+      <End Role="Country_tbl" EntitySet="Country_tbl" />
+      <End Role="Company_tbl" EntitySet="Company_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_tbl_Town_tbl" Association="Self.FK_Company_tbl_Town_tbl">
+      <End Role="Town_tbl" EntitySet="Town_tbl" />
+      <End Role="Company_tbl" EntitySet="Company_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_tbl_Town_tbl1" Association="Self.FK_Company_tbl_Town_tbl1">
+      <End Role="Town_tbl" EntitySet="Town_tbl" />
+      <End Role="Company_tbl" EntitySet="Company_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_tbl_City_tbl" Association="Self.FK_Customer_tbl_City_tbl">
+      <End Role="City_tbl" EntitySet="City_tbl" />
+      <End Role="Customer_tbl" EntitySet="Customer_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_tbl_Country_tbl" Association="Self.FK_Customer_tbl_Country_tbl">
+      <End Role="Country_tbl" EntitySet="Country_tbl" />
+      <End Role="Customer_tbl" EntitySet="Customer_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_tbl_Project_tbl" Association="Self.FK_Customer_tbl_Project_tbl">
+      <End Role="Project_tbl" EntitySet="Project_tbl" />
+      <End Role="Customer_tbl" EntitySet="Customer_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_tbl_Status_tbl" Association="Self.FK_Customer_tbl_Status_tbl">
+      <End Role="Status_tbl" EntitySet="Status_tbl" />
+      <End Role="Customer_tbl" EntitySet="Customer_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_tbl_Town_tbl" Association="Self.FK_Customer_tbl_Town_tbl">
+      <End Role="Town_tbl" EntitySet="Town_tbl" />
+      <End Role="Customer_tbl" EntitySet="Customer_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Delivery_Purchase_order_Store_tbl" Association="Self.FK_Delivery_Purchase_order_Store_tbl">
+      <End Role="Store_tbl" EntitySet="Store_tbl" />
+      <End Role="Delivery_Purchase_order" EntitySet="Delivery_Purchase_order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Delivery_Sales_Estimate_Sales_Estimate_tbl" Association="Self.FK_Delivery_Sales_Estimate_Sales_Estimate_tbl">
+      <End Role="Sales_Estimate_tbl" EntitySet="Sales_Estimate_tbl" />
+      <End Role="Delivery_Sales_Estimate" EntitySet="Delivery_Sales_Estimate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Emp_tbl_Emp_work_tbl" Association="Self.FK_Emp_tbl_Emp_work_tbl">
+      <End Role="Emp_work_tbl" EntitySet="Emp_work_tbl" />
+      <End Role="Emp_tbl" EntitySet="Emp_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Emp_tbl_Store_tbl" Association="Self.FK_Emp_tbl_Store_tbl">
+      <End Role="Store_tbl" EntitySet="Store_tbl" />
+      <End Role="Emp_tbl" EntitySet="Emp_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Installment_tbl_Acc_a" Association="Self.FK_Installment_tbl_Acc_a">
+      <End Role="Acc_a" EntitySet="Acc_a" />
+      <End Role="Installment_tbl" EntitySet="Installment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Installment_tbl_Acc_b" Association="Self.FK_Installment_tbl_Acc_b">
+      <End Role="Acc_b" EntitySet="Acc_b" />
+      <End Role="Installment_tbl" EntitySet="Installment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Installment_tbl_Acc_c" Association="Self.FK_Installment_tbl_Acc_c">
+      <End Role="Acc_c" EntitySet="Acc_c" />
+      <End Role="Installment_tbl" EntitySet="Installment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Installment_tbl_Acc_d" Association="Self.FK_Installment_tbl_Acc_d">
+      <End Role="Acc_d" EntitySet="Acc_d" />
+      <End Role="Installment_tbl" EntitySet="Installment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Installment_tbl_Sales_invoice_tbl" Association="Self.FK_Installment_tbl_Sales_invoice_tbl">
+      <End Role="Sales_invoice_tbl" EntitySet="Sales_invoice_tbl" />
+      <End Role="Installment_tbl" EntitySet="Installment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Item_content_tbl_Items_tbl" Association="Self.FK_Item_content_tbl_Items_tbl">
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+      <End Role="Item_content_tbl" EntitySet="Item_content_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Item_kind_tbl_Descount_type_tbl" Association="Self.FK_Item_kind_tbl_Descount_type_tbl">
+      <End Role="Descount_type_tbl" EntitySet="Descount_type_tbl" />
+      <End Role="Item_kind_tbl" EntitySet="Item_kind_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Item_kind_tbl_Tax_type_tbl" Association="Self.FK_Item_kind_tbl_Tax_type_tbl">
+      <End Role="Tax_type_tbl" EntitySet="Tax_type_tbl" />
+      <End Role="Item_kind_tbl" EntitySet="Item_kind_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_tbl_Acc_a" Association="Self.FK_Items_tbl_Acc_a">
+      <End Role="Acc_a" EntitySet="Acc_a" />
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_tbl_Acc_a1" Association="Self.FK_Items_tbl_Acc_a1">
+      <End Role="Acc_a" EntitySet="Acc_a" />
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_tbl_Acc_a2" Association="Self.FK_Items_tbl_Acc_a2">
+      <End Role="Acc_a" EntitySet="Acc_a" />
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_tbl_Acc_b" Association="Self.FK_Items_tbl_Acc_b">
+      <End Role="Acc_b" EntitySet="Acc_b" />
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_tbl_Acc_b1" Association="Self.FK_Items_tbl_Acc_b1">
+      <End Role="Acc_b" EntitySet="Acc_b" />
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_tbl_Acc_b2" Association="Self.FK_Items_tbl_Acc_b2">
+      <End Role="Acc_b" EntitySet="Acc_b" />
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_tbl_Acc_c" Association="Self.FK_Items_tbl_Acc_c">
+      <End Role="Acc_c" EntitySet="Acc_c" />
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_tbl_Acc_c1" Association="Self.FK_Items_tbl_Acc_c1">
+      <End Role="Acc_c" EntitySet="Acc_c" />
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_tbl_Acc_c2" Association="Self.FK_Items_tbl_Acc_c2">
+      <End Role="Acc_c" EntitySet="Acc_c" />
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_tbl_Item_kind_tbl" Association="Self.FK_Items_tbl_Item_kind_tbl">
+      <End Role="Item_kind_tbl" EntitySet="Item_kind_tbl" />
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_tbl_Store_tbl" Association="Self.FK_Items_tbl_Store_tbl">
+      <End Role="Store_tbl" EntitySet="Store_tbl" />
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_tbl_Unit_tbl" Association="Self.FK_Items_tbl_Unit_tbl">
+      <End Role="Unit_tbl" EntitySet="Unit_tbl" />
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ownership_person_Company" Association="Self.FK_Ownership_person_Company">
+      <End Role="Company_tbl" EntitySet="Company_tbl" />
+      <End Role="Ownership_person_tbl" EntitySet="Ownership_person_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_invoice_tbl_Acc_a" Association="Self.FK_Purchase_invoice_tbl_Acc_a">
+      <End Role="Acc_a" EntitySet="Acc_a" />
+      <End Role="Purchase_invoice_tbl" EntitySet="Purchase_invoice_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_invoice_tbl_Acc_b" Association="Self.FK_Purchase_invoice_tbl_Acc_b">
+      <End Role="Acc_b" EntitySet="Acc_b" />
+      <End Role="Purchase_invoice_tbl" EntitySet="Purchase_invoice_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_invoice_tbl_Acc_c" Association="Self.FK_Purchase_invoice_tbl_Acc_c">
+      <End Role="Acc_c" EntitySet="Acc_c" />
+      <End Role="Purchase_invoice_tbl" EntitySet="Purchase_invoice_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_invoice_tbl_Acc_d" Association="Self.FK_Purchase_invoice_tbl_Acc_d">
+      <End Role="Acc_d" EntitySet="Acc_d" />
+      <End Role="Purchase_invoice_tbl" EntitySet="Purchase_invoice_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_invoice_tbl_Payment_method_tbl" Association="Self.FK_Purchase_invoice_tbl_Payment_method_tbl">
+      <End Role="Payment_method_tbl" EntitySet="Payment_method_tbl" />
+      <End Role="Purchase_invoice_tbl" EntitySet="Purchase_invoice_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_invoice_tbl_Purchase_order_tbl" Association="Self.FK_Purchase_invoice_tbl_Purchase_order_tbl">
+      <End Role="Purchase_order_tbl" EntitySet="Purchase_order_tbl" />
+      <End Role="Purchase_invoice_tbl" EntitySet="Purchase_invoice_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_order_items_tbl_Items_tbl" Association="Self.FK_Purchase_order_items_tbl_Items_tbl">
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+      <End Role="Purchase_order_items_tbl" EntitySet="Purchase_order_items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_order_items_tbl_Purchase_order_tbl" Association="Self.FK_Purchase_order_items_tbl_Purchase_order_tbl">
+      <End Role="Purchase_order_tbl" EntitySet="Purchase_order_tbl" />
+      <End Role="Purchase_order_items_tbl" EntitySet="Purchase_order_items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_order_items_tbl_Store_tbl" Association="Self.FK_Purchase_order_items_tbl_Store_tbl">
+      <End Role="Store_tbl" EntitySet="Store_tbl" />
+      <End Role="Purchase_order_items_tbl" EntitySet="Purchase_order_items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_order_items_tbl_Unit_tbl" Association="Self.FK_Purchase_order_items_tbl_Unit_tbl">
+      <End Role="Unit_tbl" EntitySet="Unit_tbl" />
+      <End Role="Purchase_order_items_tbl" EntitySet="Purchase_order_items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_order_tbl_Currency_tbl" Association="Self.FK_Purchase_order_tbl_Currency_tbl">
+      <End Role="Currency_tbl" EntitySet="Currency_tbl" />
+      <End Role="Purchase_order_tbl" EntitySet="Purchase_order_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_order_tbl_Project_tbl" Association="Self.FK_Purchase_order_tbl_Project_tbl">
+      <End Role="Project_tbl" EntitySet="Project_tbl" />
+      <End Role="Purchase_order_tbl" EntitySet="Purchase_order_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_order_tbl_Status_tbl" Association="Self.FK_Purchase_order_tbl_Status_tbl">
+      <End Role="Status_tbl" EntitySet="Status_tbl" />
+      <End Role="Purchase_order_tbl" EntitySet="Purchase_order_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_order_tbl_Vendors_tbl" Association="Self.FK_Purchase_order_tbl_Vendors_tbl">
+      <End Role="Vendors_tbl" EntitySet="Vendors_tbl" />
+      <End Role="Purchase_order_tbl" EntitySet="Purchase_order_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_payment_cheque_tbl_Purchase_invoice_tbl" Association="Self.FK_Purchase_payment_cheque_tbl_Purchase_invoice_tbl">
+      <End Role="Purchase_invoice_tbl" EntitySet="Purchase_invoice_tbl" />
+      <End Role="Purchase_payment_cheque_tbl" EntitySet="Purchase_payment_cheque_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Estimate_items_tbl_Items_tbl" Association="Self.FK_Sales_Estimate_items_tbl_Items_tbl">
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+      <End Role="Sales_Estimate_items_tbl" EntitySet="Sales_Estimate_items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Estimate_items_tbl_Sales_Estimate_tbl" Association="Self.FK_Sales_Estimate_items_tbl_Sales_Estimate_tbl">
+      <End Role="Sales_Estimate_tbl" EntitySet="Sales_Estimate_tbl" />
+      <End Role="Sales_Estimate_items_tbl" EntitySet="Sales_Estimate_items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Estimate_items_tbl_Store_tbl" Association="Self.FK_Sales_Estimate_items_tbl_Store_tbl">
+      <End Role="Store_tbl" EntitySet="Store_tbl" />
+      <End Role="Sales_Estimate_items_tbl" EntitySet="Sales_Estimate_items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Estimate_items_tbl_Unit_tbl" Association="Self.FK_Sales_Estimate_items_tbl_Unit_tbl">
+      <End Role="Unit_tbl" EntitySet="Unit_tbl" />
+      <End Role="Sales_Estimate_items_tbl" EntitySet="Sales_Estimate_items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Estimate_tbl_Currency_tbl" Association="Self.FK_Sales_Estimate_tbl_Currency_tbl">
+      <End Role="Currency_tbl" EntitySet="Currency_tbl" />
+      <End Role="Sales_Estimate_tbl" EntitySet="Sales_Estimate_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Estimate_tbl_Status_tbl" Association="Self.FK_Sales_Estimate_tbl_Status_tbl">
+      <End Role="Status_tbl" EntitySet="Status_tbl" />
+      <End Role="Sales_Estimate_tbl" EntitySet="Sales_Estimate_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_invoice_tbl_Acc_a" Association="Self.FK_Sales_invoice_tbl_Acc_a">
+      <End Role="Acc_a" EntitySet="Acc_a" />
+      <End Role="Sales_invoice_tbl" EntitySet="Sales_invoice_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_invoice_tbl_Acc_b" Association="Self.FK_Sales_invoice_tbl_Acc_b">
+      <End Role="Acc_b" EntitySet="Acc_b" />
+      <End Role="Sales_invoice_tbl" EntitySet="Sales_invoice_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_invoice_tbl_Acc_c" Association="Self.FK_Sales_invoice_tbl_Acc_c">
+      <End Role="Acc_c" EntitySet="Acc_c" />
+      <End Role="Sales_invoice_tbl" EntitySet="Sales_invoice_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_invoice_tbl_Acc_d" Association="Self.FK_Sales_invoice_tbl_Acc_d">
+      <End Role="Acc_d" EntitySet="Acc_d" />
+      <End Role="Sales_invoice_tbl" EntitySet="Sales_invoice_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_invoice_tbl_Payment_method_tbl" Association="Self.FK_Sales_invoice_tbl_Payment_method_tbl">
+      <End Role="Payment_method_tbl" EntitySet="Payment_method_tbl" />
+      <End Role="Sales_invoice_tbl" EntitySet="Sales_invoice_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_invoice_tbl_Sales_Estimate_tbl" Association="Self.FK_Sales_invoice_tbl_Sales_Estimate_tbl">
+      <End Role="Sales_Estimate_tbl" EntitySet="Sales_Estimate_tbl" />
+      <End Role="Sales_invoice_tbl" EntitySet="Sales_invoice_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_person_tbl_Customer_tbl" Association="Self.FK_Sales_person_tbl_Customer_tbl">
+      <End Role="Customer_tbl" EntitySet="Customer_tbl" />
+      <End Role="Sales_person_tbl" EntitySet="Sales_person_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Receipt_payment_tbl_Acc_a" Association="Self.FK_Sales_Receipt_payment_tbl_Acc_a">
+      <End Role="Acc_a" EntitySet="Acc_a" />
+      <End Role="Sales_Receipt_payment_tbl" EntitySet="Sales_Receipt_payment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Receipt_payment_tbl_Acc_b" Association="Self.FK_Sales_Receipt_payment_tbl_Acc_b">
+      <End Role="Acc_b" EntitySet="Acc_b" />
+      <End Role="Sales_Receipt_payment_tbl" EntitySet="Sales_Receipt_payment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Receipt_payment_tbl_Acc_c" Association="Self.FK_Sales_Receipt_payment_tbl_Acc_c">
+      <End Role="Acc_c" EntitySet="Acc_c" />
+      <End Role="Sales_Receipt_payment_tbl" EntitySet="Sales_Receipt_payment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Receipt_payment_tbl_Acc_d" Association="Self.FK_Sales_Receipt_payment_tbl_Acc_d">
+      <End Role="Acc_d" EntitySet="Acc_d" />
+      <End Role="Sales_Receipt_payment_tbl" EntitySet="Sales_Receipt_payment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Receipt_payment_tbl_Sales_invoice_tbl" Association="Self.FK_Sales_Receipt_payment_tbl_Sales_invoice_tbl">
+      <End Role="Sales_invoice_tbl" EntitySet="Sales_invoice_tbl" />
+      <End Role="Sales_Receipt_payment_tbl" EntitySet="Sales_Receipt_payment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Store_tbl_City_tbl" Association="Self.FK_Store_tbl_City_tbl">
+      <End Role="City_tbl" EntitySet="City_tbl" />
+      <End Role="Store_tbl" EntitySet="Store_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Store_tbl_Country_tbl" Association="Self.FK_Store_tbl_Country_tbl">
+      <End Role="Country_tbl" EntitySet="Country_tbl" />
+      <End Role="Store_tbl" EntitySet="Store_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Store_tbl_Town_tbl1" Association="Self.FK_Store_tbl_Town_tbl1">
+      <End Role="Town_tbl" EntitySet="Town_tbl" />
+      <End Role="Store_tbl" EntitySet="Store_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vendors_tbl_City_tbl" Association="Self.FK_Vendors_tbl_City_tbl">
+      <End Role="City_tbl" EntitySet="City_tbl" />
+      <End Role="Vendors_tbl" EntitySet="Vendors_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vendors_tbl_Country_tbl" Association="Self.FK_Vendors_tbl_Country_tbl">
+      <End Role="Country_tbl" EntitySet="Country_tbl" />
+      <End Role="Vendors_tbl" EntitySet="Vendors_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vendors_tbl_Currency_tbl" Association="Self.FK_Vendors_tbl_Currency_tbl">
+      <End Role="Currency_tbl" EntitySet="Currency_tbl" />
+      <End Role="Vendors_tbl" EntitySet="Vendors_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vendors_tbl_Town_tbl" Association="Self.FK_Vendors_tbl_Town_tbl">
+      <End Role="Town_tbl" EntitySet="Town_tbl" />
+      <End Role="Vendors_tbl" EntitySet="Vendors_tbl" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,2120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CashDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CashDbEntities1" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(CashDbModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(CashDbModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="Acc_a" EntityType="CashDbModel.Acc_a" />
+    <EntitySet Name="Acc_b" EntityType="CashDbModel.Acc_b" />
+    <EntitySet Name="Acc_c" EntityType="CashDbModel.Acc_c" />
+    <EntitySet Name="Acc_d" EntityType="CashDbModel.Acc_d" />
+    <EntitySet Name="Calender_tbl" EntityType="CashDbModel.Calender_tbl" />
+    <EntitySet Name="City_tbl" EntityType="CashDbModel.City_tbl" />
+    <EntitySet Name="Company_tbl" EntityType="CashDbModel.Company_tbl" />
+    <EntitySet Name="Country_tbl" EntityType="CashDbModel.Country_tbl" />
+    <EntitySet Name="Currency_tbl" EntityType="CashDbModel.Currency_tbl" />
+    <EntitySet Name="Customer_tbl" EntityType="CashDbModel.Customer_tbl" />
+    <EntitySet Name="Delivery_Purchase_order" EntityType="CashDbModel.Delivery_Purchase_order" />
+    <EntitySet Name="Delivery_Sales_Estimate" EntityType="CashDbModel.Delivery_Sales_Estimate" />
+    <EntitySet Name="Descount_type_tbl" EntityType="CashDbModel.Descount_type_tbl" />
+    <EntitySet Name="Emp_tbl" EntityType="CashDbModel.Emp_tbl" />
+    <EntitySet Name="Emp_work_tbl" EntityType="CashDbModel.Emp_work_tbl" />
+    <EntitySet Name="Installment_tbl" EntityType="CashDbModel.Installment_tbl" />
+    <EntitySet Name="Item_content_tbl" EntityType="CashDbModel.Item_content_tbl" />
+    <EntitySet Name="Item_kind_tbl" EntityType="CashDbModel.Item_kind_tbl" />
+    <EntitySet Name="Items_tbl" EntityType="CashDbModel.Items_tbl" />
+    <EntitySet Name="Ownership_kind_tbl" EntityType="CashDbModel.Ownership_kind_tbl" />
+    <EntitySet Name="Ownership_person_tbl" EntityType="CashDbModel.Ownership_person_tbl" />
+    <EntitySet Name="Payment_method_tbl" EntityType="CashDbModel.Payment_method_tbl" />
+    <EntitySet Name="Project_tbl" EntityType="CashDbModel.Project_tbl" />
+    <EntitySet Name="Purchase_invoice_tbl" EntityType="CashDbModel.Purchase_invoice_tbl" />
+    <EntitySet Name="Purchase_order_items_tbl" EntityType="CashDbModel.Purchase_order_items_tbl" />
+    <EntitySet Name="Purchase_order_tbl" EntityType="CashDbModel.Purchase_order_tbl" />
+    <EntitySet Name="Purchase_payment_cheque_tbl" EntityType="CashDbModel.Purchase_payment_cheque_tbl" />
+    <EntitySet Name="Sales_Estimate_items_tbl" EntityType="CashDbModel.Sales_Estimate_items_tbl" />
+    <EntitySet Name="Sales_Estimate_tbl" EntityType="CashDbModel.Sales_Estimate_tbl" />
+    <EntitySet Name="Sales_invoice_tbl" EntityType="CashDbModel.Sales_invoice_tbl" />
+    <EntitySet Name="Sales_person_tbl" EntityType="CashDbModel.Sales_person_tbl" />
+    <EntitySet Name="Sales_Receipt_payment_tbl" EntityType="CashDbModel.Sales_Receipt_payment_tbl" />
+    <EntitySet Name="Sarvice_tbl" EntityType="CashDbModel.Sarvice_tbl" />
+    <EntitySet Name="Status_tbl" EntityType="CashDbModel.Status_tbl" />
+    <EntitySet Name="Store_tbl" EntityType="CashDbModel.Store_tbl" />
+    <EntitySet Name="sysdiagrams" EntityType="CashDbModel.sysdiagram" />
+    <EntitySet Name="Tax_type_tbl" EntityType="CashDbModel.Tax_type_tbl" />
+    <EntitySet Name="Town_tbl" EntityType="CashDbModel.Town_tbl" />
+    <EntitySet Name="Unit_tbl" EntityType="CashDbModel.Unit_tbl" />
+    <EntitySet Name="Vendors_tbl" EntityType="CashDbModel.Vendors_tbl" />
+    <EntitySet Name="Purchase_payment_tbl" EntityType="CashDbModel.Purchase_payment_tbl" />
+    <AssociationSet Name="FK_Installment_tbl_Acc_a" Association="CashDbModel.FK_Installment_tbl_Acc_a">
+      <End Role="Acc_a" EntitySet="Acc_a" />
+      <End Role="Installment_tbl" EntitySet="Installment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_tbl_Acc_a" Association="CashDbModel.FK_Items_tbl_Acc_a">
+      <End Role="Acc_a" EntitySet="Acc_a" />
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_tbl_Acc_a1" Association="CashDbModel.FK_Items_tbl_Acc_a1">
+      <End Role="Acc_a" EntitySet="Acc_a" />
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_tbl_Acc_a2" Association="CashDbModel.FK_Items_tbl_Acc_a2">
+      <End Role="Acc_a" EntitySet="Acc_a" />
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_invoice_tbl_Acc_a" Association="CashDbModel.FK_Purchase_invoice_tbl_Acc_a">
+      <End Role="Acc_a" EntitySet="Acc_a" />
+      <End Role="Purchase_invoice_tbl" EntitySet="Purchase_invoice_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_invoice_tbl_Acc_a" Association="CashDbModel.FK_Sales_invoice_tbl_Acc_a">
+      <End Role="Acc_a" EntitySet="Acc_a" />
+      <End Role="Sales_invoice_tbl" EntitySet="Sales_invoice_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Receipt_payment_tbl_Acc_a" Association="CashDbModel.FK_Sales_Receipt_payment_tbl_Acc_a">
+      <End Role="Acc_a" EntitySet="Acc_a" />
+      <End Role="Sales_Receipt_payment_tbl" EntitySet="Sales_Receipt_payment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Installment_tbl_Acc_b" Association="CashDbModel.FK_Installment_tbl_Acc_b">
+      <End Role="Acc_b" EntitySet="Acc_b" />
+      <End Role="Installment_tbl" EntitySet="Installment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_tbl_Acc_b" Association="CashDbModel.FK_Items_tbl_Acc_b">
+      <End Role="Acc_b" EntitySet="Acc_b" />
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_tbl_Acc_b1" Association="CashDbModel.FK_Items_tbl_Acc_b1">
+      <End Role="Acc_b" EntitySet="Acc_b" />
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_tbl_Acc_b2" Association="CashDbModel.FK_Items_tbl_Acc_b2">
+      <End Role="Acc_b" EntitySet="Acc_b" />
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_invoice_tbl_Acc_b" Association="CashDbModel.FK_Purchase_invoice_tbl_Acc_b">
+      <End Role="Acc_b" EntitySet="Acc_b" />
+      <End Role="Purchase_invoice_tbl" EntitySet="Purchase_invoice_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_invoice_tbl_Acc_b" Association="CashDbModel.FK_Sales_invoice_tbl_Acc_b">
+      <End Role="Acc_b" EntitySet="Acc_b" />
+      <End Role="Sales_invoice_tbl" EntitySet="Sales_invoice_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Receipt_payment_tbl_Acc_b" Association="CashDbModel.FK_Sales_Receipt_payment_tbl_Acc_b">
+      <End Role="Acc_b" EntitySet="Acc_b" />
+      <End Role="Sales_Receipt_payment_tbl" EntitySet="Sales_Receipt_payment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Installment_tbl_Acc_c" Association="CashDbModel.FK_Installment_tbl_Acc_c">
+      <End Role="Acc_c" EntitySet="Acc_c" />
+      <End Role="Installment_tbl" EntitySet="Installment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_tbl_Acc_c" Association="CashDbModel.FK_Items_tbl_Acc_c">
+      <End Role="Acc_c" EntitySet="Acc_c" />
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_tbl_Acc_c1" Association="CashDbModel.FK_Items_tbl_Acc_c1">
+      <End Role="Acc_c" EntitySet="Acc_c" />
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_tbl_Acc_c2" Association="CashDbModel.FK_Items_tbl_Acc_c2">
+      <End Role="Acc_c" EntitySet="Acc_c" />
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_invoice_tbl_Acc_c" Association="CashDbModel.FK_Purchase_invoice_tbl_Acc_c">
+      <End Role="Acc_c" EntitySet="Acc_c" />
+      <End Role="Purchase_invoice_tbl" EntitySet="Purchase_invoice_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_invoice_tbl_Acc_c" Association="CashDbModel.FK_Sales_invoice_tbl_Acc_c">
+      <End Role="Acc_c" EntitySet="Acc_c" />
+      <End Role="Sales_invoice_tbl" EntitySet="Sales_invoice_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Receipt_payment_tbl_Acc_c" Association="CashDbModel.FK_Sales_Receipt_payment_tbl_Acc_c">
+      <End Role="Acc_c" EntitySet="Acc_c" />
+      <End Role="Sales_Receipt_payment_tbl" EntitySet="Sales_Receipt_payment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Installment_tbl_Acc_d" Association="CashDbModel.FK_Installment_tbl_Acc_d">
+      <End Role="Acc_d" EntitySet="Acc_d" />
+      <End Role="Installment_tbl" EntitySet="Installment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_invoice_tbl_Acc_d" Association="CashDbModel.FK_Purchase_invoice_tbl_Acc_d">
+      <End Role="Acc_d" EntitySet="Acc_d" />
+      <End Role="Purchase_invoice_tbl" EntitySet="Purchase_invoice_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_invoice_tbl_Acc_d" Association="CashDbModel.FK_Sales_invoice_tbl_Acc_d">
+      <End Role="Acc_d" EntitySet="Acc_d" />
+      <End Role="Sales_invoice_tbl" EntitySet="Sales_invoice_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Receipt_payment_tbl_Acc_d" Association="CashDbModel.FK_Sales_Receipt_payment_tbl_Acc_d">
+      <End Role="Acc_d" EntitySet="Acc_d" />
+      <End Role="Sales_Receipt_payment_tbl" EntitySet="Sales_Receipt_payment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_Calender_tbl" Association="CashDbModel.FK_Company_Calender_tbl">
+      <End Role="Calender_tbl" EntitySet="Calender_tbl" />
+      <End Role="Company_tbl" EntitySet="Company_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_tbl_City_tbl" Association="CashDbModel.FK_Company_tbl_City_tbl">
+      <End Role="City_tbl" EntitySet="City_tbl" />
+      <End Role="Company_tbl" EntitySet="Company_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_tbl_City_tbl1" Association="CashDbModel.FK_Company_tbl_City_tbl1">
+      <End Role="City_tbl" EntitySet="City_tbl" />
+      <End Role="Company_tbl" EntitySet="Company_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_tbl_City_tbl" Association="CashDbModel.FK_Customer_tbl_City_tbl">
+      <End Role="City_tbl" EntitySet="City_tbl" />
+      <End Role="Customer_tbl" EntitySet="Customer_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Store_tbl_City_tbl" Association="CashDbModel.FK_Store_tbl_City_tbl">
+      <End Role="City_tbl" EntitySet="City_tbl" />
+      <End Role="Store_tbl" EntitySet="Store_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vendors_tbl_City_tbl" Association="CashDbModel.FK_Vendors_tbl_City_tbl">
+      <End Role="City_tbl" EntitySet="City_tbl" />
+      <End Role="Vendors_tbl" EntitySet="Vendors_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_Currency_tbl" Association="CashDbModel.FK_Company_Currency_tbl">
+      <End Role="Currency_tbl" EntitySet="Currency_tbl" />
+      <End Role="Company_tbl" EntitySet="Company_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_Ownership_kind_tbl" Association="CashDbModel.FK_Company_Ownership_kind_tbl">
+      <End Role="Ownership_kind_tbl" EntitySet="Ownership_kind_tbl" />
+      <End Role="Company_tbl" EntitySet="Company_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_tbl_Country_tbl" Association="CashDbModel.FK_Company_tbl_Country_tbl">
+      <End Role="Country_tbl" EntitySet="Country_tbl" />
+      <End Role="Company_tbl" EntitySet="Company_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_tbl_Country_tbl1" Association="CashDbModel.FK_Company_tbl_Country_tbl1">
+      <End Role="Country_tbl" EntitySet="Country_tbl" />
+      <End Role="Company_tbl" EntitySet="Company_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_tbl_Town_tbl" Association="CashDbModel.FK_Company_tbl_Town_tbl">
+      <End Role="Town_tbl" EntitySet="Town_tbl" />
+      <End Role="Company_tbl" EntitySet="Company_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_tbl_Town_tbl1" Association="CashDbModel.FK_Company_tbl_Town_tbl1">
+      <End Role="Town_tbl" EntitySet="Town_tbl" />
+      <End Role="Company_tbl" EntitySet="Company_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ownership_person_Company" Association="CashDbModel.FK_Ownership_person_Company">
+      <End Role="Company_tbl" EntitySet="Company_tbl" />
+      <End Role="Ownership_person_tbl" EntitySet="Ownership_person_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_tbl_Country_tbl" Association="CashDbModel.FK_Customer_tbl_Country_tbl">
+      <End Role="Country_tbl" EntitySet="Country_tbl" />
+      <End Role="Customer_tbl" EntitySet="Customer_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Store_tbl_Country_tbl" Association="CashDbModel.FK_Store_tbl_Country_tbl">
+      <End Role="Country_tbl" EntitySet="Country_tbl" />
+      <End Role="Store_tbl" EntitySet="Store_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vendors_tbl_Country_tbl" Association="CashDbModel.FK_Vendors_tbl_Country_tbl">
+      <End Role="Country_tbl" EntitySet="Country_tbl" />
+      <End Role="Vendors_tbl" EntitySet="Vendors_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_order_tbl_Currency_tbl" Association="CashDbModel.FK_Purchase_order_tbl_Currency_tbl">
+      <End Role="Currency_tbl" EntitySet="Currency_tbl" />
+      <End Role="Purchase_order_tbl" EntitySet="Purchase_order_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Estimate_tbl_Currency_tbl" Association="CashDbModel.FK_Sales_Estimate_tbl_Currency_tbl">
+      <End Role="Currency_tbl" EntitySet="Currency_tbl" />
+      <End Role="Sales_Estimate_tbl" EntitySet="Sales_Estimate_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vendors_tbl_Currency_tbl" Association="CashDbModel.FK_Vendors_tbl_Currency_tbl">
+      <End Role="Currency_tbl" EntitySet="Currency_tbl" />
+      <End Role="Vendors_tbl" EntitySet="Vendors_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_tbl_Project_tbl" Association="CashDbModel.FK_Customer_tbl_Project_tbl">
+      <End Role="Project_tbl" EntitySet="Project_tbl" />
+      <End Role="Customer_tbl" EntitySet="Customer_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_tbl_Status_tbl" Association="CashDbModel.FK_Customer_tbl_Status_tbl">
+      <End Role="Status_tbl" EntitySet="Status_tbl" />
+      <End Role="Customer_tbl" EntitySet="Customer_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_tbl_Town_tbl" Association="CashDbModel.FK_Customer_tbl_Town_tbl">
+      <End Role="Town_tbl" EntitySet="Town_tbl" />
+      <End Role="Customer_tbl" EntitySet="Customer_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_person_tbl_Customer_tbl" Association="CashDbModel.FK_Sales_person_tbl_Customer_tbl">
+      <End Role="Customer_tbl" EntitySet="Customer_tbl" />
+      <End Role="Sales_person_tbl" EntitySet="Sales_person_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Delivery_Purchase_order_Store_tbl" Association="CashDbModel.FK_Delivery_Purchase_order_Store_tbl">
+      <End Role="Store_tbl" EntitySet="Store_tbl" />
+      <End Role="Delivery_Purchase_order" EntitySet="Delivery_Purchase_order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Delivery_Sales_Estimate_Sales_Estimate_tbl" Association="CashDbModel.FK_Delivery_Sales_Estimate_Sales_Estimate_tbl">
+      <End Role="Sales_Estimate_tbl" EntitySet="Sales_Estimate_tbl" />
+      <End Role="Delivery_Sales_Estimate" EntitySet="Delivery_Sales_Estimate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Item_kind_tbl_Descount_type_tbl" Association="CashDbModel.FK_Item_kind_tbl_Descount_type_tbl">
+      <End Role="Descount_type_tbl" EntitySet="Descount_type_tbl" />
+      <End Role="Item_kind_tbl" EntitySet="Item_kind_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Emp_tbl_Emp_work_tbl" Association="CashDbModel.FK_Emp_tbl_Emp_work_tbl">
+      <End Role="Emp_work_tbl" EntitySet="Emp_work_tbl" />
+      <End Role="Emp_tbl" EntitySet="Emp_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Emp_tbl_Store_tbl" Association="CashDbModel.FK_Emp_tbl_Store_tbl">
+      <End Role="Store_tbl" EntitySet="Store_tbl" />
+      <End Role="Emp_tbl" EntitySet="Emp_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Installment_tbl_Sales_invoice_tbl" Association="CashDbModel.FK_Installment_tbl_Sales_invoice_tbl">
+      <End Role="Sales_invoice_tbl" EntitySet="Sales_invoice_tbl" />
+      <End Role="Installment_tbl" EntitySet="Installment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Item_content_tbl_Items_tbl" Association="CashDbModel.FK_Item_content_tbl_Items_tbl">
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+      <End Role="Item_content_tbl" EntitySet="Item_content_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Item_kind_tbl_Tax_type_tbl" Association="CashDbModel.FK_Item_kind_tbl_Tax_type_tbl">
+      <End Role="Tax_type_tbl" EntitySet="Tax_type_tbl" />
+      <End Role="Item_kind_tbl" EntitySet="Item_kind_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_tbl_Item_kind_tbl" Association="CashDbModel.FK_Items_tbl_Item_kind_tbl">
+      <End Role="Item_kind_tbl" EntitySet="Item_kind_tbl" />
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_tbl_Store_tbl" Association="CashDbModel.FK_Items_tbl_Store_tbl">
+      <End Role="Store_tbl" EntitySet="Store_tbl" />
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_tbl_Unit_tbl" Association="CashDbModel.FK_Items_tbl_Unit_tbl">
+      <End Role="Unit_tbl" EntitySet="Unit_tbl" />
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_order_items_tbl_Items_tbl" Association="CashDbModel.FK_Purchase_order_items_tbl_Items_tbl">
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+      <End Role="Purchase_order_items_tbl" EntitySet="Purchase_order_items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Estimate_items_tbl_Items_tbl" Association="CashDbModel.FK_Sales_Estimate_items_tbl_Items_tbl">
+      <End Role="Items_tbl" EntitySet="Items_tbl" />
+      <End Role="Sales_Estimate_items_tbl" EntitySet="Sales_Estimate_items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_invoice_tbl_Payment_method_tbl" Association="CashDbModel.FK_Purchase_invoice_tbl_Payment_method_tbl">
+      <End Role="Payment_method_tbl" EntitySet="Payment_method_tbl" />
+      <End Role="Purchase_invoice_tbl" EntitySet="Purchase_invoice_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_invoice_tbl_Payment_method_tbl" Association="CashDbModel.FK_Sales_invoice_tbl_Payment_method_tbl">
+      <End Role="Payment_method_tbl" EntitySet="Payment_method_tbl" />
+      <End Role="Sales_invoice_tbl" EntitySet="Sales_invoice_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_order_tbl_Project_tbl" Association="CashDbModel.FK_Purchase_order_tbl_Project_tbl">
+      <End Role="Project_tbl" EntitySet="Project_tbl" />
+      <End Role="Purchase_order_tbl" EntitySet="Purchase_order_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_invoice_tbl_Purchase_order_tbl" Association="CashDbModel.FK_Purchase_invoice_tbl_Purchase_order_tbl">
+      <End Role="Purchase_order_tbl" EntitySet="Purchase_order_tbl" />
+      <End Role="Purchase_invoice_tbl" EntitySet="Purchase_invoice_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_payment_cheque_tbl_Purchase_invoice_tbl" Association="CashDbModel.FK_Purchase_payment_cheque_tbl_Purchase_invoice_tbl">
+      <End Role="Purchase_invoice_tbl" EntitySet="Purchase_invoice_tbl" />
+      <End Role="Purchase_payment_cheque_tbl" EntitySet="Purchase_payment_cheque_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_order_items_tbl_Purchase_order_tbl" Association="CashDbModel.FK_Purchase_order_items_tbl_Purchase_order_tbl">
+      <End Role="Purchase_order_tbl" EntitySet="Purchase_order_tbl" />
+      <End Role="Purchase_order_items_tbl" EntitySet="Purchase_order_items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_order_items_tbl_Store_tbl" Association="CashDbModel.FK_Purchase_order_items_tbl_Store_tbl">
+      <End Role="Store_tbl" EntitySet="Store_tbl" />
+      <End Role="Purchase_order_items_tbl" EntitySet="Purchase_order_items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_order_items_tbl_Unit_tbl" Association="CashDbModel.FK_Purchase_order_items_tbl_Unit_tbl">
+      <End Role="Unit_tbl" EntitySet="Unit_tbl" />
+      <End Role="Purchase_order_items_tbl" EntitySet="Purchase_order_items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_order_tbl_Status_tbl" Association="CashDbModel.FK_Purchase_order_tbl_Status_tbl">
+      <End Role="Status_tbl" EntitySet="Status_tbl" />
+      <End Role="Purchase_order_tbl" EntitySet="Purchase_order_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_order_tbl_Vendors_tbl" Association="CashDbModel.FK_Purchase_order_tbl_Vendors_tbl">
+      <End Role="Vendors_tbl" EntitySet="Vendors_tbl" />
+      <End Role="Purchase_order_tbl" EntitySet="Purchase_order_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Estimate_items_tbl_Sales_Estimate_tbl" Association="CashDbModel.FK_Sales_Estimate_items_tbl_Sales_Estimate_tbl">
+      <End Role="Sales_Estimate_tbl" EntitySet="Sales_Estimate_tbl" />
+      <End Role="Sales_Estimate_items_tbl" EntitySet="Sales_Estimate_items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Estimate_items_tbl_Store_tbl" Association="CashDbModel.FK_Sales_Estimate_items_tbl_Store_tbl">
+      <End Role="Store_tbl" EntitySet="Store_tbl" />
+      <End Role="Sales_Estimate_items_tbl" EntitySet="Sales_Estimate_items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Estimate_items_tbl_Unit_tbl" Association="CashDbModel.FK_Sales_Estimate_items_tbl_Unit_tbl">
+      <End Role="Unit_tbl" EntitySet="Unit_tbl" />
+      <End Role="Sales_Estimate_items_tbl" EntitySet="Sales_Estimate_items_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Estimate_tbl_Status_tbl" Association="CashDbModel.FK_Sales_Estimate_tbl_Status_tbl">
+      <End Role="Status_tbl" EntitySet="Status_tbl" />
+      <End Role="Sales_Estimate_tbl" EntitySet="Sales_Estimate_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_invoice_tbl_Sales_Estimate_tbl" Association="CashDbModel.FK_Sales_invoice_tbl_Sales_Estimate_tbl">
+      <End Role="Sales_Estimate_tbl" EntitySet="Sales_Estimate_tbl" />
+      <End Role="Sales_invoice_tbl" EntitySet="Sales_invoice_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_Receipt_payment_tbl_Sales_invoice_tbl" Association="CashDbModel.FK_Sales_Receipt_payment_tbl_Sales_invoice_tbl">
+      <End Role="Sales_invoice_tbl" EntitySet="Sales_invoice_tbl" />
+      <End Role="Sales_Receipt_payment_tbl" EntitySet="Sales_Receipt_payment_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Store_tbl_Town_tbl1" Association="CashDbModel.FK_Store_tbl_Town_tbl1">
+      <End Role="Town_tbl" EntitySet="Town_tbl" />
+      <End Role="Store_tbl" EntitySet="Store_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vendors_tbl_Town_tbl" Association="CashDbModel.FK_Vendors_tbl_Town_tbl">
+      <End Role="Town_tbl" EntitySet="Town_tbl" />
+      <End Role="Vendors_tbl" EntitySet="Vendors_tbl" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="Acc_a">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Acc_a_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Installment_tbl" Relationship="CashDbModel.FK_Installment_tbl_Acc_a" FromRole="Acc_a" ToRole="Installment_tbl" />
+    <NavigationProperty Name="Items_tbl" Relationship="CashDbModel.FK_Items_tbl_Acc_a" FromRole="Acc_a" ToRole="Items_tbl" />
+    <NavigationProperty Name="Items_tbl1" Relationship="CashDbModel.FK_Items_tbl_Acc_a1" FromRole="Acc_a" ToRole="Items_tbl" />
+    <NavigationProperty Name="Items_tbl2" Relationship="CashDbModel.FK_Items_tbl_Acc_a2" FromRole="Acc_a" ToRole="Items_tbl" />
+    <NavigationProperty Name="Purchase_invoice_tbl" Relationship="CashDbModel.FK_Purchase_invoice_tbl_Acc_a" FromRole="Acc_a" ToRole="Purchase_invoice_tbl" />
+    <NavigationProperty Name="Sales_invoice_tbl" Relationship="CashDbModel.FK_Sales_invoice_tbl_Acc_a" FromRole="Acc_a" ToRole="Sales_invoice_tbl" />
+    <NavigationProperty Name="Sales_Receipt_payment_tbl" Relationship="CashDbModel.FK_Sales_Receipt_payment_tbl_Acc_a" FromRole="Acc_a" ToRole="Sales_Receipt_payment_tbl" />
+  </EntityType>
+  <EntityType Name="Acc_b">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Acc_b_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Acc_b_belong" Type="Int32" />
+    <NavigationProperty Name="Installment_tbl" Relationship="CashDbModel.FK_Installment_tbl_Acc_b" FromRole="Acc_b" ToRole="Installment_tbl" />
+    <NavigationProperty Name="Items_tbl" Relationship="CashDbModel.FK_Items_tbl_Acc_b" FromRole="Acc_b" ToRole="Items_tbl" />
+    <NavigationProperty Name="Items_tbl1" Relationship="CashDbModel.FK_Items_tbl_Acc_b1" FromRole="Acc_b" ToRole="Items_tbl" />
+    <NavigationProperty Name="Items_tbl2" Relationship="CashDbModel.FK_Items_tbl_Acc_b2" FromRole="Acc_b" ToRole="Items_tbl" />
+    <NavigationProperty Name="Purchase_invoice_tbl" Relationship="CashDbModel.FK_Purchase_invoice_tbl_Acc_b" FromRole="Acc_b" ToRole="Purchase_invoice_tbl" />
+    <NavigationProperty Name="Sales_invoice_tbl" Relationship="CashDbModel.FK_Sales_invoice_tbl_Acc_b" FromRole="Acc_b" ToRole="Sales_invoice_tbl" />
+    <NavigationProperty Name="Sales_Receipt_payment_tbl" Relationship="CashDbModel.FK_Sales_Receipt_payment_tbl_Acc_b" FromRole="Acc_b" ToRole="Sales_Receipt_payment_tbl" />
+  </EntityType>
+  <EntityType Name="Acc_c">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Acc_c_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Acc_c_belong" Type="Int32" />
+    <NavigationProperty Name="Installment_tbl" Relationship="CashDbModel.FK_Installment_tbl_Acc_c" FromRole="Acc_c" ToRole="Installment_tbl" />
+    <NavigationProperty Name="Items_tbl" Relationship="CashDbModel.FK_Items_tbl_Acc_c" FromRole="Acc_c" ToRole="Items_tbl" />
+    <NavigationProperty Name="Items_tbl1" Relationship="CashDbModel.FK_Items_tbl_Acc_c1" FromRole="Acc_c" ToRole="Items_tbl" />
+    <NavigationProperty Name="Items_tbl2" Relationship="CashDbModel.FK_Items_tbl_Acc_c2" FromRole="Acc_c" ToRole="Items_tbl" />
+    <NavigationProperty Name="Purchase_invoice_tbl" Relationship="CashDbModel.FK_Purchase_invoice_tbl_Acc_c" FromRole="Acc_c" ToRole="Purchase_invoice_tbl" />
+    <NavigationProperty Name="Sales_invoice_tbl" Relationship="CashDbModel.FK_Sales_invoice_tbl_Acc_c" FromRole="Acc_c" ToRole="Sales_invoice_tbl" />
+    <NavigationProperty Name="Sales_Receipt_payment_tbl" Relationship="CashDbModel.FK_Sales_Receipt_payment_tbl_Acc_c" FromRole="Acc_c" ToRole="Sales_Receipt_payment_tbl" />
+  </EntityType>
+  <EntityType Name="Acc_d">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Acc_d_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Acc_d_belong" Type="Int32" />
+    <NavigationProperty Name="Installment_tbl" Relationship="CashDbModel.FK_Installment_tbl_Acc_d" FromRole="Acc_d" ToRole="Installment_tbl" />
+    <NavigationProperty Name="Purchase_invoice_tbl" Relationship="CashDbModel.FK_Purchase_invoice_tbl_Acc_d" FromRole="Acc_d" ToRole="Purchase_invoice_tbl" />
+    <NavigationProperty Name="Sales_invoice_tbl" Relationship="CashDbModel.FK_Sales_invoice_tbl_Acc_d" FromRole="Acc_d" ToRole="Sales_invoice_tbl" />
+    <NavigationProperty Name="Sales_Receipt_payment_tbl" Relationship="CashDbModel.FK_Sales_Receipt_payment_tbl_Acc_d" FromRole="Acc_d" ToRole="Sales_Receipt_payment_tbl" />
+  </EntityType>
+  <EntityType Name="Calender_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Calender_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Company_tbl" Relationship="CashDbModel.FK_Company_Calender_tbl" FromRole="Calender_tbl" ToRole="Company_tbl" />
+  </EntityType>
+  <EntityType Name="City_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="City_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="City_Belong" Type="Int32" />
+    <NavigationProperty Name="Company_tbl" Relationship="CashDbModel.FK_Company_tbl_City_tbl" FromRole="City_tbl" ToRole="Company_tbl" />
+    <NavigationProperty Name="Company_tbl1" Relationship="CashDbModel.FK_Company_tbl_City_tbl1" FromRole="City_tbl" ToRole="Company_tbl" />
+    <NavigationProperty Name="Customer_tbl" Relationship="CashDbModel.FK_Customer_tbl_City_tbl" FromRole="City_tbl" ToRole="Customer_tbl" />
+    <NavigationProperty Name="Store_tbl" Relationship="CashDbModel.FK_Store_tbl_City_tbl" FromRole="City_tbl" ToRole="Store_tbl" />
+    <NavigationProperty Name="Vendors_tbl" Relationship="CashDbModel.FK_Vendors_tbl_City_tbl" FromRole="City_tbl" ToRole="Vendors_tbl" />
+  </EntityType>
+  <EntityType Name="Company_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Company_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Trade_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Trade_feacher" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Trade_RegNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Currency_code" Type="Int32" />
+    <Property Name="Logo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Country_id" Type="Int32" />
+    <Property Name="City_id" Type="Int32" />
+    <Property Name="Town_id" Type="Int32" />
+    <Property Name="Street_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Building_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Country2_id" Type="Int32" />
+    <Property Name="City2_id" Type="Int32" />
+    <Property Name="Town2_id" Type="Int32" />
+    <Property Name="Street2_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Building2_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tel_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Jawal_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Facebook" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trade_start_date" Type="DateTime" Precision="3" />
+    <Property Name="Licensed_operator_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tax_aded" Type="Double" />
+    <Property Name="Tax_income" Type="Double" />
+    <Property Name="Ownership_kind_id" Type="Int32" />
+    <Property Name="Occupation" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Calendar_id" Type="Int32" />
+    <Property Name="Financial_year" Type="Int32" />
+    <Property Name="Financial_start_date" Type="DateTime" Precision="0" />
+    <Property Name="Financial_end_date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Calender_tbl" Relationship="CashDbModel.FK_Company_Calender_tbl" FromRole="Company_tbl" ToRole="Calender_tbl" />
+    <NavigationProperty Name="City_tbl" Relationship="CashDbModel.FK_Company_tbl_City_tbl" FromRole="Company_tbl" ToRole="City_tbl" />
+    <NavigationProperty Name="City_tbl1" Relationship="CashDbModel.FK_Company_tbl_City_tbl1" FromRole="Company_tbl" ToRole="City_tbl" />
+    <NavigationProperty Name="Currency_tbl" Relationship="CashDbModel.FK_Company_Currency_tbl" FromRole="Company_tbl" ToRole="Currency_tbl" />
+    <NavigationProperty Name="Ownership_kind_tbl" Relationship="CashDbModel.FK_Company_Ownership_kind_tbl" FromRole="Company_tbl" ToRole="Ownership_kind_tbl" />
+    <NavigationProperty Name="Country_tbl" Relationship="CashDbModel.FK_Company_tbl_Country_tbl" FromRole="Company_tbl" ToRole="Country_tbl" />
+    <NavigationProperty Name="Country_tbl1" Relationship="CashDbModel.FK_Company_tbl_Country_tbl1" FromRole="Company_tbl" ToRole="Country_tbl" />
+    <NavigationProperty Name="Town_tbl" Relationship="CashDbModel.FK_Company_tbl_Town_tbl" FromRole="Company_tbl" ToRole="Town_tbl" />
+    <NavigationProperty Name="Town_tbl1" Relationship="CashDbModel.FK_Company_tbl_Town_tbl1" FromRole="Company_tbl" ToRole="Town_tbl" />
+    <NavigationProperty Name="Ownership_person_tbl" Relationship="CashDbModel.FK_Ownership_person_Company" FromRole="Company_tbl" ToRole="Ownership_person_tbl" />
+  </EntityType>
+  <EntityType Name="Country_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Contry_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Company_tbl" Relationship="CashDbModel.FK_Company_tbl_Country_tbl" FromRole="Country_tbl" ToRole="Company_tbl" />
+    <NavigationProperty Name="Company_tbl1" Relationship="CashDbModel.FK_Company_tbl_Country_tbl1" FromRole="Country_tbl" ToRole="Company_tbl" />
+    <NavigationProperty Name="Customer_tbl" Relationship="CashDbModel.FK_Customer_tbl_Country_tbl" FromRole="Country_tbl" ToRole="Customer_tbl" />
+    <NavigationProperty Name="Store_tbl" Relationship="CashDbModel.FK_Store_tbl_Country_tbl" FromRole="Country_tbl" ToRole="Store_tbl" />
+    <NavigationProperty Name="Vendors_tbl" Relationship="CashDbModel.FK_Vendors_tbl_Country_tbl" FromRole="Country_tbl" ToRole="Vendors_tbl" />
+  </EntityType>
+  <EntityType Name="Currency_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Currency_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Company_tbl" Relationship="CashDbModel.FK_Company_Currency_tbl" FromRole="Currency_tbl" ToRole="Company_tbl" />
+    <NavigationProperty Name="Purchase_order_tbl" Relationship="CashDbModel.FK_Purchase_order_tbl_Currency_tbl" FromRole="Currency_tbl" ToRole="Purchase_order_tbl" />
+    <NavigationProperty Name="Sales_Estimate_tbl" Relationship="CashDbModel.FK_Sales_Estimate_tbl_Currency_tbl" FromRole="Currency_tbl" ToRole="Sales_Estimate_tbl" />
+    <NavigationProperty Name="Vendors_tbl" Relationship="CashDbModel.FK_Vendors_tbl_Currency_tbl" FromRole="Currency_tbl" ToRole="Vendors_tbl" />
+  </EntityType>
+  <EntityType Name="Customer_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Customer_display_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Customer_activ_id" Type="Int32" />
+    <Property Name="Customer_first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Customer_last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Customer_Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Customer_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Customer_Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Customer_payment_terms" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Currency_id" Type="Int32" />
+    <Property Name="Customer_Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Customer_Website" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Country_id" Type="Int32" />
+    <Property Name="City_id" Type="Int32" />
+    <Property Name="Town_id" Type="Int32" />
+    <Property Name="Street_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Facebook" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="project_id" Type="Int32" />
+    <Property Name="Twitter" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Opining_balance" Type="Double" />
+    <Property Name="Payment_preferred_id" Type="Int32" />
+    <NavigationProperty Name="City_tbl" Relationship="CashDbModel.FK_Customer_tbl_City_tbl" FromRole="Customer_tbl" ToRole="City_tbl" />
+    <NavigationProperty Name="Country_tbl" Relationship="CashDbModel.FK_Customer_tbl_Country_tbl" FromRole="Customer_tbl" ToRole="Country_tbl" />
+    <NavigationProperty Name="Project_tbl" Relationship="CashDbModel.FK_Customer_tbl_Project_tbl" FromRole="Customer_tbl" ToRole="Project_tbl" />
+    <NavigationProperty Name="Status_tbl" Relationship="CashDbModel.FK_Customer_tbl_Status_tbl" FromRole="Customer_tbl" ToRole="Status_tbl" />
+    <NavigationProperty Name="Town_tbl" Relationship="CashDbModel.FK_Customer_tbl_Town_tbl" FromRole="Customer_tbl" ToRole="Town_tbl" />
+    <NavigationProperty Name="Sales_person_tbl" Relationship="CashDbModel.FK_Sales_person_tbl_Customer_tbl" FromRole="Customer_tbl" ToRole="Sales_person_tbl" />
+  </EntityType>
+  <EntityType Name="Delivery_Purchase_order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Purchase_order_id" Type="Int32" />
+    <Property Name="Delivery_date" Type="DateTime" Precision="3" />
+    <Property Name="Store_id" Type="Int32" />
+    <Property Name="Delivery_note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Delivery_tirms_conditions" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Delivery_recipient" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Store_tbl" Relationship="CashDbModel.FK_Delivery_Purchase_order_Store_tbl" FromRole="Delivery_Purchase_order" ToRole="Store_tbl" />
+  </EntityType>
+  <EntityType Name="Delivery_Sales_Estimate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Sales_Estimate_id" Type="Int32" />
+    <Property Name="Delivery_date" Type="DateTime" Precision="3" />
+    <Property Name="Expiry_date" Type="DateTime" Precision="3" />
+    <Property Name="Sales_Estimate_status" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Sails_person" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Delivery_note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Delivery_tirms_conditions" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Delivery_recipient" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Sales_Estimate_tbl" Relationship="CashDbModel.FK_Delivery_Sales_Estimate_Sales_Estimate_tbl" FromRole="Delivery_Sales_Estimate" ToRole="Sales_Estimate_tbl" />
+  </EntityType>
+  <EntityType Name="Descount_type_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descount_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Descount_percent" Type="Double" />
+    <NavigationProperty Name="Item_kind_tbl" Relationship="CashDbModel.FK_Item_kind_tbl_Descount_type_tbl" FromRole="Descount_type_tbl" ToRole="Item_kind_tbl" />
+  </EntityType>
+  <EntityType Name="Emp_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Emp_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_pass" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_work_id" Type="Int32" />
+    <Property Name="Store_id" Type="Int32" />
+    <Property Name="Emp_seg" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Emp_pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="t1" Type="Boolean" />
+    <Property Name="t2" Type="Boolean" />
+    <Property Name="t3" Type="Boolean" />
+    <Property Name="t4" Type="Boolean" />
+    <Property Name="t5" Type="Boolean" />
+    <Property Name="t6" Type="Boolean" />
+    <Property Name="t7" Type="Boolean" />
+    <Property Name="t8" Type="Boolean" />
+    <Property Name="t9" Type="Boolean" />
+    <Property Name="t10" Type="Boolean" />
+    <Property Name="t101" Type="Boolean" />
+    <Property Name="t102" Type="Boolean" />
+    <Property Name="t103" Type="Boolean" />
+    <Property Name="t104" Type="Boolean" />
+    <Property Name="t105" Type="Boolean" />
+    <Property Name="t106" Type="Boolean" />
+    <Property Name="t107" Type="Boolean" />
+    <Property Name="t108" Type="Boolean" />
+    <Property Name="t109" Type="Boolean" />
+    <Property Name="t1010" Type="Boolean" />
+    <Property Name="t1011" Type="Boolean" />
+    <Property Name="t1012" Type="Boolean" />
+    <Property Name="t1013" Type="Boolean" />
+    <Property Name="t1014" Type="Boolean" />
+    <Property Name="t1015" Type="Boolean" />
+    <Property Name="t1016" Type="Boolean" />
+    <Property Name="t1017" Type="Boolean" />
+    <Property Name="t1018" Type="Boolean" />
+    <Property Name="t1019" Type="Boolean" />
+    <Property Name="t1020" Type="Boolean" />
+    <Property Name="t1021" Type="Boolean" />
+    <Property Name="t1022" Type="Boolean" />
+    <Property Name="t1023" Type="Boolean" />
+    <Property Name="t1024" Type="Boolean" />
+    <Property Name="t1025" Type="Boolean" />
+    <Property Name="t1026" Type="Boolean" />
+    <Property Name="t1027" Type="Boolean" />
+    <Property Name="t1028" Type="Boolean" />
+    <Property Name="t1029" Type="Boolean" />
+    <Property Name="t1030" Type="Boolean" />
+    <NavigationProperty Name="Emp_work_tbl" Relationship="CashDbModel.FK_Emp_tbl_Emp_work_tbl" FromRole="Emp_tbl" ToRole="Emp_work_tbl" />
+    <NavigationProperty Name="Store_tbl" Relationship="CashDbModel.FK_Emp_tbl_Store_tbl" FromRole="Emp_tbl" ToRole="Store_tbl" />
+  </EntityType>
+  <EntityType Name="Emp_work_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Work_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Emp_tbl" Relationship="CashDbModel.FK_Emp_tbl_Emp_work_tbl" FromRole="Emp_work_tbl" ToRole="Emp_tbl" />
+  </EntityType>
+  <EntityType Name="Installment_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Sales_invoice_id" Type="Int32" />
+    <Property Name="Installment_date" Type="DateTime" Precision="3" />
+    <Property Name="Installment_start_date" Type="DateTime" Precision="3" />
+    <Property Name="Installment_number" Type="Int32" />
+    <Property Name="Installment_due_date" Type="DateTime" Precision="3" />
+    <Property Name="Installment_currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Currency_exchange" Type="Double" />
+    <Property Name="Installment_due_amount" Type="Double" />
+    <Property Name="Guarantor_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Guarantor_id_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kembyala_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cash_hold_acc_a" Type="Int32" />
+    <Property Name="Cash_hold_acc_b" Type="Int32" />
+    <Property Name="Cash_hold_acc_c" Type="Int32" />
+    <Property Name="Cash_hold_acc_d" Type="Int32" />
+    <NavigationProperty Name="Acc_a" Relationship="CashDbModel.FK_Installment_tbl_Acc_a" FromRole="Installment_tbl" ToRole="Acc_a" />
+    <NavigationProperty Name="Acc_b" Relationship="CashDbModel.FK_Installment_tbl_Acc_b" FromRole="Installment_tbl" ToRole="Acc_b" />
+    <NavigationProperty Name="Acc_c" Relationship="CashDbModel.FK_Installment_tbl_Acc_c" FromRole="Installment_tbl" ToRole="Acc_c" />
+    <NavigationProperty Name="Acc_d" Relationship="CashDbModel.FK_Installment_tbl_Acc_d" FromRole="Installment_tbl" ToRole="Acc_d" />
+    <NavigationProperty Name="Sales_invoice_tbl" Relationship="CashDbModel.FK_Installment_tbl_Sales_invoice_tbl" FromRole="Installment_tbl" ToRole="Sales_invoice_tbl" />
+  </EntityType>
+  <EntityType Name="Item_content_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Items_id" Type="Int32" />
+    <Property Name="Content_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Items_tbl" Relationship="CashDbModel.FK_Item_content_tbl_Items_tbl" FromRole="Item_content_tbl" ToRole="Items_tbl" />
+  </EntityType>
+  <EntityType Name="Item_kind_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Item_kind_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Item_tax_id" Type="Int32" />
+    <Property Name="Decount_type_id" Type="Int32" />
+    <NavigationProperty Name="Descount_type_tbl" Relationship="CashDbModel.FK_Item_kind_tbl_Descount_type_tbl" FromRole="Item_kind_tbl" ToRole="Descount_type_tbl" />
+    <NavigationProperty Name="Tax_type_tbl" Relationship="CashDbModel.FK_Item_kind_tbl_Tax_type_tbl" FromRole="Item_kind_tbl" ToRole="Tax_type_tbl" />
+    <NavigationProperty Name="Items_tbl" Relationship="CashDbModel.FK_Items_tbl_Item_kind_tbl" FromRole="Item_kind_tbl" ToRole="Items_tbl" />
+  </EntityType>
+  <EntityType Name="Items_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Store_id" Type="Int32" />
+    <Property Name="Item_kind_id" Type="Int32" />
+    <Property Name="Item_name" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Item_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Item_content_id" Type="Int32" />
+    <Property Name="Item_quantity" Type="Double" />
+    <Property Name="Item_unit_id" Type="Int32" />
+    <Property Name="Item_price_sell" Type="Double" />
+    <Property Name="Item_sales_acc_a_id" Type="Int32" />
+    <Property Name="Item_sales_acc_b_id" Type="Int32" />
+    <Property Name="Item_sales_acc_c_id" Type="Int32" />
+    <Property Name="Item_sales_acc_d_id" Type="Int32" />
+    <Property Name="Item_purchase_acc_a_id" Type="Int32" />
+    <Property Name="Item_purchase_acc_b_id" Type="Int32" />
+    <Property Name="Item_purchase_acc_c_id" Type="Int32" />
+    <Property Name="Item_purchase_acc_d_id" Type="Int32" />
+    <Property Name="Item_point_reorder" Type="Double" />
+    <Property Name="Cost_sold_goods_acc_a_id" Type="Int32" />
+    <Property Name="Cost_sold_goods_acc_b_id" Type="Int32" />
+    <Property Name="Cost_sold_goods_acc_c_id" Type="Int32" />
+    <Property Name="Cost_sold_goods_acc_d_id" Type="Int32" />
+    <Property Name="Item_feacher_color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Barcode" Type="Double" />
+    <NavigationProperty Name="Acc_a" Relationship="CashDbModel.FK_Items_tbl_Acc_a" FromRole="Items_tbl" ToRole="Acc_a" />
+    <NavigationProperty Name="Acc_a1" Relationship="CashDbModel.FK_Items_tbl_Acc_a1" FromRole="Items_tbl" ToRole="Acc_a" />
+    <NavigationProperty Name="Acc_a2" Relationship="CashDbModel.FK_Items_tbl_Acc_a2" FromRole="Items_tbl" ToRole="Acc_a" />
+    <NavigationProperty Name="Acc_b" Relationship="CashDbModel.FK_Items_tbl_Acc_b" FromRole="Items_tbl" ToRole="Acc_b" />
+    <NavigationProperty Name="Acc_b1" Relationship="CashDbModel.FK_Items_tbl_Acc_b1" FromRole="Items_tbl" ToRole="Acc_b" />
+    <NavigationProperty Name="Acc_b2" Relationship="CashDbModel.FK_Items_tbl_Acc_b2" FromRole="Items_tbl" ToRole="Acc_b" />
+    <NavigationProperty Name="Acc_c" Relationship="CashDbModel.FK_Items_tbl_Acc_c" FromRole="Items_tbl" ToRole="Acc_c" />
+    <NavigationProperty Name="Acc_c1" Relationship="CashDbModel.FK_Items_tbl_Acc_c1" FromRole="Items_tbl" ToRole="Acc_c" />
+    <NavigationProperty Name="Acc_c2" Relationship="CashDbModel.FK_Items_tbl_Acc_c2" FromRole="Items_tbl" ToRole="Acc_c" />
+    <NavigationProperty Name="Item_content_tbl" Relationship="CashDbModel.FK_Item_content_tbl_Items_tbl" FromRole="Items_tbl" ToRole="Item_content_tbl" />
+    <NavigationProperty Name="Item_kind_tbl" Relationship="CashDbModel.FK_Items_tbl_Item_kind_tbl" FromRole="Items_tbl" ToRole="Item_kind_tbl" />
+    <NavigationProperty Name="Store_tbl" Relationship="CashDbModel.FK_Items_tbl_Store_tbl" FromRole="Items_tbl" ToRole="Store_tbl" />
+    <NavigationProperty Name="Unit_tbl" Relationship="CashDbModel.FK_Items_tbl_Unit_tbl" FromRole="Items_tbl" ToRole="Unit_tbl" />
+    <NavigationProperty Name="Purchase_order_items_tbl" Relationship="CashDbModel.FK_Purchase_order_items_tbl_Items_tbl" FromRole="Items_tbl" ToRole="Purchase_order_items_tbl" />
+    <NavigationProperty Name="Sales_Estimate_items_tbl" Relationship="CashDbModel.FK_Sales_Estimate_items_tbl_Items_tbl" FromRole="Items_tbl" ToRole="Sales_Estimate_items_tbl" />
+  </EntityType>
+  <EntityType Name="Ownership_kind_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ownership_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ownership_tax_add" Type="Double" />
+    <NavigationProperty Name="Company_tbl" Relationship="CashDbModel.FK_Company_Ownership_kind_tbl" FromRole="Ownership_kind_tbl" ToRole="Company_tbl" />
+  </EntityType>
+  <EntityType Name="Ownership_person_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Company_id" Type="Int32" />
+    <Property Name="Person_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Person_father" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Person_family" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Person_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Company_tbl" Relationship="CashDbModel.FK_Ownership_person_Company" FromRole="Ownership_person_tbl" ToRole="Company_tbl" />
+  </EntityType>
+  <EntityType Name="Payment_method_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Payment_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Purchase_invoice_tbl" Relationship="CashDbModel.FK_Purchase_invoice_tbl_Payment_method_tbl" FromRole="Payment_method_tbl" ToRole="Purchase_invoice_tbl" />
+    <NavigationProperty Name="Sales_invoice_tbl" Relationship="CashDbModel.FK_Sales_invoice_tbl_Payment_method_tbl" FromRole="Payment_method_tbl" ToRole="Sales_invoice_tbl" />
+  </EntityType>
+  <EntityType Name="Project_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Project_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Project_note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Customer_tbl" Relationship="CashDbModel.FK_Customer_tbl_Project_tbl" FromRole="Project_tbl" ToRole="Customer_tbl" />
+    <NavigationProperty Name="Purchase_order_tbl" Relationship="CashDbModel.FK_Purchase_order_tbl_Project_tbl" FromRole="Project_tbl" ToRole="Purchase_order_tbl" />
+  </EntityType>
+  <EntityType Name="Purchase_invoice_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Vendor_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Vendor_tax_num" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Branch_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Purchase_invoice_number" Type="Int32" />
+    <Property Name="Purchase_order_id" Type="Int32" />
+    <Property Name="Purchase_invoice_date" Type="DateTime" Precision="3" />
+    <Property Name="Purchase_invoice_due_date" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Invoice_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Is_invoice_taxable" Type="Boolean" />
+    <Property Name="Invoice_amount_before_tax" Type="Double" />
+    <Property Name="Invoice_level_tax" Type="Double" />
+    <Property Name="Invoice_level_tax_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Invoice_level_tax_percent" Type="Double" />
+    <Property Name="Invoice_amount_after_tax" Type="Double" />
+    <Property Name="Invoice_note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Invoice_tirms_conditions" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Payment_method_id" Type="Int32" />
+    <Property Name="Cash" Type="Double" />
+    <Property Name="acc_a_id" Type="Int32" />
+    <Property Name="acc_b_id" Type="Int32" />
+    <Property Name="acc_c_id" Type="Int32" />
+    <Property Name="acc_d_id" Type="Int32" />
+    <Property Name="Debit_amount" Type="Double" />
+    <Property Name="Cheque_amount" Type="Double" />
+    <Property Name="Received_payment" Type="Double" />
+    <NavigationProperty Name="Acc_a" Relationship="CashDbModel.FK_Purchase_invoice_tbl_Acc_a" FromRole="Purchase_invoice_tbl" ToRole="Acc_a" />
+    <NavigationProperty Name="Acc_b" Relationship="CashDbModel.FK_Purchase_invoice_tbl_Acc_b" FromRole="Purchase_invoice_tbl" ToRole="Acc_b" />
+    <NavigationProperty Name="Acc_c" Relationship="CashDbModel.FK_Purchase_invoice_tbl_Acc_c" FromRole="Purchase_invoice_tbl" ToRole="Acc_c" />
+    <NavigationProperty Name="Acc_d" Relationship="CashDbModel.FK_Purchase_invoice_tbl_Acc_d" FromRole="Purchase_invoice_tbl" ToRole="Acc_d" />
+    <NavigationProperty Name="Payment_method_tbl" Relationship="CashDbModel.FK_Purchase_invoice_tbl_Payment_method_tbl" FromRole="Purchase_invoice_tbl" ToRole="Payment_method_tbl" />
+    <NavigationProperty Name="Purchase_order_tbl" Relationship="CashDbModel.FK_Purchase_invoice_tbl_Purchase_order_tbl" FromRole="Purchase_invoice_tbl" ToRole="Purchase_order_tbl" />
+    <NavigationProperty Name="Purchase_payment_cheque_tbl" Relationship="CashDbModel.FK_Purchase_payment_cheque_tbl_Purchase_invoice_tbl" FromRole="Purchase_invoice_tbl" ToRole="Purchase_payment_cheque_tbl" />
+  </EntityType>
+  <EntityType Name="Purchase_order_items_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Purchase_order_id" Type="Int32" />
+    <Property Name="Item_id" Type="Int32" />
+    <Property Name="Item_Services" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Double" />
+    <Property Name="Unit_id" Type="Int32" />
+    <Property Name="Item_price" Type="Double" />
+    <Property Name="Store_id" Type="Int32" />
+    <Property Name="Item_tax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Item_tax_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Item_tax_percent" Type="Double" />
+    <Property Name="Item_tax_amount" Type="Double" />
+    <Property Name="Descount_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Descount_percent" Type="Double" />
+    <Property Name="Discount_amount_item" Type="Double" />
+    <Property Name="Amount_after_tax" Type="Double" />
+    <Property Name="Amount_before_tax" Type="Double" />
+    <Property Name="Enclude_invoice" Type="Boolean" />
+    <Property Name="Enclude_delivery" Type="Boolean" />
+    <NavigationProperty Name="Items_tbl" Relationship="CashDbModel.FK_Purchase_order_items_tbl_Items_tbl" FromRole="Purchase_order_items_tbl" ToRole="Items_tbl" />
+    <NavigationProperty Name="Purchase_order_tbl" Relationship="CashDbModel.FK_Purchase_order_items_tbl_Purchase_order_tbl" FromRole="Purchase_order_items_tbl" ToRole="Purchase_order_tbl" />
+    <NavigationProperty Name="Store_tbl" Relationship="CashDbModel.FK_Purchase_order_items_tbl_Store_tbl" FromRole="Purchase_order_items_tbl" ToRole="Store_tbl" />
+    <NavigationProperty Name="Unit_tbl" Relationship="CashDbModel.FK_Purchase_order_items_tbl_Unit_tbl" FromRole="Purchase_order_items_tbl" ToRole="Unit_tbl" />
+  </EntityType>
+  <EntityType Name="Purchase_order_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Vendor_id" Type="Int32" />
+    <Property Name="Purchase_order_date" Type="DateTime" Precision="3" />
+    <Property Name="Purchase_order_expert_date" Type="DateTime" Precision="3" />
+    <Property Name="Project_id" Type="Int32" />
+    <Property Name="Purchase_order_status_id" Type="Int32" />
+    <Property Name="Currency_id" Type="Int32" />
+    <Property Name="Exchange_rate" Type="Double" />
+    <Property Name="Purchase_order_amount_before_tax" Type="Double" />
+    <Property Name="Purchase_order_level_tax" Type="Double" />
+    <Property Name="Purchase_order_level_tax_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Purchase_order_level_tax_percent" Type="Double" />
+    <Property Name="Purchase_order_amount_after_tax" Type="Double" />
+    <Property Name="Purchase_order_notes" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Purchase_order_terms_conditions" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Currency_tbl" Relationship="CashDbModel.FK_Purchase_order_tbl_Currency_tbl" FromRole="Purchase_order_tbl" ToRole="Currency_tbl" />
+    <NavigationProperty Name="Project_tbl" Relationship="CashDbModel.FK_Purchase_order_tbl_Project_tbl" FromRole="Purchase_order_tbl" ToRole="Project_tbl" />
+    <NavigationProperty Name="Purchase_invoice_tbl" Relationship="CashDbModel.FK_Purchase_invoice_tbl_Purchase_order_tbl" FromRole="Purchase_order_tbl" ToRole="Purchase_invoice_tbl" />
+    <NavigationProperty Name="Purchase_order_items_tbl" Relationship="CashDbModel.FK_Purchase_order_items_tbl_Purchase_order_tbl" FromRole="Purchase_order_tbl" ToRole="Purchase_order_items_tbl" />
+    <NavigationProperty Name="Status_tbl" Relationship="CashDbModel.FK_Purchase_order_tbl_Status_tbl" FromRole="Purchase_order_tbl" ToRole="Status_tbl" />
+    <NavigationProperty Name="Vendors_tbl" Relationship="CashDbModel.FK_Purchase_order_tbl_Vendors_tbl" FromRole="Purchase_order_tbl" ToRole="Vendors_tbl" />
+  </EntityType>
+  <EntityType Name="Purchase_payment_cheque_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Purchase_invoice_id" Type="Int32" />
+    <Property Name="Cheque_num" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cheque_amount" Type="Double" />
+    <Property Name="Cheque_due_date" Type="DateTime" Precision="3" />
+    <Property Name="Bank_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name_hold_cheque" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Cheque_currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Currency_exchange" Type="Double" />
+    <NavigationProperty Name="Purchase_invoice_tbl" Relationship="CashDbModel.FK_Purchase_payment_cheque_tbl_Purchase_invoice_tbl" FromRole="Purchase_payment_cheque_tbl" ToRole="Purchase_invoice_tbl" />
+  </EntityType>
+  <EntityType Name="Sales_Estimate_items_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Sales_Estimate_id" Type="Int32" />
+    <Property Name="Item_id" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Double" />
+    <Property Name="Unit_id" Type="Int32" />
+    <Property Name="Item_price" Type="Double" />
+    <Property Name="Store_id" Type="Int32" />
+    <Property Name="Item_tax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Item_tax_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Item_tax_percent" Type="Double" />
+    <Property Name="Item_tax_amount" Type="Double" />
+    <Property Name="Descount_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Descount_percent" Type="Double" />
+    <Property Name="Discount_amount_item" Type="Double" />
+    <Property Name="Amount_after_tax" Type="Double" />
+    <Property Name="Amount_before_tax" Type="Double" />
+    <NavigationProperty Name="Items_tbl" Relationship="CashDbModel.FK_Sales_Estimate_items_tbl_Items_tbl" FromRole="Sales_Estimate_items_tbl" ToRole="Items_tbl" />
+    <NavigationProperty Name="Sales_Estimate_tbl" Relationship="CashDbModel.FK_Sales_Estimate_items_tbl_Sales_Estimate_tbl" FromRole="Sales_Estimate_items_tbl" ToRole="Sales_Estimate_tbl" />
+    <NavigationProperty Name="Store_tbl" Relationship="CashDbModel.FK_Sales_Estimate_items_tbl_Store_tbl" FromRole="Sales_Estimate_items_tbl" ToRole="Store_tbl" />
+    <NavigationProperty Name="Unit_tbl" Relationship="CashDbModel.FK_Sales_Estimate_items_tbl_Unit_tbl" FromRole="Sales_Estimate_items_tbl" ToRole="Unit_tbl" />
+  </EntityType>
+  <EntityType Name="Sales_Estimate_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Customer_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Estimate_date" Type="DateTime" Precision="3" />
+    <Property Name="Estimate_expert_date" Type="DateTime" Precision="3" />
+    <Property Name="Project_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Estimate_status_id" Type="Int32" />
+    <Property Name="Sails_person" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Currency_id" Type="Int32" />
+    <Property Name="Exchange_rate" Type="Double" />
+    <Property Name="Sales_Estimate_amount_before_tax" Type="Double" />
+    <Property Name="Sales_Estimate_level_tax" Type="Double" />
+    <Property Name="Sales_Estimate_level_tax_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sales_Estimate_level_tax_percent" Type="Double" />
+    <Property Name="Purchase_order_amount_after_tax" Type="Double" />
+    <Property Name="Shipping_charge" Type="Double" />
+    <Property Name="Purchase_order_notes" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Purchase_order_terms_conditions" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Currency_tbl" Relationship="CashDbModel.FK_Sales_Estimate_tbl_Currency_tbl" FromRole="Sales_Estimate_tbl" ToRole="Currency_tbl" />
+    <NavigationProperty Name="Delivery_Sales_Estimate" Relationship="CashDbModel.FK_Delivery_Sales_Estimate_Sales_Estimate_tbl" FromRole="Sales_Estimate_tbl" ToRole="Delivery_Sales_Estimate" />
+    <NavigationProperty Name="Sales_Estimate_items_tbl" Relationship="CashDbModel.FK_Sales_Estimate_items_tbl_Sales_Estimate_tbl" FromRole="Sales_Estimate_tbl" ToRole="Sales_Estimate_items_tbl" />
+    <NavigationProperty Name="Status_tbl" Relationship="CashDbModel.FK_Sales_Estimate_tbl_Status_tbl" FromRole="Sales_Estimate_tbl" ToRole="Status_tbl" />
+    <NavigationProperty Name="Sales_invoice_tbl" Relationship="CashDbModel.FK_Sales_invoice_tbl_Sales_Estimate_tbl" FromRole="Sales_Estimate_tbl" ToRole="Sales_invoice_tbl" />
+  </EntityType>
+  <EntityType Name="Sales_invoice_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Customer_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Sales_Estimate_id" Type="Int32" />
+    <Property Name="Branch_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Purchase_invoice_number" Type="Int32" />
+    <Property Name="Sails_invoice_date" Type="DateTime" Precision="3" />
+    <Property Name="Sales_invoice_due_date" Type="DateTime" Precision="3" />
+    <Property Name="Invoice_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Is_invoice_taxable" Type="Boolean" />
+    <Property Name="Invoice_amount_before_tax" Type="Double" />
+    <Property Name="Invoice_level_tax" Type="Double" />
+    <Property Name="Invoice_level_tax_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Invoice_level_tax_percent" Type="Double" />
+    <Property Name="Invoice_amount_after_tax" Type="Double" />
+    <Property Name="Sarvice_id" Type="Int32" />
+    <Property Name="Invoice_note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Invoice_tirms_conditions" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Payment_method_id" Type="Int32" />
+    <Property Name="Cash" Type="Double" />
+    <Property Name="acc_a_id" Type="Int32" />
+    <Property Name="acc_b_id" Type="Int32" />
+    <Property Name="acc_c_id" Type="Int32" />
+    <Property Name="acc_d_id" Type="Int32" />
+    <Property Name="Debit_amount" Type="Double" />
+    <Property Name="Cheque_amount" Type="Double" />
+    <Property Name="Installment_amount" Type="Double" />
+    <Property Name="Received_payment" Type="Double" />
+    <NavigationProperty Name="Acc_a" Relationship="CashDbModel.FK_Sales_invoice_tbl_Acc_a" FromRole="Sales_invoice_tbl" ToRole="Acc_a" />
+    <NavigationProperty Name="Acc_b" Relationship="CashDbModel.FK_Sales_invoice_tbl_Acc_b" FromRole="Sales_invoice_tbl" ToRole="Acc_b" />
+    <NavigationProperty Name="Acc_c" Relationship="CashDbModel.FK_Sales_invoice_tbl_Acc_c" FromRole="Sales_invoice_tbl" ToRole="Acc_c" />
+    <NavigationProperty Name="Acc_d" Relationship="CashDbModel.FK_Sales_invoice_tbl_Acc_d" FromRole="Sales_invoice_tbl" ToRole="Acc_d" />
+    <NavigationProperty Name="Installment_tbl" Relationship="CashDbModel.FK_Installment_tbl_Sales_invoice_tbl" FromRole="Sales_invoice_tbl" ToRole="Installment_tbl" />
+    <NavigationProperty Name="Payment_method_tbl" Relationship="CashDbModel.FK_Sales_invoice_tbl_Payment_method_tbl" FromRole="Sales_invoice_tbl" ToRole="Payment_method_tbl" />
+    <NavigationProperty Name="Sales_Estimate_tbl" Relationship="CashDbModel.FK_Sales_invoice_tbl_Sales_Estimate_tbl" FromRole="Sales_invoice_tbl" ToRole="Sales_Estimate_tbl" />
+    <NavigationProperty Name="Sales_Receipt_payment_tbl" Relationship="CashDbModel.FK_Sales_Receipt_payment_tbl_Sales_invoice_tbl" FromRole="Sales_invoice_tbl" ToRole="Sales_Receipt_payment_tbl" />
+  </EntityType>
+  <EntityType Name="Sales_person_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Customer_id" Type="Int32" />
+    <Property Name="Sales_person_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Customer_tbl" Relationship="CashDbModel.FK_Sales_person_tbl_Customer_tbl" FromRole="Sales_person_tbl" ToRole="Customer_tbl" />
+  </EntityType>
+  <EntityType Name="Sales_Receipt_payment_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Customer_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Sales_invoice_id" Type="Int32" />
+    <Property Name="Amount" Type="Double" />
+    <Property Name="Payment_date" Type="DateTime" Precision="3" />
+    <Property Name="Payment_method" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Currency_exchange" Type="Double" />
+    <Property Name="Cash_hold_acc_a" Type="Int32" />
+    <Property Name="Cash_hold_acc_b" Type="Int32" />
+    <Property Name="Cash_hold_acc_c" Type="Int32" />
+    <Property Name="Cash_hold_acc_d" Type="Int32" />
+    <Property Name="Amount_words" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Cheque_num" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cheque_due_date" Type="DateTime" Precision="3" />
+    <Property Name="Bank_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name_hold_cheque" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Acc_a" Relationship="CashDbModel.FK_Sales_Receipt_payment_tbl_Acc_a" FromRole="Sales_Receipt_payment_tbl" ToRole="Acc_a" />
+    <NavigationProperty Name="Acc_b" Relationship="CashDbModel.FK_Sales_Receipt_payment_tbl_Acc_b" FromRole="Sales_Receipt_payment_tbl" ToRole="Acc_b" />
+    <NavigationProperty Name="Acc_c" Relationship="CashDbModel.FK_Sales_Receipt_payment_tbl_Acc_c" FromRole="Sales_Receipt_payment_tbl" ToRole="Acc_c" />
+    <NavigationProperty Name="Acc_d" Relationship="CashDbModel.FK_Sales_Receipt_payment_tbl_Acc_d" FromRole="Sales_Receipt_payment_tbl" ToRole="Acc_d" />
+    <NavigationProperty Name="Sales_invoice_tbl" Relationship="CashDbModel.FK_Sales_Receipt_payment_tbl_Sales_invoice_tbl" FromRole="Sales_Receipt_payment_tbl" ToRole="Sales_invoice_tbl" />
+  </EntityType>
+  <EntityType Name="Sarvice_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sarvice_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Status_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Customer_tbl" Relationship="CashDbModel.FK_Customer_tbl_Status_tbl" FromRole="Status_tbl" ToRole="Customer_tbl" />
+    <NavigationProperty Name="Purchase_order_tbl" Relationship="CashDbModel.FK_Purchase_order_tbl_Status_tbl" FromRole="Status_tbl" ToRole="Purchase_order_tbl" />
+    <NavigationProperty Name="Sales_Estimate_tbl" Relationship="CashDbModel.FK_Sales_Estimate_tbl_Status_tbl" FromRole="Status_tbl" ToRole="Sales_Estimate_tbl" />
+  </EntityType>
+  <EntityType Name="Store_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Store_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Country_id" Type="Int32" />
+    <Property Name="City_id" Type="Int32" />
+    <Property Name="Town_id" Type="Int32" />
+    <Property Name="Street_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Building_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="City_tbl" Relationship="CashDbModel.FK_Store_tbl_City_tbl" FromRole="Store_tbl" ToRole="City_tbl" />
+    <NavigationProperty Name="Country_tbl" Relationship="CashDbModel.FK_Store_tbl_Country_tbl" FromRole="Store_tbl" ToRole="Country_tbl" />
+    <NavigationProperty Name="Delivery_Purchase_order" Relationship="CashDbModel.FK_Delivery_Purchase_order_Store_tbl" FromRole="Store_tbl" ToRole="Delivery_Purchase_order" />
+    <NavigationProperty Name="Emp_tbl" Relationship="CashDbModel.FK_Emp_tbl_Store_tbl" FromRole="Store_tbl" ToRole="Emp_tbl" />
+    <NavigationProperty Name="Items_tbl" Relationship="CashDbModel.FK_Items_tbl_Store_tbl" FromRole="Store_tbl" ToRole="Items_tbl" />
+    <NavigationProperty Name="Purchase_order_items_tbl" Relationship="CashDbModel.FK_Purchase_order_items_tbl_Store_tbl" FromRole="Store_tbl" ToRole="Purchase_order_items_tbl" />
+    <NavigationProperty Name="Sales_Estimate_items_tbl" Relationship="CashDbModel.FK_Sales_Estimate_items_tbl_Store_tbl" FromRole="Store_tbl" ToRole="Sales_Estimate_items_tbl" />
+    <NavigationProperty Name="Town_tbl" Relationship="CashDbModel.FK_Store_tbl_Town_tbl1" FromRole="Store_tbl" ToRole="Town_tbl" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tax_type_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tax_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tax_percent" Type="Double" />
+    <NavigationProperty Name="Item_kind_tbl" Relationship="CashDbModel.FK_Item_kind_tbl_Tax_type_tbl" FromRole="Tax_type_tbl" ToRole="Item_kind_tbl" />
+  </EntityType>
+  <EntityType Name="Town_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Town_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Town_belong" Type="Int32" />
+    <NavigationProperty Name="Company_tbl" Relationship="CashDbModel.FK_Company_tbl_Town_tbl" FromRole="Town_tbl" ToRole="Company_tbl" />
+    <NavigationProperty Name="Company_tbl1" Relationship="CashDbModel.FK_Company_tbl_Town_tbl1" FromRole="Town_tbl" ToRole="Company_tbl" />
+    <NavigationProperty Name="Customer_tbl" Relationship="CashDbModel.FK_Customer_tbl_Town_tbl" FromRole="Town_tbl" ToRole="Customer_tbl" />
+    <NavigationProperty Name="Store_tbl" Relationship="CashDbModel.FK_Store_tbl_Town_tbl1" FromRole="Town_tbl" ToRole="Store_tbl" />
+    <NavigationProperty Name="Vendors_tbl" Relationship="CashDbModel.FK_Vendors_tbl_Town_tbl" FromRole="Town_tbl" ToRole="Vendors_tbl" />
+  </EntityType>
+  <EntityType Name="Unit_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Unit_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Items_tbl" Relationship="CashDbModel.FK_Items_tbl_Unit_tbl" FromRole="Unit_tbl" ToRole="Items_tbl" />
+    <NavigationProperty Name="Purchase_order_items_tbl" Relationship="CashDbModel.FK_Purchase_order_items_tbl_Unit_tbl" FromRole="Unit_tbl" ToRole="Purchase_order_items_tbl" />
+    <NavigationProperty Name="Sales_Estimate_items_tbl" Relationship="CashDbModel.FK_Sales_Estimate_items_tbl_Unit_tbl" FromRole="Unit_tbl" ToRole="Sales_Estimate_items_tbl" />
+  </EntityType>
+  <EntityType Name="Vendors_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Vendor_display_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Vendor_tax_num" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Vendor_activ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Vendor_first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Vendor_last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Vendo_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Vendo_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Vendo_Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Vender_payment_terms" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Currency_id" Type="Int32" />
+    <Property Name="Vendo_Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Vendo_Website" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Country_id" Type="Int32" />
+    <Property Name="City_id" Type="Int32" />
+    <Property Name="Town_id" Type="Int32" />
+    <Property Name="Street_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Facebook" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Twitter" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Opining_balance" Type="Double" />
+    <Property Name="Payment_preferred" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="City_tbl" Relationship="CashDbModel.FK_Vendors_tbl_City_tbl" FromRole="Vendors_tbl" ToRole="City_tbl" />
+    <NavigationProperty Name="Country_tbl" Relationship="CashDbModel.FK_Vendors_tbl_Country_tbl" FromRole="Vendors_tbl" ToRole="Country_tbl" />
+    <NavigationProperty Name="Currency_tbl" Relationship="CashDbModel.FK_Vendors_tbl_Currency_tbl" FromRole="Vendors_tbl" ToRole="Currency_tbl" />
+    <NavigationProperty Name="Purchase_order_tbl" Relationship="CashDbModel.FK_Purchase_order_tbl_Vendors_tbl" FromRole="Vendors_tbl" ToRole="Purchase_order_tbl" />
+    <NavigationProperty Name="Town_tbl" Relationship="CashDbModel.FK_Vendors_tbl_Town_tbl" FromRole="Vendors_tbl" ToRole="Town_tbl" />
+  </EntityType>
+  <EntityType Name="Purchase_payment_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Purchase_invoice_id" Type="Int32" />
+    <Property Name="Amount" Type="Double" />
+    <Property Name="Pay_date" Type="DateTime" Precision="3" />
+    <Property Name="currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Currency_exchange" Type="Double" />
+  </EntityType>
+  <Association Name="FK_Installment_tbl_Acc_a">
+    <End Type="CashDbModel.Acc_a" Role="Acc_a" Multiplicity="0..1" />
+    <End Type="CashDbModel.Installment_tbl" Role="Installment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_a">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Installment_tbl">
+        <PropertyRef Name="Cash_hold_acc_a" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_tbl_Acc_a">
+    <End Type="CashDbModel.Acc_a" Role="Acc_a" Multiplicity="0..1" />
+    <End Type="CashDbModel.Items_tbl" Role="Items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_a">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Items_tbl">
+        <PropertyRef Name="Item_sales_acc_a_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_tbl_Acc_a1">
+    <End Type="CashDbModel.Acc_a" Role="Acc_a" Multiplicity="0..1" />
+    <End Type="CashDbModel.Items_tbl" Role="Items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_a">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Items_tbl">
+        <PropertyRef Name="Item_purchase_acc_a_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_tbl_Acc_a2">
+    <End Type="CashDbModel.Acc_a" Role="Acc_a" Multiplicity="0..1" />
+    <End Type="CashDbModel.Items_tbl" Role="Items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_a">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Items_tbl">
+        <PropertyRef Name="Cost_sold_goods_acc_a_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_invoice_tbl_Acc_a">
+    <End Type="CashDbModel.Acc_a" Role="Acc_a" Multiplicity="0..1" />
+    <End Type="CashDbModel.Purchase_invoice_tbl" Role="Purchase_invoice_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_a">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Purchase_invoice_tbl">
+        <PropertyRef Name="acc_a_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_invoice_tbl_Acc_a">
+    <End Type="CashDbModel.Acc_a" Role="Acc_a" Multiplicity="0..1" />
+    <End Type="CashDbModel.Sales_invoice_tbl" Role="Sales_invoice_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_a">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sales_invoice_tbl">
+        <PropertyRef Name="acc_a_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Receipt_payment_tbl_Acc_a">
+    <End Type="CashDbModel.Acc_a" Role="Acc_a" Multiplicity="0..1" />
+    <End Type="CashDbModel.Sales_Receipt_payment_tbl" Role="Sales_Receipt_payment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_a">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sales_Receipt_payment_tbl">
+        <PropertyRef Name="Cash_hold_acc_a" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Installment_tbl_Acc_b">
+    <End Type="CashDbModel.Acc_b" Role="Acc_b" Multiplicity="0..1" />
+    <End Type="CashDbModel.Installment_tbl" Role="Installment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_b">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Installment_tbl">
+        <PropertyRef Name="Cash_hold_acc_b" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_tbl_Acc_b">
+    <End Type="CashDbModel.Acc_b" Role="Acc_b" Multiplicity="0..1" />
+    <End Type="CashDbModel.Items_tbl" Role="Items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_b">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Items_tbl">
+        <PropertyRef Name="Item_sales_acc_b_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_tbl_Acc_b1">
+    <End Type="CashDbModel.Acc_b" Role="Acc_b" Multiplicity="0..1" />
+    <End Type="CashDbModel.Items_tbl" Role="Items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_b">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Items_tbl">
+        <PropertyRef Name="Item_purchase_acc_b_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_tbl_Acc_b2">
+    <End Type="CashDbModel.Acc_b" Role="Acc_b" Multiplicity="0..1" />
+    <End Type="CashDbModel.Items_tbl" Role="Items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_b">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Items_tbl">
+        <PropertyRef Name="Cost_sold_goods_acc_b_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_invoice_tbl_Acc_b">
+    <End Type="CashDbModel.Acc_b" Role="Acc_b" Multiplicity="0..1" />
+    <End Type="CashDbModel.Purchase_invoice_tbl" Role="Purchase_invoice_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_b">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Purchase_invoice_tbl">
+        <PropertyRef Name="acc_b_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_invoice_tbl_Acc_b">
+    <End Type="CashDbModel.Acc_b" Role="Acc_b" Multiplicity="0..1" />
+    <End Type="CashDbModel.Sales_invoice_tbl" Role="Sales_invoice_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_b">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sales_invoice_tbl">
+        <PropertyRef Name="acc_b_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Receipt_payment_tbl_Acc_b">
+    <End Type="CashDbModel.Acc_b" Role="Acc_b" Multiplicity="0..1" />
+    <End Type="CashDbModel.Sales_Receipt_payment_tbl" Role="Sales_Receipt_payment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_b">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sales_Receipt_payment_tbl">
+        <PropertyRef Name="Cash_hold_acc_b" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Installment_tbl_Acc_c">
+    <End Type="CashDbModel.Acc_c" Role="Acc_c" Multiplicity="0..1" />
+    <End Type="CashDbModel.Installment_tbl" Role="Installment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_c">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Installment_tbl">
+        <PropertyRef Name="Cash_hold_acc_c" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_tbl_Acc_c">
+    <End Type="CashDbModel.Acc_c" Role="Acc_c" Multiplicity="0..1" />
+    <End Type="CashDbModel.Items_tbl" Role="Items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_c">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Items_tbl">
+        <PropertyRef Name="Item_sales_acc_c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_tbl_Acc_c1">
+    <End Type="CashDbModel.Acc_c" Role="Acc_c" Multiplicity="0..1" />
+    <End Type="CashDbModel.Items_tbl" Role="Items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_c">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Items_tbl">
+        <PropertyRef Name="Item_purchase_acc_c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_tbl_Acc_c2">
+    <End Type="CashDbModel.Acc_c" Role="Acc_c" Multiplicity="0..1" />
+    <End Type="CashDbModel.Items_tbl" Role="Items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_c">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Items_tbl">
+        <PropertyRef Name="Cost_sold_goods_acc_c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_invoice_tbl_Acc_c">
+    <End Type="CashDbModel.Acc_c" Role="Acc_c" Multiplicity="0..1" />
+    <End Type="CashDbModel.Purchase_invoice_tbl" Role="Purchase_invoice_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_c">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Purchase_invoice_tbl">
+        <PropertyRef Name="acc_c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_invoice_tbl_Acc_c">
+    <End Type="CashDbModel.Acc_c" Role="Acc_c" Multiplicity="0..1" />
+    <End Type="CashDbModel.Sales_invoice_tbl" Role="Sales_invoice_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_c">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sales_invoice_tbl">
+        <PropertyRef Name="acc_c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Receipt_payment_tbl_Acc_c">
+    <End Type="CashDbModel.Acc_c" Role="Acc_c" Multiplicity="0..1" />
+    <End Type="CashDbModel.Sales_Receipt_payment_tbl" Role="Sales_Receipt_payment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_c">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sales_Receipt_payment_tbl">
+        <PropertyRef Name="Cash_hold_acc_c" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Installment_tbl_Acc_d">
+    <End Type="CashDbModel.Acc_d" Role="Acc_d" Multiplicity="0..1" />
+    <End Type="CashDbModel.Installment_tbl" Role="Installment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_d">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Installment_tbl">
+        <PropertyRef Name="Cash_hold_acc_d" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_invoice_tbl_Acc_d">
+    <End Type="CashDbModel.Acc_d" Role="Acc_d" Multiplicity="0..1" />
+    <End Type="CashDbModel.Purchase_invoice_tbl" Role="Purchase_invoice_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_d">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase_invoice_tbl">
+        <PropertyRef Name="acc_d_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_invoice_tbl_Acc_d">
+    <End Type="CashDbModel.Acc_d" Role="Acc_d" Multiplicity="0..1" />
+    <End Type="CashDbModel.Sales_invoice_tbl" Role="Sales_invoice_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_d">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_invoice_tbl">
+        <PropertyRef Name="acc_d_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Receipt_payment_tbl_Acc_d">
+    <End Type="CashDbModel.Acc_d" Role="Acc_d" Multiplicity="0..1" />
+    <End Type="CashDbModel.Sales_Receipt_payment_tbl" Role="Sales_Receipt_payment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acc_d">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_Receipt_payment_tbl">
+        <PropertyRef Name="Cash_hold_acc_d" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_Calender_tbl">
+    <End Type="CashDbModel.Calender_tbl" Role="Calender_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Company_tbl" Role="Company_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Calender_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company_tbl">
+        <PropertyRef Name="Calendar_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_tbl_City_tbl">
+    <End Type="CashDbModel.City_tbl" Role="City_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Company_tbl" Role="Company_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company_tbl">
+        <PropertyRef Name="City_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_tbl_City_tbl1">
+    <End Type="CashDbModel.City_tbl" Role="City_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Company_tbl" Role="Company_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company_tbl">
+        <PropertyRef Name="City2_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_tbl_City_tbl">
+    <End Type="CashDbModel.City_tbl" Role="City_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Customer_tbl" Role="Customer_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer_tbl">
+        <PropertyRef Name="City_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Store_tbl_City_tbl">
+    <End Type="CashDbModel.City_tbl" Role="City_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Store_tbl" Role="Store_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Store_tbl">
+        <PropertyRef Name="City_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vendors_tbl_City_tbl">
+    <End Type="CashDbModel.City_tbl" Role="City_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Vendors_tbl" Role="Vendors_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vendors_tbl">
+        <PropertyRef Name="City_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_Currency_tbl">
+    <End Type="CashDbModel.Currency_tbl" Role="Currency_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Company_tbl" Role="Company_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currency_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company_tbl">
+        <PropertyRef Name="Currency_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_Ownership_kind_tbl">
+    <End Type="CashDbModel.Ownership_kind_tbl" Role="Ownership_kind_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Company_tbl" Role="Company_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ownership_kind_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company_tbl">
+        <PropertyRef Name="Ownership_kind_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_tbl_Country_tbl">
+    <End Type="CashDbModel.Country_tbl" Role="Country_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Company_tbl" Role="Company_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company_tbl">
+        <PropertyRef Name="Country_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_tbl_Country_tbl1">
+    <End Type="CashDbModel.Country_tbl" Role="Country_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Company_tbl" Role="Company_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company_tbl">
+        <PropertyRef Name="Country2_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_tbl_Town_tbl">
+    <End Type="CashDbModel.Town_tbl" Role="Town_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Company_tbl" Role="Company_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Town_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company_tbl">
+        <PropertyRef Name="Town_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_tbl_Town_tbl1">
+    <End Type="CashDbModel.Town_tbl" Role="Town_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Company_tbl" Role="Company_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Town_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company_tbl">
+        <PropertyRef Name="Town2_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ownership_person_Company">
+    <End Type="CashDbModel.Company_tbl" Role="Company_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Ownership_person_tbl" Role="Ownership_person_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ownership_person_tbl">
+        <PropertyRef Name="Company_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_tbl_Country_tbl">
+    <End Type="CashDbModel.Country_tbl" Role="Country_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Customer_tbl" Role="Customer_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer_tbl">
+        <PropertyRef Name="Country_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Store_tbl_Country_tbl">
+    <End Type="CashDbModel.Country_tbl" Role="Country_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Store_tbl" Role="Store_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Store_tbl">
+        <PropertyRef Name="Country_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vendors_tbl_Country_tbl">
+    <End Type="CashDbModel.Country_tbl" Role="Country_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Vendors_tbl" Role="Vendors_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vendors_tbl">
+        <PropertyRef Name="Country_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_order_tbl_Currency_tbl">
+    <End Type="CashDbModel.Currency_tbl" Role="Currency_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Purchase_order_tbl" Role="Purchase_order_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currency_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase_order_tbl">
+        <PropertyRef Name="Currency_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Estimate_tbl_Currency_tbl">
+    <End Type="CashDbModel.Currency_tbl" Role="Currency_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Sales_Estimate_tbl" Role="Sales_Estimate_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currency_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_Estimate_tbl">
+        <PropertyRef Name="Currency_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vendors_tbl_Currency_tbl">
+    <End Type="CashDbModel.Currency_tbl" Role="Currency_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Vendors_tbl" Role="Vendors_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currency_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vendors_tbl">
+        <PropertyRef Name="Currency_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_tbl_Project_tbl">
+    <End Type="CashDbModel.Project_tbl" Role="Project_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Customer_tbl" Role="Customer_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer_tbl">
+        <PropertyRef Name="project_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_tbl_Status_tbl">
+    <End Type="CashDbModel.Status_tbl" Role="Status_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Customer_tbl" Role="Customer_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer_tbl">
+        <PropertyRef Name="Customer_activ_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_tbl_Town_tbl">
+    <End Type="CashDbModel.Town_tbl" Role="Town_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Customer_tbl" Role="Customer_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Town_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer_tbl">
+        <PropertyRef Name="Town_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_person_tbl_Customer_tbl">
+    <End Type="CashDbModel.Customer_tbl" Role="Customer_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Sales_person_tbl" Role="Sales_person_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_person_tbl">
+        <PropertyRef Name="Customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Delivery_Purchase_order_Store_tbl">
+    <End Type="CashDbModel.Store_tbl" Role="Store_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Delivery_Purchase_order" Role="Delivery_Purchase_order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Delivery_Purchase_order">
+        <PropertyRef Name="Store_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Delivery_Sales_Estimate_Sales_Estimate_tbl">
+    <End Type="CashDbModel.Sales_Estimate_tbl" Role="Sales_Estimate_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Delivery_Sales_Estimate" Role="Delivery_Sales_Estimate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_Estimate_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Delivery_Sales_Estimate">
+        <PropertyRef Name="Sales_Estimate_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Item_kind_tbl_Descount_type_tbl">
+    <End Type="CashDbModel.Descount_type_tbl" Role="Descount_type_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Item_kind_tbl" Role="Item_kind_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Descount_type_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Item_kind_tbl">
+        <PropertyRef Name="Decount_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Emp_tbl_Emp_work_tbl">
+    <End Type="CashDbModel.Emp_work_tbl" Role="Emp_work_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Emp_tbl" Role="Emp_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Emp_work_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Emp_tbl">
+        <PropertyRef Name="Emp_work_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Emp_tbl_Store_tbl">
+    <End Type="CashDbModel.Store_tbl" Role="Store_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Emp_tbl" Role="Emp_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Emp_tbl">
+        <PropertyRef Name="Store_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Installment_tbl_Sales_invoice_tbl">
+    <End Type="CashDbModel.Sales_invoice_tbl" Role="Sales_invoice_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Installment_tbl" Role="Installment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_invoice_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Installment_tbl">
+        <PropertyRef Name="Sales_invoice_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Item_content_tbl_Items_tbl">
+    <End Type="CashDbModel.Items_tbl" Role="Items_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Item_content_tbl" Role="Item_content_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Items_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Item_content_tbl">
+        <PropertyRef Name="Items_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Item_kind_tbl_Tax_type_tbl">
+    <End Type="CashDbModel.Tax_type_tbl" Role="Tax_type_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Item_kind_tbl" Role="Item_kind_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tax_type_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Item_kind_tbl">
+        <PropertyRef Name="Item_tax_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_tbl_Item_kind_tbl">
+    <End Type="CashDbModel.Item_kind_tbl" Role="Item_kind_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Items_tbl" Role="Items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item_kind_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Items_tbl">
+        <PropertyRef Name="Item_kind_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_tbl_Store_tbl">
+    <End Type="CashDbModel.Store_tbl" Role="Store_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Items_tbl" Role="Items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Items_tbl">
+        <PropertyRef Name="Store_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_tbl_Unit_tbl">
+    <End Type="CashDbModel.Unit_tbl" Role="Unit_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Items_tbl" Role="Items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Items_tbl">
+        <PropertyRef Name="Item_unit_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_order_items_tbl_Items_tbl">
+    <End Type="CashDbModel.Items_tbl" Role="Items_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Purchase_order_items_tbl" Role="Purchase_order_items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Items_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase_order_items_tbl">
+        <PropertyRef Name="Item_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Estimate_items_tbl_Items_tbl">
+    <End Type="CashDbModel.Items_tbl" Role="Items_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Sales_Estimate_items_tbl" Role="Sales_Estimate_items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Items_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_Estimate_items_tbl">
+        <PropertyRef Name="Item_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_invoice_tbl_Payment_method_tbl">
+    <End Type="CashDbModel.Payment_method_tbl" Role="Payment_method_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Purchase_invoice_tbl" Role="Purchase_invoice_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payment_method_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase_invoice_tbl">
+        <PropertyRef Name="Payment_method_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_invoice_tbl_Payment_method_tbl">
+    <End Type="CashDbModel.Payment_method_tbl" Role="Payment_method_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Sales_invoice_tbl" Role="Sales_invoice_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payment_method_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_invoice_tbl">
+        <PropertyRef Name="Payment_method_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_order_tbl_Project_tbl">
+    <End Type="CashDbModel.Project_tbl" Role="Project_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Purchase_order_tbl" Role="Purchase_order_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase_order_tbl">
+        <PropertyRef Name="Project_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_invoice_tbl_Purchase_order_tbl">
+    <End Type="CashDbModel.Purchase_order_tbl" Role="Purchase_order_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Purchase_invoice_tbl" Role="Purchase_invoice_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Purchase_order_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase_invoice_tbl">
+        <PropertyRef Name="Purchase_order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_payment_cheque_tbl_Purchase_invoice_tbl">
+    <End Type="CashDbModel.Purchase_invoice_tbl" Role="Purchase_invoice_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Purchase_payment_cheque_tbl" Role="Purchase_payment_cheque_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Purchase_invoice_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase_payment_cheque_tbl">
+        <PropertyRef Name="Purchase_invoice_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_order_items_tbl_Purchase_order_tbl">
+    <End Type="CashDbModel.Purchase_order_tbl" Role="Purchase_order_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Purchase_order_items_tbl" Role="Purchase_order_items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Purchase_order_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase_order_items_tbl">
+        <PropertyRef Name="Purchase_order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_order_items_tbl_Store_tbl">
+    <End Type="CashDbModel.Store_tbl" Role="Store_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Purchase_order_items_tbl" Role="Purchase_order_items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase_order_items_tbl">
+        <PropertyRef Name="Store_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_order_items_tbl_Unit_tbl">
+    <End Type="CashDbModel.Unit_tbl" Role="Unit_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Purchase_order_items_tbl" Role="Purchase_order_items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase_order_items_tbl">
+        <PropertyRef Name="Unit_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_order_tbl_Status_tbl">
+    <End Type="CashDbModel.Status_tbl" Role="Status_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Purchase_order_tbl" Role="Purchase_order_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase_order_tbl">
+        <PropertyRef Name="Purchase_order_status_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_order_tbl_Vendors_tbl">
+    <End Type="CashDbModel.Vendors_tbl" Role="Vendors_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Purchase_order_tbl" Role="Purchase_order_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vendors_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase_order_tbl">
+        <PropertyRef Name="Vendor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Estimate_items_tbl_Sales_Estimate_tbl">
+    <End Type="CashDbModel.Sales_Estimate_tbl" Role="Sales_Estimate_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Sales_Estimate_items_tbl" Role="Sales_Estimate_items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_Estimate_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_Estimate_items_tbl">
+        <PropertyRef Name="Sales_Estimate_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Estimate_items_tbl_Store_tbl">
+    <End Type="CashDbModel.Store_tbl" Role="Store_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Sales_Estimate_items_tbl" Role="Sales_Estimate_items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_Estimate_items_tbl">
+        <PropertyRef Name="Store_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Estimate_items_tbl_Unit_tbl">
+    <End Type="CashDbModel.Unit_tbl" Role="Unit_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Sales_Estimate_items_tbl" Role="Sales_Estimate_items_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_Estimate_items_tbl">
+        <PropertyRef Name="Unit_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Estimate_tbl_Status_tbl">
+    <End Type="CashDbModel.Status_tbl" Role="Status_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Sales_Estimate_tbl" Role="Sales_Estimate_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_Estimate_tbl">
+        <PropertyRef Name="Estimate_status_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_invoice_tbl_Sales_Estimate_tbl">
+    <End Type="CashDbModel.Sales_Estimate_tbl" Role="Sales_Estimate_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Sales_invoice_tbl" Role="Sales_invoice_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_Estimate_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_invoice_tbl">
+        <PropertyRef Name="Sales_Estimate_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_Receipt_payment_tbl_Sales_invoice_tbl">
+    <End Type="CashDbModel.Sales_invoice_tbl" Role="Sales_invoice_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Sales_Receipt_payment_tbl" Role="Sales_Receipt_payment_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_invoice_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales_Receipt_payment_tbl">
+        <PropertyRef Name="Sales_invoice_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Store_tbl_Town_tbl1">
+    <End Type="CashDbModel.Town_tbl" Role="Town_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Store_tbl" Role="Store_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Town_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Store_tbl">
+        <PropertyRef Name="Town_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vendors_tbl_Town_tbl">
+    <End Type="CashDbModel.Town_tbl" Role="Town_tbl" Multiplicity="0..1" />
+    <End Type="CashDbModel.Vendors_tbl" Role="Vendors_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Town_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vendors_tbl">
+        <PropertyRef Name="Town_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

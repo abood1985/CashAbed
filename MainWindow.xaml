@@ -1,0 +1,1652 @@
+﻿<Window x:Class="Cash_prg.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cash_prg"
+        xmlns:uc_Sales_customer="clr-namespace:Cash_prg.Sales.Customer"
+        mc:Ignorable="d"
+        Title="Cash_Click" Height="650" Width="1200" UseLayoutRounding="True" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+
+    <Grid x:Name="Grid_flaw" >
+        <TabControl Margin="10" BorderBrush="Gainsboro" >
+            <TabControl.Resources>
+                <Style TargetType="TabItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="TabItem">
+                                <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="Gainsboro" CornerRadius="4,4,0,0" Margin="2,0">
+                                    <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="Border" Property="Background" Value="gray" />
+                                        <Setter TargetName="Border" Property="TextBlock.FontSize" Value="22" />
+                                        <Setter TargetName="Border" Property="TextBlock.FontFamily" Value="arial" />
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="False">
+                                        <Setter TargetName="Border" Property="Background" Value="white" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TabControl.Resources>
+             <!--===================================================-->       
+            <TabItem x:Name="A" Header="المبيعات والزبائن" Height="30" VerticalAlignment="Top" Margin="0,0,0,-4">
+                <TabControl >
+                    <TabItem >
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock x:Name="A1"  Text="الزبائن"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--+++++++++++++++++++++++++++-->
+                        <TabControl >
+                            <TabItem >
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock x:Name="A11" Text="الاضافة "/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <uc_Sales_customer:Cust_add_uc></uc_Sales_customer:Cust_add_uc>
+                            </TabItem>
+                            <TabItem x:Name="A12">
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="البحث والتعديل"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem x:Name="A13">
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock   Text="تقارير الزبائن"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                     </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem >
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock x:Name="A2" Text="عرض سعر"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem x:Name="A21">
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="الاضافة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem x:Name="A22">
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="البحث والتعديل"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem x:Name="A23">
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقارير عروض الاسعار"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  x:Name="A3" Text="الارسالية"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="الاضافة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="البحث والتعديل"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقارير الارساليات"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem >
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock x:Name="A4" Text="فواتير المبيعات"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="الاضافة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="البحث والتعديل"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقارير الفواتير"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem >
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock x:Name="A5" Text="فواتير المرجع"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="الاضافة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="البحث والتعديل"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقارير الفواتير المرجعة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem >
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock x:Name="A6" Text="السندات الدائنة"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="الاضافة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="البحث والتعديل"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقارير السندات الدائنة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  x:Name="A7" Text="طرق التحصيل"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="سندات القبض"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="قائمة سندت القبض"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقارير وكشوفات سندات القبض"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقارير متابعة التحصيل النقدي"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="متابعة الاقساط"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="الشيكات الواردة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem >
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock x:Name="A8" Text="تقارير المبيعات"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقارير المبيعات"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                </TabControl>
+            </TabItem>
+             <!--==================================================-->
+            <TabItem x:Name="B" Header="المشتريات والموردين" Height="30" VerticalAlignment="Top" Margin="0,0,0,-4">
+                <TabControl >
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="الموردين"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--+++++++++++++++++++++++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="الاضافة "/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="البحث والتعديل"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقارير الموردين"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="امر الشراء"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="الاضافة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="البحث والتعديل"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقارير امر الشراء"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="الارسالية"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="الاضافة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="البحث والتعديل"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقارير الارساليات الواردة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="فواتير المشتريات والمصاريف"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="الاضافة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="البحث والتعديل"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقارير فواتير المشتريات"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="فواتير مرجع المشتريات"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="الاضافة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="البحث والتعديل"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقارير الفواتير المرجعة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="السندات المدينة"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="الاضافة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="البحث والتعديل"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقارير السندات المدينة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="طرق الدفع للموردين"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="سندات الصرف"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="قائمة سندت الصرف"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقارير وكشوفات سندات الصرف"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقارير متابعة الدفع النقدي"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="الشيكات الصادرة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="تقارير المشتريات"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقارير المشتريات"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                </TabControl>
+            </TabItem>
+            <!--=============================================================-->
+            <TabItem x:Name="C" Header="الاصناف والمخازن" Height="30" VerticalAlignment="Top" Margin="0,0,0,-4">
+                <TabControl >
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="الاصناف"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--+++++++++++++++++++++++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="الاضافة "/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="البحث والتعديل"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقارير الاصناف"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="عمليات وحركة الاصناف"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="نقل الاصناف بين المخزون"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تصنيع صنف محلي جديد"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تسوية الاصناف والفروقات"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="تقارير الاصناف"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقارير حركة الاصناف"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="حركة الاصناف الواردة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="حركة الاصناف الصادرة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="حركة تسوية الاصناف والفروقات"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="حركة التصنيع"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="حركة النقل بين المخازن"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقارير الاصول الثابتة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقارير عمليات التصنيع"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقارير المواد الخام"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="قائمة المخازن"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="الاضافة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="البحث والتعديل"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقارير المخازن"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                                      <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                </TabControl>
+            </TabItem>
+            <!--=============================================================-->
+            <TabItem x:Name="D" Header="الصناديق والبنوك" Height="30" VerticalAlignment="Top" Margin="0,0,0,-4">
+                <TabControl >
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="حسابات البنوك"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--+++++++++++++++++++++++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="الاضافة "/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقرير كشف حساب البنوك"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقرير قائمة تسويات كشف حساب البنك"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="قائمة حسابات الصناديق النقدية"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="إضافة حساب صندوق نقدي"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="تقرير كشف حساب البنك"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                </TabControl>
+            </TabItem>
+            <!--=============================================================-->
+            <TabItem x:Name="E" Header="قائمة المشاريع" Height="30" VerticalAlignment="Top" Margin="0,0,0,-4">
+                <TabControl >
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="المشاريع"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--+++++++++++++++++++++++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="اضافة مشروع جديد "/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="البحث والتعديل"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف المشاريع"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                     </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                </TabControl>
+            </TabItem>
+            <!--=============================================================-->
+            <TabItem x:Name="F" Header="الموظفين" Height="30" VerticalAlignment="Top" Margin="0,0,0,-4">
+                <TabControl >
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="الموظفين"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--+++++++++++++++++++++++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="الاضافة "/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="البحث والتعديل"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="عمليات خاصة بالموظفين"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="مرتبات الموظفين"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="احتساب رواتب الموظفين"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="اعداد كشف رواتب "/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="عمل سلفة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="اضافة مكافئة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="عمل خصومات"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="دفع مكافاة نهاية الخدمة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                </TabControl>
+            </TabItem>
+            <!--==================================================-->
+            <TabItem x:Name="G" Header="قائمة التقارير" Height="30" VerticalAlignment="Top" Margin="0,0,0,-4">
+                <TabControl >
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="التقارير المحاسبية"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--+++++++++++++++++++++++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="شجرة الحسابات "/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف القيود"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="ميزان المراجعة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text=" الارباح والخسائر"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="المركز المالي"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="تقارير المبيعات"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف الزبائن"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف المبيعات والخدمات"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف الفواتير الغير محصلة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="المبيعات حسب الاصناف"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="المبيعات حسب الزبائن"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="المبيعات حسب المشروع"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="الذمم المدينة وفقا لتاريخ الاستحقاق"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="تقارير المشتريات والمصاريف"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف الموردين"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف المشتريات والمصاريف"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="فواتير المشتريات والمصاريف الغير مدفوعة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="المشتريات والمصاريف وفقا للصنف"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="المشتريات وفقا للموردين"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="الذمم وفقا لتاريخ الاستحقاق"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="تقارير الاقساط"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف اقساط العميل"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف الاقساط المستحقة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف الاقساط وفقا لتواريخ استحقاقها"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف الاقساط المسددة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف الاقساط الغير مسددة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف جميع الاقساط"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="تقارير الاصول الثابتة"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف الاصول الثابتة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف الاصول الثابتة المصنفة كاصناف"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف الاصول الثابتة المضافة عن طريق سند صرف"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف الاصول الثابتة المستبعدة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف الاصول الثابتة التفصيلي"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                                       <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="تقارير الموظفين"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="فيشة راتب الموظف"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف حساب الموظفين"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشوفات مكافاة الموظفين"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشوفات الخصومات على الموظفين"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشوفات سلف الموظفين"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشوفات مكافاة نهاية الخدمة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                   <!--++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="تقارير المشاريع"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف حساب المشروع"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف ايرادات ومصاريف المشروع"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            
+                        </TabControl>
+                    </TabItem>
+                       <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                </TabControl>
+            </TabItem>
+            <!--=============================================================-->
+            <TabItem x:Name="H" Header="قائمة الضرائب" Height="30" VerticalAlignment="Top" Margin="0,0,0,-4">
+                <TabControl >
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="ضريبة القيمة المضافة"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--+++++++++++++++++++++++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف المقبوضات والمدفوعات الشهري "/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف الفواتير المبيعات الضريبية"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف المشتريات الضريبية"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف المبيعات الغير ضريبية"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف المدفوعات لضريبة القيمة المضافة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="ضريبة الدخل"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="قائمة الدخل"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف الايصالات المدفوعة لضريبة الدخل"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف استقطاع الموظفين لضريبة الدخل"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="كشف الاستقطاعات المدفوعة لضريبة الدخل"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                      <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                </TabControl>
+            </TabItem>
+            <!--=============================================================-->
+            <TabItem x:Name="I" Header="الأصول الثابتة" Height="30" VerticalAlignment="Top" Margin="0,0,0,-4">
+                <TabControl >
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="الاصول الثابتة"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--+++++++++++++++++++++++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="اضافة حساب اصل ثابت "/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="اضافة اصل ثابت عن طريق فاتورة"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="اضافة اصل ثابت عن طريق سند قيد"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="اضافة سند قيد مصروف اهلاك الاصل"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="استبعاد الاصل الثايت"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            
+                        </TabControl>
+                    </TabItem>
+                   
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                </TabControl>
+            </TabItem>
+            <!--=============================================================-->
+            <TabItem x:Name="J" Header="اعدادات البرنامج" Height="30" VerticalAlignment="Top" Margin="0,0,0,-4">
+                <TabControl >
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="اعدادات الشركة"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--+++++++++++++++++++++++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="البيانات الاساسية"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="التعديل"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="العنوان"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <TabItem>
+                        <TabItem.Header >
+                            <StackPanel >
+                                <TextBlock  Text="اعدادات المستخدمين والصلاحيات"/>
+                                <Image Source="/Images/refresh.png" Width="40" Height="35" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <!--+++++++++++++++++++++++++++-->
+                        <TabControl >
+                            <TabItem>
+                                <TabItem.Header >
+                                    <StackPanel >
+                                        <TextBlock  Text="المستخدمين والصلاحيات"/>
+                                    </StackPanel>
+                                </TabItem.Header>
+                                <!--<my:cars x:Name="cars"/>-->
+                            </TabItem>
+                            
+                        </TabControl>
+                    </TabItem>
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                </TabControl>
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</Window>

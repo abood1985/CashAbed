@@ -1,0 +1,681 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CashDbModelStoreContainer" CdmEntityContainer="CashDbEntities1">
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="CashDbModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="CashDbModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="CashDbModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="CashDbModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CashDbModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="CashDbModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CashDbModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="CashDbModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="CashDbModel.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="Acc_a">
+      <EntityTypeMapping TypeName="CashDbModel.Acc_a">
+        <MappingFragment StoreEntitySet="Acc_a">
+          <ScalarProperty Name="Acc_a_name" ColumnName="Acc_a_name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Acc_b">
+      <EntityTypeMapping TypeName="CashDbModel.Acc_b">
+        <MappingFragment StoreEntitySet="Acc_b">
+          <ScalarProperty Name="Acc_b_belong" ColumnName="Acc_b_belong" />
+          <ScalarProperty Name="Acc_b_name" ColumnName="Acc_b_name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Acc_c">
+      <EntityTypeMapping TypeName="CashDbModel.Acc_c">
+        <MappingFragment StoreEntitySet="Acc_c">
+          <ScalarProperty Name="Acc_c_belong" ColumnName="Acc_c_belong" />
+          <ScalarProperty Name="Acc_c_name" ColumnName="Acc_c_name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Acc_d">
+      <EntityTypeMapping TypeName="CashDbModel.Acc_d">
+        <MappingFragment StoreEntitySet="Acc_d">
+          <ScalarProperty Name="Acc_d_belong" ColumnName="Acc_d_belong" />
+          <ScalarProperty Name="Acc_d_name" ColumnName="Acc_d_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Calender_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Calender_tbl">
+        <MappingFragment StoreEntitySet="Calender_tbl">
+          <ScalarProperty Name="Calender_name" ColumnName="Calender_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="City_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.City_tbl">
+        <MappingFragment StoreEntitySet="City_tbl">
+          <ScalarProperty Name="City_Belong" ColumnName="City_Belong" />
+          <ScalarProperty Name="City_name" ColumnName="City_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Company_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Company_tbl">
+        <MappingFragment StoreEntitySet="Company_tbl">
+          <ScalarProperty Name="Financial_end_date" ColumnName="Financial_end_date" />
+          <ScalarProperty Name="Financial_start_date" ColumnName="Financial_start_date" />
+          <ScalarProperty Name="Financial_year" ColumnName="Financial_year" />
+          <ScalarProperty Name="Calendar_id" ColumnName="Calendar_id" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="Ownership_kind_id" ColumnName="Ownership_kind_id" />
+          <ScalarProperty Name="Tax_income" ColumnName="Tax_income" />
+          <ScalarProperty Name="Tax_aded" ColumnName="Tax_aded" />
+          <ScalarProperty Name="Licensed_operator_no" ColumnName="Licensed_operator_no" />
+          <ScalarProperty Name="Trade_start_date" ColumnName="Trade_start_date" />
+          <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Jawal_no" ColumnName="Jawal_no" />
+          <ScalarProperty Name="Tel_no" ColumnName="Tel_no" />
+          <ScalarProperty Name="Building2_name" ColumnName="Building2_name" />
+          <ScalarProperty Name="Street2_name" ColumnName="Street2_name" />
+          <ScalarProperty Name="Town2_id" ColumnName="Town2_id" />
+          <ScalarProperty Name="City2_id" ColumnName="City2_id" />
+          <ScalarProperty Name="Country2_id" ColumnName="Country2_id" />
+          <ScalarProperty Name="Building_name" ColumnName="Building_name" />
+          <ScalarProperty Name="Street_name" ColumnName="Street_name" />
+          <ScalarProperty Name="Town_id" ColumnName="Town_id" />
+          <ScalarProperty Name="City_id" ColumnName="City_id" />
+          <ScalarProperty Name="Country_id" ColumnName="Country_id" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="Currency_code" ColumnName="Currency_code" />
+          <ScalarProperty Name="Trade_RegNo" ColumnName="Trade_RegNo" />
+          <ScalarProperty Name="Trade_feacher" ColumnName="Trade_feacher" />
+          <ScalarProperty Name="Trade_name" ColumnName="Trade_name" />
+          <ScalarProperty Name="Company_name" ColumnName="Company_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Country_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Country_tbl">
+        <MappingFragment StoreEntitySet="Country_tbl">
+          <ScalarProperty Name="Contry_name" ColumnName="Contry_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Currency_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Currency_tbl">
+        <MappingFragment StoreEntitySet="Currency_tbl">
+          <ScalarProperty Name="Currency_name" ColumnName="Currency_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customer_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Customer_tbl">
+        <MappingFragment StoreEntitySet="Customer_tbl">
+          <ScalarProperty Name="Payment_preferred_id" ColumnName="Payment_preferred_id" />
+          <ScalarProperty Name="Opining_balance" ColumnName="Opining_balance" />
+          <ScalarProperty Name="Twitter" ColumnName="Twitter" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Street_name" ColumnName="Street_name" />
+          <ScalarProperty Name="Town_id" ColumnName="Town_id" />
+          <ScalarProperty Name="City_id" ColumnName="City_id" />
+          <ScalarProperty Name="Country_id" ColumnName="Country_id" />
+          <ScalarProperty Name="Customer_Website" ColumnName="Customer_Website" />
+          <ScalarProperty Name="Customer_Notes" ColumnName="Customer_Notes" />
+          <ScalarProperty Name="Currency_id" ColumnName="Currency_id" />
+          <ScalarProperty Name="Customer_payment_terms" ColumnName="Customer_payment_terms" />
+          <ScalarProperty Name="Customer_Mobile" ColumnName="Customer_Mobile" />
+          <ScalarProperty Name="Customer_Phone" ColumnName="Customer_Phone" />
+          <ScalarProperty Name="Customer_Email" ColumnName="Customer_Email" />
+          <ScalarProperty Name="Customer_last_name" ColumnName="Customer_last_name" />
+          <ScalarProperty Name="Customer_first_name" ColumnName="Customer_first_name" />
+          <ScalarProperty Name="Customer_activ_id" ColumnName="Customer_activ_id" />
+          <ScalarProperty Name="Customer_display_name" ColumnName="Customer_display_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Delivery_Purchase_order">
+      <EntityTypeMapping TypeName="CashDbModel.Delivery_Purchase_order">
+        <MappingFragment StoreEntitySet="Delivery_Purchase_order">
+          <ScalarProperty Name="Delivery_recipient" ColumnName="Delivery_recipient" />
+          <ScalarProperty Name="Delivery_tirms_conditions" ColumnName="Delivery_tirms_conditions" />
+          <ScalarProperty Name="Delivery_note" ColumnName="Delivery_note" />
+          <ScalarProperty Name="Store_id" ColumnName="Store_id" />
+          <ScalarProperty Name="Delivery_date" ColumnName="Delivery_date" />
+          <ScalarProperty Name="Purchase_order_id" ColumnName="Purchase_order_id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Delivery_Sales_Estimate">
+      <EntityTypeMapping TypeName="CashDbModel.Delivery_Sales_Estimate">
+        <MappingFragment StoreEntitySet="Delivery_Sales_Estimate">
+          <ScalarProperty Name="Delivery_recipient" ColumnName="Delivery_recipient" />
+          <ScalarProperty Name="Delivery_tirms_conditions" ColumnName="Delivery_tirms_conditions" />
+          <ScalarProperty Name="Delivery_note" ColumnName="Delivery_note" />
+          <ScalarProperty Name="Sails_person" ColumnName="Sails_person" />
+          <ScalarProperty Name="Sales_Estimate_status" ColumnName="Sales_Estimate_status" />
+          <ScalarProperty Name="Expiry_date" ColumnName="Expiry_date" />
+          <ScalarProperty Name="Delivery_date" ColumnName="Delivery_date" />
+          <ScalarProperty Name="Sales_Estimate_id" ColumnName="Sales_Estimate_id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Descount_type_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Descount_type_tbl">
+        <MappingFragment StoreEntitySet="Descount_type_tbl">
+          <ScalarProperty Name="Descount_percent" ColumnName="Descount_percent" />
+          <ScalarProperty Name="Descount_name" ColumnName="Descount_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emp_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Emp_tbl">
+        <MappingFragment StoreEntitySet="Emp_tbl">
+          <ScalarProperty Name="t1030" ColumnName="t1030" />
+          <ScalarProperty Name="t1029" ColumnName="t1029" />
+          <ScalarProperty Name="t1028" ColumnName="t1028" />
+          <ScalarProperty Name="t1027" ColumnName="t1027" />
+          <ScalarProperty Name="t1026" ColumnName="t1026" />
+          <ScalarProperty Name="t1025" ColumnName="t1025" />
+          <ScalarProperty Name="t1024" ColumnName="t1024" />
+          <ScalarProperty Name="t1023" ColumnName="t1023" />
+          <ScalarProperty Name="t1022" ColumnName="t1022" />
+          <ScalarProperty Name="t1021" ColumnName="t1021" />
+          <ScalarProperty Name="t1020" ColumnName="t1020" />
+          <ScalarProperty Name="t1019" ColumnName="t1019" />
+          <ScalarProperty Name="t1018" ColumnName="t1018" />
+          <ScalarProperty Name="t1017" ColumnName="t1017" />
+          <ScalarProperty Name="t1016" ColumnName="t1016" />
+          <ScalarProperty Name="t1015" ColumnName="t1015" />
+          <ScalarProperty Name="t1014" ColumnName="t1014" />
+          <ScalarProperty Name="t1013" ColumnName="t1013" />
+          <ScalarProperty Name="t1012" ColumnName="t1012" />
+          <ScalarProperty Name="t1011" ColumnName="t1011" />
+          <ScalarProperty Name="t1010" ColumnName="t1010" />
+          <ScalarProperty Name="t109" ColumnName="t109" />
+          <ScalarProperty Name="t108" ColumnName="t108" />
+          <ScalarProperty Name="t107" ColumnName="t107" />
+          <ScalarProperty Name="t106" ColumnName="t106" />
+          <ScalarProperty Name="t105" ColumnName="t105" />
+          <ScalarProperty Name="t104" ColumnName="t104" />
+          <ScalarProperty Name="t103" ColumnName="t103" />
+          <ScalarProperty Name="t102" ColumnName="t102" />
+          <ScalarProperty Name="t101" ColumnName="t101" />
+          <ScalarProperty Name="t10" ColumnName="t10" />
+          <ScalarProperty Name="t9" ColumnName="t9" />
+          <ScalarProperty Name="t8" ColumnName="t8" />
+          <ScalarProperty Name="t7" ColumnName="t7" />
+          <ScalarProperty Name="t6" ColumnName="t6" />
+          <ScalarProperty Name="t5" ColumnName="t5" />
+          <ScalarProperty Name="t4" ColumnName="t4" />
+          <ScalarProperty Name="t3" ColumnName="t3" />
+          <ScalarProperty Name="t2" ColumnName="t2" />
+          <ScalarProperty Name="t1" ColumnName="t1" />
+          <ScalarProperty Name="Emp_pic" ColumnName="Emp_pic" />
+          <ScalarProperty Name="Emp_seg" ColumnName="Emp_seg" />
+          <ScalarProperty Name="Store_id" ColumnName="Store_id" />
+          <ScalarProperty Name="Emp_work_id" ColumnName="Emp_work_id" />
+          <ScalarProperty Name="Emp_pass" ColumnName="Emp_pass" />
+          <ScalarProperty Name="Emp_name" ColumnName="Emp_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emp_work_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Emp_work_tbl">
+        <MappingFragment StoreEntitySet="Emp_work_tbl">
+          <ScalarProperty Name="Work_name" ColumnName="Work_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Installment_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Installment_tbl">
+        <MappingFragment StoreEntitySet="Installment_tbl">
+          <ScalarProperty Name="Cash_hold_acc_d" ColumnName="Cash_hold_acc_d" />
+          <ScalarProperty Name="Cash_hold_acc_c" ColumnName="Cash_hold_acc_c" />
+          <ScalarProperty Name="Cash_hold_acc_b" ColumnName="Cash_hold_acc_b" />
+          <ScalarProperty Name="Cash_hold_acc_a" ColumnName="Cash_hold_acc_a" />
+          <ScalarProperty Name="kembyala_number" ColumnName="kembyala_number" />
+          <ScalarProperty Name="Guarantor_id_no" ColumnName="Guarantor_id_no" />
+          <ScalarProperty Name="Guarantor_name" ColumnName="Guarantor_name" />
+          <ScalarProperty Name="Installment_due_amount" ColumnName="Installment_due_amount" />
+          <ScalarProperty Name="Currency_exchange" ColumnName="Currency_exchange" />
+          <ScalarProperty Name="Installment_currency" ColumnName="Installment_currency" />
+          <ScalarProperty Name="Installment_due_date" ColumnName="Installment_due_date" />
+          <ScalarProperty Name="Installment_number" ColumnName="Installment_number" />
+          <ScalarProperty Name="Installment_start_date" ColumnName="Installment_start_date" />
+          <ScalarProperty Name="Installment_date" ColumnName="Installment_date" />
+          <ScalarProperty Name="Sales_invoice_id" ColumnName="Sales_invoice_id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Item_content_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Item_content_tbl">
+        <MappingFragment StoreEntitySet="Item_content_tbl">
+          <ScalarProperty Name="Content_name" ColumnName="Content_name" />
+          <ScalarProperty Name="Items_id" ColumnName="Items_id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Item_kind_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Item_kind_tbl">
+        <MappingFragment StoreEntitySet="Item_kind_tbl">
+          <ScalarProperty Name="Decount_type_id" ColumnName="Decount_type_id" />
+          <ScalarProperty Name="Item_tax_id" ColumnName="Item_tax_id" />
+          <ScalarProperty Name="Item_kind_name" ColumnName="Item_kind_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Items_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Items_tbl">
+        <MappingFragment StoreEntitySet="Items_tbl">
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="Item_feacher_color" ColumnName="Item_feacher_color" />
+          <ScalarProperty Name="Cost_sold_goods_acc_d_id" ColumnName="Cost_sold_goods_acc_d_id" />
+          <ScalarProperty Name="Cost_sold_goods_acc_c_id" ColumnName="Cost_sold_goods_acc_c_id" />
+          <ScalarProperty Name="Cost_sold_goods_acc_b_id" ColumnName="Cost_sold_goods_acc_b_id" />
+          <ScalarProperty Name="Cost_sold_goods_acc_a_id" ColumnName="Cost_sold_goods_acc_a_id" />
+          <ScalarProperty Name="Item_point_reorder" ColumnName="Item_point_reorder" />
+          <ScalarProperty Name="Item_purchase_acc_d_id" ColumnName="Item_purchase_acc_d_id" />
+          <ScalarProperty Name="Item_purchase_acc_c_id" ColumnName="Item_purchase_acc_c_id" />
+          <ScalarProperty Name="Item_purchase_acc_b_id" ColumnName="Item_purchase_acc_b_id" />
+          <ScalarProperty Name="Item_purchase_acc_a_id" ColumnName="Item_purchase_acc_a_id" />
+          <ScalarProperty Name="Item_sales_acc_d_id" ColumnName="Item_sales_acc_d_id" />
+          <ScalarProperty Name="Item_sales_acc_c_id" ColumnName="Item_sales_acc_c_id" />
+          <ScalarProperty Name="Item_sales_acc_b_id" ColumnName="Item_sales_acc_b_id" />
+          <ScalarProperty Name="Item_sales_acc_a_id" ColumnName="Item_sales_acc_a_id" />
+          <ScalarProperty Name="Item_price_sell" ColumnName="Item_price_sell" />
+          <ScalarProperty Name="Item_unit_id" ColumnName="Item_unit_id" />
+          <ScalarProperty Name="Item_quantity" ColumnName="Item_quantity" />
+          <ScalarProperty Name="Item_content_id" ColumnName="Item_content_id" />
+          <ScalarProperty Name="Item_description" ColumnName="Item_description" />
+          <ScalarProperty Name="Item_name" ColumnName="Item_name" />
+          <ScalarProperty Name="Item_kind_id" ColumnName="Item_kind_id" />
+          <ScalarProperty Name="Store_id" ColumnName="Store_id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ownership_kind_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Ownership_kind_tbl">
+        <MappingFragment StoreEntitySet="Ownership_kind_tbl">
+          <ScalarProperty Name="Ownership_tax_add" ColumnName="Ownership_tax_add" />
+          <ScalarProperty Name="Ownership_name" ColumnName="Ownership_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ownership_person_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Ownership_person_tbl">
+        <MappingFragment StoreEntitySet="Ownership_person_tbl">
+          <ScalarProperty Name="Person_id" ColumnName="Person_id" />
+          <ScalarProperty Name="Person_family" ColumnName="Person_family" />
+          <ScalarProperty Name="Person_father" ColumnName="Person_father" />
+          <ScalarProperty Name="Person_name" ColumnName="Person_name" />
+          <ScalarProperty Name="Company_id" ColumnName="Company_id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payment_method_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Payment_method_tbl">
+        <MappingFragment StoreEntitySet="Payment_method_tbl">
+          <ScalarProperty Name="Payment_name" ColumnName="Payment_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Project_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Project_tbl">
+        <MappingFragment StoreEntitySet="Project_tbl">
+          <ScalarProperty Name="Project_note" ColumnName="Project_note" />
+          <ScalarProperty Name="Project_name" ColumnName="Project_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchase_invoice_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Purchase_invoice_tbl">
+        <MappingFragment StoreEntitySet="Purchase_invoice_tbl">
+          <ScalarProperty Name="Received_payment" ColumnName="Received_payment" />
+          <ScalarProperty Name="Cheque_amount" ColumnName="Cheque_amount" />
+          <ScalarProperty Name="Debit_amount" ColumnName="Debit_amount" />
+          <ScalarProperty Name="acc_d_id" ColumnName="acc_d_id" />
+          <ScalarProperty Name="acc_c_id" ColumnName="acc_c_id" />
+          <ScalarProperty Name="acc_b_id" ColumnName="acc_b_id" />
+          <ScalarProperty Name="acc_a_id" ColumnName="acc_a_id" />
+          <ScalarProperty Name="Cash" ColumnName="Cash" />
+          <ScalarProperty Name="Payment_method_id" ColumnName="Payment_method_id" />
+          <ScalarProperty Name="Invoice_tirms_conditions" ColumnName="Invoice_tirms_conditions" />
+          <ScalarProperty Name="Invoice_note" ColumnName="Invoice_note" />
+          <ScalarProperty Name="Invoice_amount_after_tax" ColumnName="Invoice_amount_after_tax" />
+          <ScalarProperty Name="Invoice_level_tax_percent" ColumnName="Invoice_level_tax_percent" />
+          <ScalarProperty Name="Invoice_level_tax_type" ColumnName="Invoice_level_tax_type" />
+          <ScalarProperty Name="Invoice_level_tax" ColumnName="Invoice_level_tax" />
+          <ScalarProperty Name="Invoice_amount_before_tax" ColumnName="Invoice_amount_before_tax" />
+          <ScalarProperty Name="Is_invoice_taxable" ColumnName="Is_invoice_taxable" />
+          <ScalarProperty Name="Invoice_status" ColumnName="Invoice_status" />
+          <ScalarProperty Name="Purchase_invoice_due_date" ColumnName="Purchase_invoice_due_date" />
+          <ScalarProperty Name="Purchase_invoice_date" ColumnName="Purchase_invoice_date" />
+          <ScalarProperty Name="Purchase_order_id" ColumnName="Purchase_order_id" />
+          <ScalarProperty Name="Purchase_invoice_number" ColumnName="Purchase_invoice_number" />
+          <ScalarProperty Name="Branch_name" ColumnName="Branch_name" />
+          <ScalarProperty Name="Vendor_tax_num" ColumnName="Vendor_tax_num" />
+          <ScalarProperty Name="Vendor_name" ColumnName="Vendor_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchase_order_items_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Purchase_order_items_tbl">
+        <MappingFragment StoreEntitySet="Purchase_order_items_tbl">
+          <ScalarProperty Name="Enclude_delivery" ColumnName="Enclude_delivery" />
+          <ScalarProperty Name="Enclude_invoice" ColumnName="Enclude_invoice" />
+          <ScalarProperty Name="Amount_before_tax" ColumnName="Amount_before_tax" />
+          <ScalarProperty Name="Amount_after_tax" ColumnName="Amount_after_tax" />
+          <ScalarProperty Name="Discount_amount_item" ColumnName="Discount_amount_item" />
+          <ScalarProperty Name="Descount_percent" ColumnName="Descount_percent" />
+          <ScalarProperty Name="Descount_type" ColumnName="Descount_type" />
+          <ScalarProperty Name="Item_tax_amount" ColumnName="Item_tax_amount" />
+          <ScalarProperty Name="Item_tax_percent" ColumnName="Item_tax_percent" />
+          <ScalarProperty Name="Item_tax_type" ColumnName="Item_tax_type" />
+          <ScalarProperty Name="Item_tax" ColumnName="Item_tax" />
+          <ScalarProperty Name="Store_id" ColumnName="Store_id" />
+          <ScalarProperty Name="Item_price" ColumnName="Item_price" />
+          <ScalarProperty Name="Unit_id" ColumnName="Unit_id" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Item_Services" ColumnName="Item_Services" />
+          <ScalarProperty Name="Item_id" ColumnName="Item_id" />
+          <ScalarProperty Name="Purchase_order_id" ColumnName="Purchase_order_id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchase_order_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Purchase_order_tbl">
+        <MappingFragment StoreEntitySet="Purchase_order_tbl">
+          <ScalarProperty Name="Purchase_order_terms_conditions" ColumnName="Purchase_order_terms_conditions" />
+          <ScalarProperty Name="Purchase_order_notes" ColumnName="Purchase_order_notes" />
+          <ScalarProperty Name="Purchase_order_amount_after_tax" ColumnName="Purchase_order_amount_after_tax" />
+          <ScalarProperty Name="Purchase_order_level_tax_percent" ColumnName="Purchase_order_level_tax_percent" />
+          <ScalarProperty Name="Purchase_order_level_tax_type" ColumnName="Purchase_order_level_tax_type" />
+          <ScalarProperty Name="Purchase_order_level_tax" ColumnName="Purchase_order_level_tax" />
+          <ScalarProperty Name="Purchase_order_amount_before_tax" ColumnName="Purchase_order_amount_before_tax" />
+          <ScalarProperty Name="Exchange_rate" ColumnName="Exchange_rate" />
+          <ScalarProperty Name="Currency_id" ColumnName="Currency_id" />
+          <ScalarProperty Name="Purchase_order_status_id" ColumnName="Purchase_order_status_id" />
+          <ScalarProperty Name="Project_id" ColumnName="Project_id" />
+          <ScalarProperty Name="Purchase_order_expert_date" ColumnName="Purchase_order_expert_date" />
+          <ScalarProperty Name="Purchase_order_date" ColumnName="Purchase_order_date" />
+          <ScalarProperty Name="Vendor_id" ColumnName="Vendor_id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchase_payment_cheque_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Purchase_payment_cheque_tbl">
+        <MappingFragment StoreEntitySet="Purchase_payment_cheque_tbl">
+          <ScalarProperty Name="Currency_exchange" ColumnName="Currency_exchange" />
+          <ScalarProperty Name="Cheque_currency" ColumnName="Cheque_currency" />
+          <ScalarProperty Name="Name_hold_cheque" ColumnName="Name_hold_cheque" />
+          <ScalarProperty Name="Bank_name" ColumnName="Bank_name" />
+          <ScalarProperty Name="Cheque_due_date" ColumnName="Cheque_due_date" />
+          <ScalarProperty Name="Cheque_amount" ColumnName="Cheque_amount" />
+          <ScalarProperty Name="Cheque_num" ColumnName="Cheque_num" />
+          <ScalarProperty Name="Purchase_invoice_id" ColumnName="Purchase_invoice_id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales_Estimate_items_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Sales_Estimate_items_tbl">
+        <MappingFragment StoreEntitySet="Sales_Estimate_items_tbl">
+          <ScalarProperty Name="Amount_before_tax" ColumnName="Amount_before_tax" />
+          <ScalarProperty Name="Amount_after_tax" ColumnName="Amount_after_tax" />
+          <ScalarProperty Name="Discount_amount_item" ColumnName="Discount_amount_item" />
+          <ScalarProperty Name="Descount_percent" ColumnName="Descount_percent" />
+          <ScalarProperty Name="Descount_type" ColumnName="Descount_type" />
+          <ScalarProperty Name="Item_tax_amount" ColumnName="Item_tax_amount" />
+          <ScalarProperty Name="Item_tax_percent" ColumnName="Item_tax_percent" />
+          <ScalarProperty Name="Item_tax_type" ColumnName="Item_tax_type" />
+          <ScalarProperty Name="Item_tax" ColumnName="Item_tax" />
+          <ScalarProperty Name="Store_id" ColumnName="Store_id" />
+          <ScalarProperty Name="Item_price" ColumnName="Item_price" />
+          <ScalarProperty Name="Unit_id" ColumnName="Unit_id" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Item_id" ColumnName="Item_id" />
+          <ScalarProperty Name="Sales_Estimate_id" ColumnName="Sales_Estimate_id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales_Estimate_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Sales_Estimate_tbl">
+        <MappingFragment StoreEntitySet="Sales_Estimate_tbl">
+          <ScalarProperty Name="Purchase_order_terms_conditions" ColumnName="Purchase_order_terms_conditions" />
+          <ScalarProperty Name="Purchase_order_notes" ColumnName="Purchase_order_notes" />
+          <ScalarProperty Name="Shipping_charge" ColumnName="Shipping_charge" />
+          <ScalarProperty Name="Purchase_order_amount_after_tax" ColumnName="Purchase_order_amount_after_tax" />
+          <ScalarProperty Name="Sales_Estimate_level_tax_percent" ColumnName="Sales_Estimate_level_tax_percent" />
+          <ScalarProperty Name="Sales_Estimate_level_tax_type" ColumnName="Sales_Estimate_level_tax_type" />
+          <ScalarProperty Name="Sales_Estimate_level_tax" ColumnName="Sales_Estimate_level_tax" />
+          <ScalarProperty Name="Sales_Estimate_amount_before_tax" ColumnName="Sales_Estimate_amount_before_tax" />
+          <ScalarProperty Name="Exchange_rate" ColumnName="Exchange_rate" />
+          <ScalarProperty Name="Currency_id" ColumnName="Currency_id" />
+          <ScalarProperty Name="Sails_person" ColumnName="Sails_person" />
+          <ScalarProperty Name="Estimate_status_id" ColumnName="Estimate_status_id" />
+          <ScalarProperty Name="Project_name" ColumnName="Project_name" />
+          <ScalarProperty Name="Estimate_expert_date" ColumnName="Estimate_expert_date" />
+          <ScalarProperty Name="Estimate_date" ColumnName="Estimate_date" />
+          <ScalarProperty Name="Customer_name" ColumnName="Customer_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales_invoice_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Sales_invoice_tbl">
+        <MappingFragment StoreEntitySet="Sales_invoice_tbl">
+          <ScalarProperty Name="Received_payment" ColumnName="Received_payment" />
+          <ScalarProperty Name="Installment_amount" ColumnName="Installment_amount" />
+          <ScalarProperty Name="Cheque_amount" ColumnName="Cheque_amount" />
+          <ScalarProperty Name="Debit_amount" ColumnName="Debit_amount" />
+          <ScalarProperty Name="acc_d_id" ColumnName="acc_d_id" />
+          <ScalarProperty Name="acc_c_id" ColumnName="acc_c_id" />
+          <ScalarProperty Name="acc_b_id" ColumnName="acc_b_id" />
+          <ScalarProperty Name="acc_a_id" ColumnName="acc_a_id" />
+          <ScalarProperty Name="Cash" ColumnName="Cash" />
+          <ScalarProperty Name="Payment_method_id" ColumnName="Payment_method_id" />
+          <ScalarProperty Name="Invoice_tirms_conditions" ColumnName="Invoice_tirms_conditions" />
+          <ScalarProperty Name="Invoice_note" ColumnName="Invoice_note" />
+          <ScalarProperty Name="Sarvice_id" ColumnName="Sarvice_id" />
+          <ScalarProperty Name="Invoice_amount_after_tax" ColumnName="Invoice_amount_after_tax" />
+          <ScalarProperty Name="Invoice_level_tax_percent" ColumnName="Invoice_level_tax_percent" />
+          <ScalarProperty Name="Invoice_level_tax_type" ColumnName="Invoice_level_tax_type" />
+          <ScalarProperty Name="Invoice_level_tax" ColumnName="Invoice_level_tax" />
+          <ScalarProperty Name="Invoice_amount_before_tax" ColumnName="Invoice_amount_before_tax" />
+          <ScalarProperty Name="Is_invoice_taxable" ColumnName="Is_invoice_taxable" />
+          <ScalarProperty Name="Invoice_status" ColumnName="Invoice_status" />
+          <ScalarProperty Name="Sales_invoice_due_date" ColumnName="Sales_invoice_due_date" />
+          <ScalarProperty Name="Sails_invoice_date" ColumnName="Sails_invoice_date" />
+          <ScalarProperty Name="Purchase_invoice_number" ColumnName="Purchase_invoice_number" />
+          <ScalarProperty Name="Branch_name" ColumnName="Branch_name" />
+          <ScalarProperty Name="Sales_Estimate_id" ColumnName="Sales_Estimate_id" />
+          <ScalarProperty Name="Customer_name" ColumnName="Customer_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales_person_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Sales_person_tbl">
+        <MappingFragment StoreEntitySet="Sales_person_tbl">
+          <ScalarProperty Name="Sales_person_name" ColumnName="Sales_person_name" />
+          <ScalarProperty Name="Customer_id" ColumnName="Customer_id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales_Receipt_payment_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Sales_Receipt_payment_tbl">
+        <MappingFragment StoreEntitySet="Sales_Receipt_payment_tbl">
+          <ScalarProperty Name="Name_hold_cheque" ColumnName="Name_hold_cheque" />
+          <ScalarProperty Name="Bank_name" ColumnName="Bank_name" />
+          <ScalarProperty Name="Cheque_due_date" ColumnName="Cheque_due_date" />
+          <ScalarProperty Name="Cheque_num" ColumnName="Cheque_num" />
+          <ScalarProperty Name="Amount_words" ColumnName="Amount_words" />
+          <ScalarProperty Name="Cash_hold_acc_d" ColumnName="Cash_hold_acc_d" />
+          <ScalarProperty Name="Cash_hold_acc_c" ColumnName="Cash_hold_acc_c" />
+          <ScalarProperty Name="Cash_hold_acc_b" ColumnName="Cash_hold_acc_b" />
+          <ScalarProperty Name="Cash_hold_acc_a" ColumnName="Cash_hold_acc_a" />
+          <ScalarProperty Name="Currency_exchange" ColumnName="Currency_exchange" />
+          <ScalarProperty Name="currency" ColumnName="currency" />
+          <ScalarProperty Name="Payment_method" ColumnName="Payment_method" />
+          <ScalarProperty Name="Payment_date" ColumnName="Payment_date" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Sales_invoice_id" ColumnName="Sales_invoice_id" />
+          <ScalarProperty Name="Customer_name" ColumnName="Customer_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sarvice_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Sarvice_tbl">
+        <MappingFragment StoreEntitySet="Sarvice_tbl">
+          <ScalarProperty Name="Sarvice_name" ColumnName="Sarvice_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Status_tbl">
+        <MappingFragment StoreEntitySet="Status_tbl">
+          <ScalarProperty Name="Status_name" ColumnName="Status_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Store_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Store_tbl">
+        <MappingFragment StoreEntitySet="Store_tbl">
+          <ScalarProperty Name="Building_name" ColumnName="Building_name" />
+          <ScalarProperty Name="Street_name" ColumnName="Street_name" />
+          <ScalarProperty Name="Town_id" ColumnName="Town_id" />
+          <ScalarProperty Name="City_id" ColumnName="City_id" />
+          <ScalarProperty Name="Country_id" ColumnName="Country_id" />
+          <ScalarProperty Name="Store_name" ColumnName="Store_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="CashDbModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tax_type_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Tax_type_tbl">
+        <MappingFragment StoreEntitySet="Tax_type_tbl">
+          <ScalarProperty Name="Tax_percent" ColumnName="Tax_percent" />
+          <ScalarProperty Name="Tax_name" ColumnName="Tax_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Town_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Town_tbl">
+        <MappingFragment StoreEntitySet="Town_tbl">
+          <ScalarProperty Name="Town_belong" ColumnName="Town_belong" />
+          <ScalarProperty Name="Town_name" ColumnName="Town_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Unit_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Unit_tbl">
+        <MappingFragment StoreEntitySet="Unit_tbl">
+          <ScalarProperty Name="Unit_name" ColumnName="Unit_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vendors_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Vendors_tbl">
+        <MappingFragment StoreEntitySet="Vendors_tbl">
+          <ScalarProperty Name="Payment_preferred" ColumnName="Payment_preferred" />
+          <ScalarProperty Name="Opining_balance" ColumnName="Opining_balance" />
+          <ScalarProperty Name="Twitter" ColumnName="Twitter" />
+          <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Street_name" ColumnName="Street_name" />
+          <ScalarProperty Name="Town_id" ColumnName="Town_id" />
+          <ScalarProperty Name="City_id" ColumnName="City_id" />
+          <ScalarProperty Name="Country_id" ColumnName="Country_id" />
+          <ScalarProperty Name="Vendo_Website" ColumnName="Vendo_Website" />
+          <ScalarProperty Name="Vendo_Notes" ColumnName="Vendo_Notes" />
+          <ScalarProperty Name="Currency_id" ColumnName="Currency_id" />
+          <ScalarProperty Name="Vender_payment_terms" ColumnName="Vender_payment_terms" />
+          <ScalarProperty Name="Vendo_Mobile" ColumnName="Vendo_Mobile" />
+          <ScalarProperty Name="Vendo_Phone" ColumnName="Vendo_Phone" />
+          <ScalarProperty Name="Vendo_Email" ColumnName="Vendo_Email" />
+          <ScalarProperty Name="Vendor_last_name" ColumnName="Vendor_last_name" />
+          <ScalarProperty Name="Vendor_first_name" ColumnName="Vendor_first_name" />
+          <ScalarProperty Name="Vendor_activ" ColumnName="Vendor_activ" />
+          <ScalarProperty Name="Vendor_tax_num" ColumnName="Vendor_tax_num" />
+          <ScalarProperty Name="Vendor_display_name" ColumnName="Vendor_display_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchase_payment_tbl">
+      <EntityTypeMapping TypeName="CashDbModel.Purchase_payment_tbl">
+        <MappingFragment StoreEntitySet="Purchase_payment_tbl">
+          <ScalarProperty Name="Currency_exchange" ColumnName="Currency_exchange" />
+          <ScalarProperty Name="currency" ColumnName="currency" />
+          <ScalarProperty Name="Pay_date" ColumnName="Pay_date" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Purchase_invoice_id" ColumnName="Purchase_invoice_id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
