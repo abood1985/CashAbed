@@ -21,7 +21,7 @@ namespace Cash_prg.Sales.Customer
     /// </summary>
     public partial class Cust_add_uc : UserControl
     {
-        CashDbEntities1 context = new CashDbEntities1();
+        CashDbEntities context = new CashDbEntities();
         CollectionViewSource Cust_source;
 
         public Cust_add_uc()
@@ -192,6 +192,51 @@ namespace Cash_prg.Sales.Customer
 
 
 
+        }
+
+        private void customer_activCBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (customer_activCBox.SelectedValue is null)
+            {
+                if (customer_activCBox.Text == "")
+                {
+                    return;
+                }
+                else
+                {
+                    var fnd = (from s in context.Status_tbl where s.Status_name == customer_activCBox.Text select s).FirstOrDefault<Status_tbl>();
+                    if (fnd is null)
+                    {
+                        //AddChild new
+                        MessageBoxResult result = MessageBox.Show("Add New .\n\nEllement?", "Cash_Click", MessageBoxButton.YesNo);
+                        switch (result)
+                        {
+                            case MessageBoxResult.Yes:
+                                //MyLanguageInfo = new CultureInfo("en-US");
+                                //MessageBox.Show("Hello to you too!", "My App");
+                                int noOfRowInserted = context.Database.ExecuteSqlCommand("insert into Status_tbl(Status_name) values({0})", customer_activCBox.Text);
+                                customer_activCBox.ItemsSource = (from em in context.Status_tbl select new { em.Status_name, em.Id }).ToList();
+                                context.SaveChanges();
+                                break;
+                            case MessageBoxResult.No:
+                                break;
+                            case MessageBoxResult.Cancel:
+                                Class1_Cash.lang_prefared = 1;
+                                break;
+                        }
+                    }
+
+                }
+
+            }
+                    //var cust = context.Status_tbl.Find((int?)customer_activCBox.SelectedValue);
+                    //if (cust is null) { MessageBox.Show("not found"); }
+                    //MessageBox.Show(cust.Status_name);
+                    //MessageBox.Show(cust.);
+                
+            
+                   
+           
         }
     }
 }

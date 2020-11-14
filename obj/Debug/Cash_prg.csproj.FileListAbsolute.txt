@@ -79,7 +79,6 @@ E:\Cash_new\CashAbed\bin\Debug\EntityFramework.dll
 E:\Cash_new\CashAbed\bin\Debug\EntityFramework.SqlServer.dll
 E:\Cash_new\CashAbed\bin\Debug\EntityFramework.xml
 E:\Cash_new\CashAbed\bin\Debug\EntityFramework.SqlServer.xml
-E:\Cash_new\CashAbed\obj\Debug\Cash_prg.csprojAssemblyReference.cache
 E:\Cash_new\CashAbed\obj\Debug\MainWindow.g.cs
 E:\Cash_new\CashAbed\obj\Debug\Sales\Customer\Cust_add_uc.g.cs
 E:\Cash_new\CashAbed\obj\Debug\Sales\Uc_Salesinvoice.g.cs
@@ -102,3 +101,4 @@ E:\Cash_new\CashAbed\obj\Debug\Cash_prg.csproj.CoreCompileInputs.cache
 E:\Cash_new\CashAbed\obj\Debug\Cash_prg.csproj.CopyComplete
 E:\Cash_new\CashAbed\obj\Debug\Cash_prg.exe
 E:\Cash_new\CashAbed\obj\Debug\Cash_prg.pdb
+E:\Cash_new\CashAbed\obj\Debug\Cash_prg.csprojAssemblyReference.cache

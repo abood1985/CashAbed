@@ -17,6 +17,7 @@ namespace Cash_prg
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Payment_method_tbl()
         {
+            this.Customer_tbl = new HashSet<Customer_tbl>();
             this.Purchase_invoice_tbl = new HashSet<Purchase_invoice_tbl>();
             this.Sales_invoice_tbl = new HashSet<Sales_invoice_tbl>();
         }
@@ -24,6 +25,8 @@ namespace Cash_prg
         public int Id { get; set; }
         public string Payment_name { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Customer_tbl> Customer_tbl { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Purchase_invoice_tbl> Purchase_invoice_tbl { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

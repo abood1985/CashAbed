@@ -45,6 +45,7 @@ namespace Cash_prg
     
         public virtual City_tbl City_tbl { get; set; }
         public virtual Country_tbl Country_tbl { get; set; }
+        public virtual Payment_method_tbl Payment_method_tbl { get; set; }
         public virtual Project_tbl Project_tbl { get; set; }
         public virtual Status_tbl Status_tbl { get; set; }
         public virtual Town_tbl Town_tbl { get; set; }

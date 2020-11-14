@@ -1,4 +1,4 @@
-﻿<Window x:Class="Cash_prg.MainWindow"
+﻿<Window  x:Class="Cash_prg.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -37,7 +37,7 @@
                     </Setter>
                 </Style>
             </TabControl.Resources>
-             <!--===================================================-->       
+            <!--===================================================-->
             <TabItem x:Name="A" Header="المبيعات والزبائن" Height="30" VerticalAlignment="Top" Margin="0,0,0,-4">
                 <TabControl >
                     <TabItem >
@@ -74,7 +74,7 @@
                                 <!--<my:cars x:Name="cars"/>-->
                             </TabItem>
                         </TabControl>
-                     </TabItem>
+                    </TabItem>
                     <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
                     <TabItem >
                         <TabItem.Header >
@@ -338,7 +338,7 @@
                     <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
                 </TabControl>
             </TabItem>
-             <!--==================================================-->
+            <!--==================================================-->
             <TabItem x:Name="B" Header="المشتريات والموردين" Height="30" VerticalAlignment="Top" Margin="0,0,0,-4">
                 <TabControl >
                     <TabItem>
@@ -825,7 +825,7 @@
                             </TabItem>
                         </TabControl>
                     </TabItem>
-                                      <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
                 </TabControl>
             </TabItem>
             <!--=============================================================-->
@@ -894,7 +894,7 @@
                             </TabItem>
                         </TabControl>
                     </TabItem>
-                <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
                 </TabControl>
             </TabItem>
             <!--=============================================================-->
@@ -933,7 +933,7 @@
                                 </TabItem.Header>
                                 <!--<my:cars x:Name="cars"/>-->
                             </TabItem>
-                     </TabControl>
+                        </TabControl>
                     </TabItem>
                     <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
                 </TabControl>
@@ -1333,7 +1333,7 @@
                             </TabItem>
                         </TabControl>
                     </TabItem>
-                                       <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
                     <TabItem>
                         <TabItem.Header >
                             <StackPanel >
@@ -1393,7 +1393,7 @@
                             </TabItem>
                         </TabControl>
                     </TabItem>
-                   <!--++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <!--++++++++++++++++++++++++++++++++++++++++++++++++-->
                     <TabItem>
                         <TabItem.Header >
                             <StackPanel >
@@ -1419,10 +1419,10 @@
                                 </TabItem.Header>
                                 <!--<my:cars x:Name="cars"/>-->
                             </TabItem>
-                            
+
                         </TabControl>
                     </TabItem>
-                       <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
                 </TabControl>
             </TabItem>
             <!--=============================================================-->
@@ -1523,7 +1523,7 @@
                             </TabItem>
                         </TabControl>
                     </TabItem>
-                      <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
                 </TabControl>
             </TabItem>
             <!--=============================================================-->
@@ -1578,10 +1578,10 @@
                                 </TabItem.Header>
                                 <!--<my:cars x:Name="cars"/>-->
                             </TabItem>
-                            
+
                         </TabControl>
                     </TabItem>
-                   
+
                     <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
                 </TabControl>
             </TabItem>
@@ -1640,7 +1640,7 @@
                                 </TabItem.Header>
                                 <!--<my:cars x:Name="cars"/>-->
                             </TabItem>
-                            
+
                         </TabControl>
                     </TabItem>
                     <!--+++++++++++++++++++++++++++++++++++++++++++++++++++-->
@@ -1649,4 +1649,4 @@
 
         </TabControl>
     </Grid>
-</Window>
+    </Window> 

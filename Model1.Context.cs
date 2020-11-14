@@ -15,10 +15,10 @@ namespace Cash_prg
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class CashDbEntities1 : DbContext
+    public partial class CashDbEntities : DbContext
     {
-        public CashDbEntities1()
-            : base("name=CashDbEntities1")
+        public CashDbEntities()
+            : base("name=CashDbEntities")
         {
         }
     

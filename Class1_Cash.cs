@@ -10,8 +10,7 @@ using System.Windows.Input;
 namespace Cash_prg
    
 {
- public static  class Class1_Cash
-
+ public static  class Class1_Cash 
     {
         public static int lang_prefared = 1;
        

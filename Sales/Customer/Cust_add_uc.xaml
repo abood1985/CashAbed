@@ -21,7 +21,7 @@
             <Label x:Name="currency_id" VerticalAlignment="Center" Margin="374,278,0,146" HorizontalAlignment="Left" Grid.Column="0" Content="Currency id:"/>
             <ComboBox x:Name="currency_idCBox"  SelectedValuePath="Id" DisplayMemberPath="Currency_name" Width="120" VerticalAlignment="Center" Text="{Binding Currency_id, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="504,280,0,148" Height="22" HorizontalAlignment="Left"/>
             <Label x:Name="customer_activ" VerticalAlignment="Center" Margin="230,6,0,418" HorizontalAlignment="Left" Grid.Column="0" Content="Customer activ:"/>
-            <ComboBox  x:Name="customer_activCBox" SelectedValuePath="Id" DisplayMemberPath="Status_name" Width="120" VerticalAlignment="Center" Text="{Binding Customer_activ, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="327,10,0,418" Height="22" HorizontalAlignment="Left"/>
+            <ComboBox IsEditable="True" x:Name="customer_activCBox" SelectedValuePath="Id" DisplayMemberPath="Status_name" Width="120" VerticalAlignment="Center" Text="{Binding Customer_activ, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="327,10,0,418" Height="22" HorizontalAlignment="Left" LostFocus="customer_activCBox_LostFocus"/>
             <Label x:Name="customer_display_name" VerticalAlignment="Center" Margin="10,44,0,380" HorizontalAlignment="Left" Grid.Column="0" Content="Customer display name:"/>
             <TextBox x:Name="customer_display_nameTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Customer_display_name, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="148,44,0,384" Height="22" HorizontalAlignment="Left"/>
             <Label x:Name="customer_Email" VerticalAlignment="Center" Margin="14,198,0,226" HorizontalAlignment="Left" Grid.Column="0" Content="Customer Email:"/>
@@ -59,7 +59,6 @@
             <Label x:Name="twitter" VerticalAlignment="Center" Margin="81,226,0,198" HorizontalAlignment="Left" Grid.Column="0" Content="Twitter:"/>
             <TextBox x:Name="twitterTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Twitter, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="148,228,0,200" Height="22" HorizontalAlignment="Left"/>
             <Button x:Name="button_add" Content="Add Customer" HorizontalAlignment="Left" Height="42" Margin="552,15,0,0" VerticalAlignment="Top" Width="138" Click="button_add_Click"/>
-            <Button x:Name="button" Content="Button" Background="Black" HorizontalAlignment="Left" Height="162" Margin="884,232,0,0" VerticalAlignment="Top" Width="249"/>
 
         </Grid>
     </Viewbox>

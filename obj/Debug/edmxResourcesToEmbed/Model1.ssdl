@@ -745,6 +745,18 @@ warning 6002: The table/view 'CashDb.dbo.Purchase_payment_tbl' does not have a p
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Customer_tbl_Payment_method_tbl">
+    <End Role="Payment_method_tbl" Type="Self.Payment_method_tbl" Multiplicity="0..1" />
+    <End Role="Customer_tbl" Type="Self.Customer_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payment_method_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer_tbl">
+        <PropertyRef Name="Payment_preferred_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Customer_tbl_Project_tbl">
     <End Role="Project_tbl" Type="Self.Project_tbl" Multiplicity="0..1" />
     <End Role="Customer_tbl" Type="Self.Customer_tbl" Multiplicity="*" />
@@ -1685,6 +1697,10 @@ warning 6002: The table/view 'CashDb.dbo.Purchase_payment_tbl' does not have a p
     </AssociationSet>
     <AssociationSet Name="FK_Customer_tbl_Country_tbl" Association="Self.FK_Customer_tbl_Country_tbl">
       <End Role="Country_tbl" EntitySet="Country_tbl" />
+      <End Role="Customer_tbl" EntitySet="Customer_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_tbl_Payment_method_tbl" Association="Self.FK_Customer_tbl_Payment_method_tbl">
+      <End Role="Payment_method_tbl" EntitySet="Payment_method_tbl" />
       <End Role="Customer_tbl" EntitySet="Customer_tbl" />
     </AssociationSet>
     <AssociationSet Name="FK_Customer_tbl_Project_tbl" Association="Self.FK_Customer_tbl_Project_tbl">
