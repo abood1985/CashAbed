@@ -59,7 +59,7 @@
             <Label x:Name="twitter" VerticalAlignment="Center" Margin="81,226,0,198" HorizontalAlignment="Left" Grid.Column="0" Content="Twitter:"/>
             <TextBox x:Name="twitterTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Twitter, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="148,228,0,200" Height="22" HorizontalAlignment="Left"/>
             <Button x:Name="button_add" Content="Add Customer" HorizontalAlignment="Left" Height="42" Margin="552,15,0,0" VerticalAlignment="Top" Width="138" Click="button_add_Click"/>
-            <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="162" Margin="884,232,0,0" VerticalAlignment="Top" Width="249"/>
+            <Button x:Name="button" Content="Button" Background="Black" HorizontalAlignment="Left" Height="162" Margin="884,232,0,0" VerticalAlignment="Top" Width="249"/>
 
         </Grid>
     </Viewbox>
