@@ -23,7 +23,7 @@ namespace Cash_prg.Sales.Customer
     {
         CashDbEntities context = new CashDbEntities();
         CollectionViewSource Cust_source;
-
+        int pop_flag = 0;
         public Cust_add_uc()
         {
             InitializeComponent();
@@ -208,17 +208,17 @@ namespace Cash_prg.Sales.Customer
                     if (fnd is null)
                     {
                         //AddChild new
-                        MessageBoxResult result = MessageBox.Show("Add New .\n\nEllement?", "Cash_Click", MessageBoxButton.YesNo);
+                        MessageBoxResult result = MessageBox.Show("Add New Element .\n\n " + customer_activCBox.Text, "Cash_Click", MessageBoxButton.YesNo);
                         switch (result)
                         {
                             case MessageBoxResult.Yes:
-                                //MyLanguageInfo = new CultureInfo("en-US");
-                                //MessageBox.Show("Hello to you too!", "My App");
+                               
                                 int noOfRowInserted = context.Database.ExecuteSqlCommand("insert into Status_tbl(Status_name) values({0})", customer_activCBox.Text);
                                 customer_activCBox.ItemsSource = (from em in context.Status_tbl select new { em.Status_name, em.Id }).ToList();
                                 context.SaveChanges();
                                 break;
                             case MessageBoxResult.No:
+                                customer_activCBox.Text = "";
                                 break;
                             case MessageBoxResult.Cancel:
                                 Class1_Cash.lang_prefared = 1;
@@ -233,10 +233,45 @@ namespace Cash_prg.Sales.Customer
                     //if (cust is null) { MessageBox.Show("not found"); }
                     //MessageBox.Show(cust.Status_name);
                     //MessageBox.Show(cust.);
-                
-            
-                   
+        }
+
+        private void button_pop_Click(object sender, RoutedEventArgs e)
+        {
+           if( customer_activCBox.Text == "") { return; }
+            label_pop.Content = "Replace : " + customer_activCBox.Text;
+            text_pop.Text = "";
+            this.Cust_pop.IsOpen = true;
+            pop_flag = 1;
+            //this.text_pop.Visibility = Visibility.Visible;
+        }
+
+        private void pop_btn_replac(object sender, RoutedEventArgs e)
+        {
            
+            if (pop_flag == 1 )
+            {
+                var fnd = (from s in context.Status_tbl where s.Status_name == text_pop.Text select s).FirstOrDefault<Status_tbl>();
+                if (fnd is null)
+                {
+                    int noOfRowupdated = context.Database.ExecuteSqlCommand("update Status_tbl set Status_name = {0} where Id = {1}", text_pop.Text, customer_activCBox.SelectedValue);
+                    customer_activCBox.ItemsSource = (from em in context.Status_tbl select new { em.Status_name, em.Id }).ToList();
+                }
+                else
+                {
+                   MessageBox.Show("element exist");
+                   return; 
+                }
+            }
+
+
+
+            //==================================== 
+            this.Cust_pop.IsOpen = false;
+        }
+
+        private void btn_exit_pop_Click(object sender, RoutedEventArgs e)
+        {
+            this.Cust_pop.IsOpen = false;
         }
     }
 }

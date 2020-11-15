@@ -20,8 +20,7 @@
             <ComboBox x:Name="country_idCBox"  SelectedValuePath="Id" DisplayMemberPath="Contry_name" VerticalAlignment="Center" Text="{Binding Country_id, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="148,141,932,287" Height="22" DropDownClosed="country_idCBox_DropDownClosed"/>
             <Label x:Name="currency_id" VerticalAlignment="Center" Margin="374,278,0,146" HorizontalAlignment="Left" Grid.Column="0" Content="Currency id:"/>
             <ComboBox x:Name="currency_idCBox"  SelectedValuePath="Id" DisplayMemberPath="Currency_name" Width="120" VerticalAlignment="Center" Text="{Binding Currency_id, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="504,280,0,148" Height="22" HorizontalAlignment="Left"/>
-            <Label x:Name="customer_activ" VerticalAlignment="Center" Margin="230,6,0,418" HorizontalAlignment="Left" Grid.Column="0" Content="Customer activ:"/>
-            <ComboBox IsEditable="True" x:Name="customer_activCBox" SelectedValuePath="Id" DisplayMemberPath="Status_name" Width="120" VerticalAlignment="Center" Text="{Binding Customer_activ, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="327,10,0,418" Height="22" HorizontalAlignment="Left" LostFocus="customer_activCBox_LostFocus"/>
+            <Label x:Name="customer_activ" VerticalAlignment="Center" Margin="218,10,0,423" HorizontalAlignment="Left" Grid.Column="0" Content="Customer activ:"/>
             <Label x:Name="customer_display_name" VerticalAlignment="Center" Margin="10,44,0,380" HorizontalAlignment="Left" Grid.Column="0" Content="Customer display name:"/>
             <TextBox x:Name="customer_display_nameTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Customer_display_name, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="148,44,0,384" Height="22" HorizontalAlignment="Left"/>
             <Label x:Name="customer_Email" VerticalAlignment="Center" Margin="14,198,0,226" HorizontalAlignment="Left" Grid.Column="0" Content="Customer Email:"/>
@@ -59,7 +58,35 @@
             <Label x:Name="twitter" VerticalAlignment="Center" Margin="81,226,0,198" HorizontalAlignment="Left" Grid.Column="0" Content="Twitter:"/>
             <TextBox x:Name="twitterTextBox" Width="120" VerticalAlignment="Center" Text="{Binding Twitter, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="148,228,0,200" Height="22" HorizontalAlignment="Left"/>
             <Button x:Name="button_add" Content="Add Customer" HorizontalAlignment="Left" Height="42" Margin="552,15,0,0" VerticalAlignment="Top" Width="138" Click="button_add_Click"/>
+            <Popup x:Name="Cust_pop"
+               Placement="MousePoint"
+               HorizontalOffset="-100"
+               VerticalOffset="-100"
+
+               AllowsTransparency="True">
+
+                <Grid Width="269">
+
+                    <Ellipse  Fill="Aquamarine" Stroke="Black" StrokeThickness="3" Margin="6,33,10,43" />
+                    <TextBox x:Name="text_pop" Margin="48,83,27,78" ></TextBox>
+                    <Label x:Name="label_pop" Margin="23,55,10,105" Content="label" ></Label>
+                    <Button x:Name="pop_btn_replace"  Margin="132,110,77,53" Click="pop_btn_replac" Content="Replace"/>
+
+                    <Button x:Name="btn_exit_pop"  Margin="85,110,142,53"  Content="Cancel" Click="btn_exit_pop_Click"/>
+
+                </Grid>
+
+            </Popup>
+
+            <Button x:Name="btn_replace_active" HorizontalAlignment="Left" Height="36" Margin="432,4,0,0" VerticalAlignment="Top" Width="41" Click="button_pop_Click">
+                <StackPanel Height="28" Width="31" >
+
+                    <Image Source="/Images/Edit.png" Height="28" />
+                </StackPanel>
+            </Button>
+            <ComboBox IsEditable="True" x:Name="customer_activCBox" SelectedValuePath="Id" DisplayMemberPath="Status_name" Width="108" VerticalAlignment="Center" Text="{Binding Customer_activ, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Height="22" HorizontalAlignment="Left" LostFocus="customer_activCBox_LostFocus" Margin="315,11,0,426"/>
 
         </Grid>
+
     </Viewbox>
 </UserControl>

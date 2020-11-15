@@ -47,6 +47,7 @@ namespace Cash_prg
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             //string input = Microsoft.VisualBasic.Interaction.InputBox("Prompt", "Title", "Default", 0, 0);
+           
             MessageBoxResult result = MessageBox.Show ("Chose .\n\nEnglish, Language?", "Cash_Click", MessageBoxButton.YesNoCancel);
             switch (result)
             {
