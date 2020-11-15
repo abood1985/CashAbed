@@ -268,10 +268,53 @@ namespace Cash_prg.Sales.Customer
             //==================================== 
             this.Cust_pop.IsOpen = false;
         }
-
+        private void replace_contry(object sender, RoutedEventArgs e)
+        {
+            if (country_idCBox.Text == "") { return; }
+            label_pop.Content = "Replace : " + country_idCBox.Text;
+            text_pop.Text = "";
+            this.Cust_pop.IsOpen = true;
+            pop_flag = 2;
+            //this.text_pop.Visibility = Visibility.Visible;
+        }
         private void btn_exit_pop_Click(object sender, RoutedEventArgs e)
         {
             this.Cust_pop.IsOpen = false;
+        }
+
+        private void country_idCBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (country_idCBox.SelectedValue is null)
+            {
+                if (country_idCBox.Text == "")
+                {
+                    return;
+                }
+                else
+                {
+                    var fnd = (from s in context.Country_tbl where s.Contry_name == country_idCBox.Text select s).FirstOrDefault<Country_tbl>();
+                    if (fnd is null)
+                    {
+                        //AddChild new
+                        MessageBoxResult result = MessageBox.Show("Add New Element .\n\n " + country_idCBox.Text, "Cash_Click", MessageBoxButton.YesNo);
+                        switch (result)
+                        {
+                            case MessageBoxResult.Yes:
+
+                                int noOfRowInserted = context.Database.ExecuteSqlCommand("insert into Country_tbl(Contry_name) values({0})", country_idCBox.Text);
+                                country_idCBox.ItemsSource = (from em in context.Country_tbl select new { em.Contry_name, em.Id }).ToList();
+                                context.SaveChanges();
+                                break;
+                            case MessageBoxResult.No:
+                                country_idCBox.Text = "";
+                                break;
+                           
+                        }
+                    }
+
+                }
+
+            }
         }
     }
 }

@@ -14,10 +14,10 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Label x:Name="city_id" VerticalAlignment="Top" Grid.Row="0" Margin="300,137,854,0" Grid.Column="0" Content="City id:"/>
-            <ComboBox x:Name="city_idCBox" SelectedValuePath="Id" DisplayMemberPath="City_name" VerticalAlignment="Top" Text="{Binding City_id, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="356,139,724,0" Height="22" SelectionChanged="city_idCBox_SelectionChanged" DropDownClosed="city_idCBox_DropDownClosed"/>
+            <Label x:Name="city_id" VerticalAlignment="Top" Grid.Row="0" Margin="301,144,853,0" Grid.Column="0" Content="City id:"/>
+            <ComboBox x:Name="city_idCBox" SelectedValuePath="Id" DisplayMemberPath="City_name" VerticalAlignment="Top" Text="{Binding City_id, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Margin="356,146,724,0" Height="22" SelectionChanged="city_idCBox_SelectionChanged" DropDownClosed="city_idCBox_DropDownClosed"/>
             <Label x:Name="country_id" VerticalAlignment="Center" Margin="14,139,1118,285" Grid.Column="0" Content="Country id:"/>
-            <ComboBox x:Name="country_idCBox"  SelectedValuePath="Id" DisplayMemberPath="Contry_name" VerticalAlignment="Center" Text="{Binding Country_id, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="148,141,932,287" Height="22" DropDownClosed="country_idCBox_DropDownClosed"/>
+            <ComboBox x:Name="country_idCBox" IsEditable="True" SelectedValuePath="Id" DisplayMemberPath="Contry_name" VerticalAlignment="Center" Text="{Binding Country_id, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="148,146,953,287" Height="26" DropDownClosed="country_idCBox_DropDownClosed" LostFocus="country_idCBox_LostFocus"/>
             <Label x:Name="currency_id" VerticalAlignment="Center" Margin="374,278,0,146" HorizontalAlignment="Left" Grid.Column="0" Content="Currency id:"/>
             <ComboBox x:Name="currency_idCBox"  SelectedValuePath="Id" DisplayMemberPath="Currency_name" Width="120" VerticalAlignment="Center" Text="{Binding Currency_id, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="504,280,0,148" Height="22" HorizontalAlignment="Left"/>
             <Label x:Name="customer_activ" VerticalAlignment="Center" Margin="218,10,0,423" HorizontalAlignment="Left" Grid.Column="0" Content="Customer activ:"/>
@@ -78,13 +78,19 @@
 
             </Popup>
 
-            <Button x:Name="btn_replace_active" HorizontalAlignment="Left" Height="36" Margin="432,4,0,0" VerticalAlignment="Top" Width="41" Click="button_pop_Click">
+            <Button x:Name="btn_replace_active" HorizontalAlignment="Left" Height="27" Margin="438,10,0,0" VerticalAlignment="Top" Width="28" Click="button_pop_Click">
                 <StackPanel Height="28" Width="31" >
 
-                    <Image Source="/Images/Edit.png" Height="28" />
+                    <Image Source="/Images/Edit.png" Height="22" Margin="0,0,10,0" />
                 </StackPanel>
             </Button>
-            <ComboBox IsEditable="True" x:Name="customer_activCBox" SelectedValuePath="Id" DisplayMemberPath="Status_name" Width="108" VerticalAlignment="Center" Text="{Binding Customer_activ, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Height="22" HorizontalAlignment="Left" LostFocus="customer_activCBox_LostFocus" Margin="315,11,0,426"/>
+            <ComboBox IsEditable="True" x:Name="customer_activCBox" SelectedValuePath="Id" DisplayMemberPath="Status_name" Width="116" VerticalAlignment="Center" Text="{Binding Customer_activ, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Height="27" HorizontalAlignment="Left" LostFocus="customer_activCBox_LostFocus" Margin="323,10,0,422"/>
+            <Button x:Name="btn_replace_contry" HorizontalAlignment="Left" Height="26" Margin="247,146,0,0" VerticalAlignment="Top" Width="27" Click="replace_contry">
+                <StackPanel Height="26" Width="27" >
+
+                    <Image Source="/Cash_prg;component/Images/Edit.png" Height="20" Margin="0,0,10,0" />
+                </StackPanel>
+            </Button>
 
         </Grid>
 
