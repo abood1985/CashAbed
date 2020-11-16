@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\Cash_new\CashAbed\App.xaml
-5-151374222
+6-1976952602
 21750853300
-56-21413135
+58363017560
 18-1831972494
-MainWindow.xaml;Sales\Customer\Cust_add_uc.xaml;Sales\Uc_Salesinvoice.xaml;Stors\Uc_2.xaml;Stors\Uc_store.xaml;
+MainWindow.xaml;Purchase\Vendors\Vendors_uc.xaml;Sales\Customer\Cust_add_uc.xaml;Sales\Uc_Salesinvoice.xaml;Stors\Uc_2.xaml;Stors\Uc_store.xaml;
 
-False
+True
 

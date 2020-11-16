@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cash_prg"
         xmlns:uc_Sales_customer="clr-namespace:Cash_prg.Sales.Customer"
+          xmlns:uc_vendor="clr-namespace:Cash_prg.Purchase.Vendors"
         mc:Ignorable="d"
         Title="Cash_Click" Height="650" Width="1200" UseLayoutRounding="True" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
 
@@ -356,7 +357,7 @@
                                         <TextBlock  Text="الاضافة "/>
                                     </StackPanel>
                                 </TabItem.Header>
-                                <!--<my:cars x:Name="cars"/>-->
+                                <uc_vendor:Vendors_uc></uc_vendor:Vendors_uc>
                             </TabItem>
                             <TabItem>
                                 <TabItem.Header >

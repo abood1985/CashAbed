@@ -102,3 +102,5 @@ E:\Cash_new\CashAbed\obj\Debug\Cash_prg.csproj.CopyComplete
 E:\Cash_new\CashAbed\obj\Debug\Cash_prg.exe
 E:\Cash_new\CashAbed\obj\Debug\Cash_prg.pdb
 E:\Cash_new\CashAbed\obj\Debug\Cash_prg.csprojAssemblyReference.cache
+E:\Cash_new\CashAbed\obj\Debug\Purchase\Vendors\Vendors_uc.g.cs
+E:\Cash_new\CashAbed\obj\Debug\Purchase\Vendors\Vendors_uc.baml

@@ -167,7 +167,7 @@ namespace Cash_prg.Sales.Customer
             };
 
             //==========================================================
-            if (new_cust.Id >= 1)
+            if (new_cust.Id >= 0)
             {
 
                 //int len = context.Purchase_order_tbl.Local.Count();

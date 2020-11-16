@@ -172,6 +172,9 @@
     <Compile Include="Project_tbl.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Purchase\Vendors\Vendors_uc.xaml.cs">
+      <DependentUpon>Vendors_uc.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Purchase_invoice_tbl.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -256,6 +259,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Purchase\Vendors\Vendors_uc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Sales\Customer\Cust_add_uc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -384,7 +391,6 @@
     <Resource Include="Images\cust_usr.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Customers\" />
     <Folder Include="Sales\Delivery\" />
     <Folder Include="Sales\Estimate\" />
     <Folder Include="Sales\invoice\" />
