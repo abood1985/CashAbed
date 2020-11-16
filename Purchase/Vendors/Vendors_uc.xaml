@@ -6,5 +6,5 @@
              xmlns:local="clr-namespace:Cash_prg.Purchase.Vendors"
              mc:Ignorable="d" 
              d:DesignHeight="470" d:DesignWidth="1200">
-    <Grid/>
+    <Grid Background="DarkCyan"/>
 </UserControl>
