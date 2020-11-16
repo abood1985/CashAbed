@@ -6,9 +6,5 @@
              xmlns:local="clr-namespace:Cash_prg.Purchase.Vendors"
              mc:Ignorable="d" 
              d:DesignHeight="470" d:DesignWidth="1200">
-    <Grid>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="140" Margin="342,138,0,0" VerticalAlignment="Top" Width="371"/>
-
-    </Grid>
+    <Grid/>
 </UserControl>
